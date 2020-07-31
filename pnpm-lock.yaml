@@ -1,12 +1,12 @@
 dependencies:
-  uvu: 0.3.0
+  uvu: 0.3.1
 devDependencies:
   '@types/eslint': 7.2.0
-  '@types/node': 14.0.26
+  '@types/node': 14.0.27
   '@types/prettier': 2.0.2
   '@typescript-eslint/eslint-plugin': 3.7.1_6426e42c89f0c157ed209e0bfffbcf90
   '@typescript-eslint/parser': 3.7.1_eslint@7.5.0+typescript@3.9.7
-  '@vangware/base': 1.0.10
+  '@vangware/base': 1.0.12
   eslint: 7.5.0
   eslint-config-prettier: 6.11.0_eslint@7.5.0
   eslint-import-resolver-node: 0.3.4
@@ -67,10 +67,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
-  /@types/node/14.0.26:
+  /@types/node/14.0.27:
     dev: true
     resolution:
-      integrity: sha512-W+fpe5s91FBGE0pEa0lnqGLL4USgpLgs4nokw16SrBBco/gQxuua7KnArSEOd5iaMqbbSHV10vUDkJYJJqpXKA==
+      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
@@ -208,14 +208,14 @@ packages:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     resolution:
       integrity: sha512-xn22sQbEya+Utj2IqJHGLA3i1jDzR43RzWupxojbSWnj3nnPLavaQmWe5utw03CwYao3r00qzXfgJMGNkrzrAA==
-  /@vangware/base/1.0.10:
+  /@vangware/base/1.0.12:
     dependencies:
       husky: 4.2.5
       prompts: 2.3.2
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-v8rxBSVBj+jO9keAxqb6lbzFpuuPjQYTnz4s32WWlUm0YqM9QTybyhzhlzRhAc3Aal/yU4wSyCyvulAvilNA+A==
+      integrity: sha512-p0xTK8NWhZUnfubB8NlmimnLMmskUhkD01VE6DW8/A/Am2yYHtEm8rwOeZ87CeeWkzoQVMMkt7HGdngGGmeVGg==
   /acorn-jsx/5.2.0_acorn@7.3.1:
     dependencies:
       acorn: 7.3.1
@@ -1064,12 +1064,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
-  /kleur/4.0.2:
+  /kleur/4.0.3:
     dev: false
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-FGCCxczbrZuF5CtMeO0xfnjhzkVZSXfcWK90IPLucDWZwskrpYN7pmRIgvd8muU0mrPrzy4A2RBGuwCjLHI+nw==
+      integrity: sha512-s84+52u0qkMmOI+eFJSxOCS/2Xt4j2A7Uacg8j+Ja1uFrED2zV3bILKtdAmpJCER4ufTej7p1OwuHbUz5ZVUyg==
   /levn/0.4.1:
     dependencies:
       prelude-ls: 1.2.1
@@ -1789,11 +1789,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-KY9Frmirql91X2Qgjry0Wd4Y+YTdrdZheS8TFwvkbLWf/G5KNJDCh6pKL5OZctEW4+0Baa5idK2ZQuELRwPznQ==
-  /uvu/0.3.0:
+  /uvu/0.3.1:
     dependencies:
       dequal: 1.0.1
       diff: 4.0.2
-      kleur: 4.0.2
+      kleur: 4.0.3
       sade: 1.7.3
       totalist: 1.1.0
     dev: false
@@ -1801,7 +1801,7 @@ packages:
       node: '>=8'
     hasBin: true
     resolution:
-      integrity: sha512-N9yQwZqZCHsC/hGsZJG7lu/+qv+MjDNVS6MuxhnDqk6p/IWWm4Pjch4w+oMqDlIk6cjf+wMPMAhdnHVGRM+4+g==
+      integrity: sha512-N1lpO22pAbXbSNZgrtjjTwVyBsSPwXVaOHBzhj/X8i2OrbFGD0p91QBQUlIMC79V2KVcA7+a3lGTG74LSirEiQ==
   /v8-compile-cache/2.1.1:
     dev: true
     resolution:
@@ -1859,11 +1859,11 @@ packages:
       integrity: sha512-yr2icI4glYaNG+KWONODapy2/jDdMSDnrONSjblABjD9B4Z5LgiircSt8m8sRZFNi08kG9Sm0uSHtEmP3zaEGg==
 specifiers:
   '@types/eslint': ^7.2.0
-  '@types/node': ^14.0.26
+  '@types/node': ^14.0.27
   '@types/prettier': ^2.0.2
   '@typescript-eslint/eslint-plugin': ^3.7.1
   '@typescript-eslint/parser': ^3.7.1
-  '@vangware/base': ^1.0.10
+  '@vangware/base': ^1.0.12
   eslint: ^7.5.0
   eslint-config-prettier: ^6.11.0
   eslint-import-resolver-node: ^0.3.4
@@ -1877,4 +1877,4 @@ specifiers:
   npm-run-all: ^4.1.5
   prettier: ^2.0.5
   typescript: ^3.9.7
-  uvu: ^0.3.0
+  uvu: ^0.3.1
