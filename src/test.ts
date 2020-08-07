@@ -1,5 +1,6 @@
+import dequal from "dequal";
 import { test as uvu } from "uvu";
-import { equal } from "uvu/assert";
+import { TestError } from "./TestError";
 import { TestFunction } from "./TestFunction";
 
 /**
@@ -10,12 +11,21 @@ export const test: TestFunction = tests => {
 	// eslint-disable-next-line functional/no-expression-statement
 	tests.map(({ given, must, received, wanted }) =>
 		// eslint-disable-next-line functional/functional-parameters
-		uvu(`Given ${given}, must ${must}.`, async () =>
-			equal(
-				received instanceof Promise ? await received : received,
-				wanted instanceof Promise ? await wanted : wanted
-			)
-		)
+		uvu(`Given ${given}, must ${must}.`, async () => {
+			// eslint-disable-next-line functional/no-conditional-statement
+			if (
+				!dequal(
+					received instanceof Promise ? await received : received,
+					wanted instanceof Promise ? await wanted : wanted
+				)
+			) {
+				// eslint-disable-next-line functional/no-throw-statement
+				throw new TestError({
+					received,
+					wanted
+				});
+			}
+		})
 	);
 
 	return uvu.run();
