@@ -1,7 +1,7 @@
 {
   "name": "@vangware/test",
   "description": "uvu test wrapper that enforces legibility",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
