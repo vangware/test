@@ -33,7 +33,6 @@ test([
 If let's say the first test fails, the error reads something like this:
 ```
 [FAIL] Given a 1 and a 2, must return 3.
-  Expected values to be deeply equal:  (equal)
     ++3    (Expected)
     --4    (Actual)
 ```
