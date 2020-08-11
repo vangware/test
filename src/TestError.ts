@@ -18,7 +18,7 @@ export class TestError<OutputType> extends Error {
 		// eslint-disable-next-line functional/no-expression-statement
 		super();
 		// eslint-disable-next-line functional/no-expression-statement, functional/no-this-expression
-		this.details = compare(options.wanted, options.received);
+		this.details = compare(options.received, options.wanted);
 		// eslint-disable-next-line functional/no-expression-statement, functional/no-this-expression
 		this.stack = "";
 	}
