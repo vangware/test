@@ -8,8 +8,6 @@ export class TestError<OutputType> extends Error {
 	public readonly name = "Test";
 	public readonly code = "TEST_ERROR";
 	public readonly details: string;
-	// Temporary until https://github.com/lukeed/uvu/pull/41 is merged:
-	public readonly operator = "equal";
 
 	public constructor(
 		options: {
