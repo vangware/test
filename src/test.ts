@@ -1,4 +1,4 @@
-import dequal from "dequal";
+import { dequal } from "dequal";
 import { test as uvu } from "uvu";
 import { TestError } from "./TestError";
 import { TestFunction } from "./TestFunction";
