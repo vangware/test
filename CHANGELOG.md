@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 2.0.0
+
+- :arrow_up: major dependency upgrade (new TS version!).
+
 ## 1.0.5
 
 - :bug: fix bug where expected and actual were being showed in the wrong order.
