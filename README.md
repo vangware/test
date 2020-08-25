@@ -1,9 +1,9 @@
-![@vangware/test](https://i.imgur.com/W6vFF4U.png)
+![@vangware/test](https://i.imgur.com/ywl00fk.png)
 
-![License](https://img.shields.io/npm/l/@vangware/test.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://github.com/vangware/test/blob/master/LICENSE)
-![NPM Version](https://img.shields.io/npm/v/@vangware/test.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://npm.im/@vangware/test)
-![Open Issues](https://img.shields.io/github/issues/vangware/test.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://github.com/vangware/test/issues)
-![Size](https://img.shields.io/bundlephobia/minzip/@vangware/test.svg?style=for-the-badge&labelColor=333&color=20b075&label=size&link=https://bundlephobia.com/result?p=@vangware/test)
+![License](https://img.shields.io/npm/l/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/blob/master/LICENSE)
+![NPM Version](https://img.shields.io/npm/v/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://npm.im/@vangware/test)
+![Open Issues](https://img.shields.io/github/issues/vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/issues)
+![Size](https://img.shields.io/bundlephobia/minzip/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&label=size&link=https://bundlephobia.com/result?p=@vangware/test)
 
 Wrapper of [uvu](https://github.com/lukeed/uvu) that enforces legibility (based on [RITEway](https://github.com/ericelliott/riteway)).
 
