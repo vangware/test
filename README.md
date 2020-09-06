@@ -1,6 +1,6 @@
 ![@vangware/test](https://i.imgur.com/ywl00fk.png)
 
-![License](https://img.shields.io/npm/l/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/blob/master/LICENSE)
+![License](https://img.shields.io/npm/l/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/blob/main/LICENSE)
 ![NPM Version](https://img.shields.io/npm/v/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://npm.im/@vangware/test)
 ![Open Issues](https://img.shields.io/github/issues/vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/issues)
 ![Size](https://img.shields.io/bundlephobia/minzip/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&label=size&link=https://bundlephobia.com/result?p=@vangware/test)
@@ -36,3 +36,7 @@ If let's say the first test fails, the error reads something like this:
     ++3    (Expected)
     --4    (Actual)
 ```
+
+## Future
+
+In the near future, this library will move away from uvu to just have equality assertions.
