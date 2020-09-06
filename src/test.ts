@@ -1,4 +1,4 @@
-import { dequal } from "dequal";
+import { equal } from "@vangware/utils";
 import { test as uvu } from "uvu";
 import { TestError } from "./TestError";
 import { TestFunction } from "./TestFunction";
@@ -14,8 +14,7 @@ export const test: TestFunction = tests => {
 		uvu(`Given ${given}, must ${must}.`, async () => {
 			// eslint-disable-next-line functional/no-conditional-statement
 			if (
-				!dequal(
-					received instanceof Promise ? await received : received,
+				!equal(received instanceof Promise ? await received : received)(
 					wanted instanceof Promise ? await wanted : wanted
 				)
 			) {
