@@ -31,5 +31,6 @@
     "typescriptreact"
   ],
   "eslint.enable": true,
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.suggestionActions.enabled": false
 }
