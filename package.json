@@ -1,7 +1,7 @@
 {
   "name": "@vangware/test",
-  "description": "uvu test wrapper that enforces legibility",
-  "version": "2.0.3",
+  "description": "Simple equality test with enforced legibility",
+  "version": "3.0.0",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -9,30 +9,36 @@
   "bugs": {
     "url": "https://github.com/vangware/test/issues"
   },
+  "bin": {
+    "test": "./cjs/bin.js"
+  },
   "dependencies": {
-    "@vangware/utils": "^4.2.1",
-    "uvu": "^0.3.3"
+    "@vangware/forcli": "^1.1.2",
+    "@vangware/utils": "^4.2.6",
+    "diff": "^4.0.2",
+    "ts-node": "^9.0.0"
   },
   "devDependencies": {
-    "@types/eslint": "^7.2.2",
-    "@types/node": "^14.6.4",
-    "@types/prettier": "^2.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
-    "@typescript-eslint/parser": "^4.0.1",
-    "@vangware/base": "^2.0.3",
-    "eslint": "^7.8.1",
-    "eslint-config-prettier": "^6.11.0",
+    "@types/diff": "^4.0.2",
+    "@types/eslint": "^7.2.4",
+    "@types/node": "^14.11.10",
+    "@types/prettier": "^2.1.5",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "@vangware/base": "^2.2.1",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-ban": "^1.5.1",
-    "eslint-plugin-functional": "^3.0.2",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-functional": "^3.1.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-no-null": "^1.0.2",
     "eslint-plugin-prefer-arrow": "^1.2.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.1",
-    "typescript": "^4.0.2"
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
   },
   "files": [
     "cjs",
@@ -53,9 +59,6 @@
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
-  "peerDependencies": {
-    "uvu": "^0.2.3"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/vangware/test.git"

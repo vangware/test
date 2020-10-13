@@ -3,6 +3,9 @@
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "es2019"
+    ],
     "listEmittedFiles": true,
     "module": "commonjs",
     "moduleResolution": "node",
@@ -16,6 +19,6 @@
     "target": "ES2018"
   },
   "include": [
-    "src/*.ts"
+    "src/**/*.ts"
   ]
 }
