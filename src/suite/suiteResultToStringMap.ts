@@ -1,6 +1,6 @@
 import { arrayMap, arraySort, ReadOnlyObjectArray } from "@vangware/utils";
 import { SuiteResult } from "../types/SuiteResult";
-import { joinNewLine } from "../utils";
+import { joinNewLine } from "../utils/joinNewLine";
 import { suiteResultToString } from "./suiteResultToString";
 
 /**
