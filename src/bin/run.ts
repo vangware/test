@@ -1,7 +1,7 @@
 import { UnguardedFilterer } from "@vangware/utils";
-import { suiteResultToStringMap } from "./suite/suiteResultToStringMap";
-import { suitesImport } from "./suite/suitesImport";
-import { listFiles } from "./utils/listFiles";
+import { suiteResultToStringMap } from "../suite/suiteResultToStringMap";
+import { suitesImport } from "../suite/suitesImport";
+import { listFiles } from "./listFiles";
 
 /**
  * Runs tests in given directory and log to the console.
