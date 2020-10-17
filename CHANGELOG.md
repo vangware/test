@@ -5,6 +5,12 @@ This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
 ## 3.0.0
 
+- :memo: update README.md.
+- :wrench: update ESM TSConfig to exclude fs.
+- :bug: fix bug with paths.
+
+## 3.0.0
+
 - :arrow_up: dependency upgrade.
 - :fire: remove `uvu`.
 - :heavy_plus_sign: add `diff`.
