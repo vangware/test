@@ -3,7 +3,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
-## 3.0.0
+## 3.0.2
+
+- :pencil2: fix typo in CHANGELOG.md.
+- :bug: `run` shouldn't be exported (lol).
+
+## 3.0.1
 
 - :memo: update README.md.
 - :wrench: update ESM TSConfig to exclude fs.
