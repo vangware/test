@@ -6,9 +6,6 @@
     "target": "ESNext"
   },
   "exclude": [
-    "./src/bin.ts",
-    "./src/run.ts",
-    "./src/utils/direntToPath.ts",
-    "./src/utils/listFiles.ts"
+    "./src/bin/*"
   ]
 }
