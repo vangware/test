@@ -9,6 +9,8 @@ Simple equality test with enforced legibility (based on [RITEway](https://github
 
 ## Usage
 
+Write:
+
 ```typescript
 import { suite } from "@vangware/test";
 
@@ -30,19 +32,18 @@ export default suite([
 ])("Example suite name (optional)");
 ```
 
+Then run:
+
 ```bash
 test
 ```
 
 If let's say the first test fails, the error reads something like this:
 ```
-[SUITE] Example suite name (optional)
+[FAIL] Example suite name (optional)
 
-[FAIL] Given a 1 and a 2, must return 3.
+> Given a 1 and a 2, must return 3.
 
 Received: 4
 Wanted:   3
-
-[PASS] Given a 1 and a -2, must return -1.
-
 ```
