@@ -2,8 +2,8 @@
 import { existsSync } from "fs";
 import { resolve } from "path";
 import { register } from "ts-node";
+import { isTestFile } from "./isTestFile";
 import { run } from "./run";
-import { isTestFile } from "./utils/isTestFile";
 
 // Register ts-node to support TypeScript files.
 // eslint-disable-next-line functional/no-expression-statement

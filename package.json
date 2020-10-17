@@ -1,7 +1,7 @@
 {
   "name": "@vangware/test",
   "description": "Simple equality test with enforced legibility",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -10,7 +10,7 @@
     "url": "https://github.com/vangware/test/issues"
   },
   "bin": {
-    "test": "./cjs/bin.js"
+    "test": "./cjs/bin/bin.js"
   },
   "dependencies": {
     "@vangware/forcli": "^1.1.2",
