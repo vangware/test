@@ -1,12 +1,8 @@
 export { arrayFlat1 } from "./arrayFlat1";
-export { direntToPath } from "./direntToPath";
-export { direntToPathMap } from "./direntToPathMap";
 export { id } from "./id";
-export { isTestFile } from "./isTestFile";
 export { joinComma } from "./joinComma";
 export { joinNewLine } from "./joinNewLine";
 export { lastAwareMap } from "./lastAwareMap";
-export { listFiles } from "./listFiles";
 export { promiseWrap } from "./promiseWrap";
 export { stringify } from "./stringify";
 export { stringifyMap } from "./stringifyMap";

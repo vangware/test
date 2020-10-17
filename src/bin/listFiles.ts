@@ -5,7 +5,7 @@ import {
 } from "@vangware/utils";
 import { readdir } from "fs/promises";
 import { sep } from "path";
-import { arrayFlat1 } from "./arrayFlat1";
+import { arrayFlat1 } from "../utils/arrayFlat1";
 import { direntToPathMap } from "./direntToPathMap";
 
 /**
