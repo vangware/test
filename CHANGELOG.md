@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 3.0.4
+
+- :arrow_up: dependency upgrade.
+- :fire: remove some redundant code with `@vangware/utils`.
+
 ## 3.0.3
 
 - :bug: `listFiles` shouldn't be exported (lol).

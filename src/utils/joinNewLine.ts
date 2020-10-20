@@ -1,4 +1,4 @@
-import arrayJoin from "./arrayJoin";
+import { arrayJoin } from "@vangware/utils";
 
 /**
  * Join array with new lines.
