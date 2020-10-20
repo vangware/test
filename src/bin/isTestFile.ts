@@ -1,7 +1,8 @@
+import { stringTest } from "@vangware/utils";
+
 /**
  * Checks if given path is a test file (ends with .test.ext).
- * @param path File path.
  */
-export const isTestFile = (path: string) => /\.test\.\w+$/gu.test(path);
+export const isTestFile = stringTest(/\.test\.\w+$/gu);
 
 export default isTestFile;

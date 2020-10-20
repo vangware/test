@@ -1,4 +1,4 @@
-import { arrayFlat } from "./arrayFlat";
+import { arrayFlat } from "@vangware/utils";
 
 /**
  * Return array with 1 level flatted.
