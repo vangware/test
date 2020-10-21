@@ -1,7 +1,7 @@
 {
   "name": "@vangware/test",
   "description": "Simple equality test with enforced legibility",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -13,8 +13,8 @@
     "url": "https://github.com/vangware/test/issues"
   },
   "dependencies": {
-    "@vangware/forcli": "^1.1.5",
-    "@vangware/utils": "^5.0.0",
+    "@vangware/forcli": "^1.1.6",
+    "@vangware/utils": "^5.0.1",
     "diff": "^4.0.2",
     "ts-node": "^9.0.0"
   },
@@ -48,8 +48,8 @@
     }
   },
   "files": [
-    "./cjs/",
-    "./esm/"
+    "cjs",
+    "esm"
   ],
   "homepage": "https://test.vangware.com",
   "husky": {
