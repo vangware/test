@@ -11,5 +11,3 @@ import { stringifyMap } from "../utils/stringifyMap";
 export const compareArrayMissingItems = <Item>(
 	source: ReadOnlyObjectArray<Item>
 ) => grayText(`${INDENT}// Missing: ${joinComma(stringifyMap(source))}`);
-
-export default compareArrayMissingItems;

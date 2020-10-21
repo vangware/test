@@ -25,5 +25,3 @@ export const test = <Value>({
 			given,
 			must
 		}));
-
-export default test;

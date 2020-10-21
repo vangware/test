@@ -15,5 +15,3 @@ export const promiseWrap = <OutputType>(
 		: Promise.resolve(valueOrPromise)) as Promise<
 		ReadOnlyObject<OutputType>
 	>;
-
-export default promiseWrap;
