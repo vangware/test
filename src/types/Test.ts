@@ -24,5 +24,3 @@ export type Test<Value> = {
 	 */
 	readonly wanted: ValueOrPromise<Value>;
 };
-
-export default Test;

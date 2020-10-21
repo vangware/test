@@ -6,5 +6,3 @@ import { TestResult } from "../types/TestResult";
  * @param testResult TestResult to check.
  */
 export const isPassedTestResult = ({ error }: TestResult) => isUndefined(error);
-
-export default isPassedTestResult;

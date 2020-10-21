@@ -1,20 +1,20 @@
 {
   "name": "@vangware/test",
   "description": "Simple equality test with enforced legibility",
-  "version": "3.0.5",
+  "version": "4.0.0",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
   },
-  "bugs": {
-    "url": "https://github.com/vangware/test/issues"
-  },
   "bin": {
     "test": "./cjs/bin/bin.js"
   },
+  "bugs": {
+    "url": "https://github.com/vangware/test/issues"
+  },
   "dependencies": {
-    "@vangware/forcli": "^1.1.4",
-    "@vangware/utils": "^4.3.1",
+    "@vangware/forcli": "^1.1.5",
+    "@vangware/utils": "^5.0.0",
     "diff": "^4.0.2",
     "ts-node": "^9.0.0"
   },
@@ -38,16 +38,23 @@
     "husky": "^4.3.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
+    "typedoc": "^0.19.2",
     "typescript": "^4.0.3"
   },
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./cjs/index.js"
+    }
+  },
   "files": [
-    "cjs",
-    "esm"
+    "./cjs/",
+    "./esm/"
   ],
-  "homepage": "https://github.com/vangware/test#readme",
+  "homepage": "https://test.vangware.com",
   "husky": {
     "hooks": {
-      "pre-commit": "run-s clean pre-compile lint"
+      "pre-commit": "run-s clean pre-compile lint docs"
     }
   },
   "keywords": [
@@ -68,6 +75,7 @@
     "compile": "run-s compile:*",
     "compile:cjs": "tsc --project tsconfig.cjs.json",
     "compile:esm": "tsc --project tsconfig.esm.json",
+    "docs": "typedoc --gitRevision main --mode file --out ./docs ./src/index.ts",
     "lint": "eslint src/*.ts",
     "pre-compile": "run-s pre-compile:*",
     "pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",

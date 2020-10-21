@@ -20,5 +20,3 @@ export const suite = <Value>(tests: ReadOnlyObjectArray<Test<Value>>) =>
 				name,
 				passed
 			}));
-
-export default suite;

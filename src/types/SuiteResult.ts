@@ -20,5 +20,3 @@ export type SuiteResult = {
 	 */
 	readonly passed: ReadOnlyObjectArray<TestResult>;
 };
-
-export default SuiteResult;

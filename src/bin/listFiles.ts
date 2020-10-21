@@ -27,5 +27,3 @@ export const listFiles = (filterer: UnguardedFilterer<string>) =>
 				)(direntToPathMap(directory)(files))
 			).then(arrayFlat1)
 		);
-
-export default listFiles;

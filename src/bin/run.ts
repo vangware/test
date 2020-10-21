@@ -15,7 +15,4 @@ export const run = (filterer: UnguardedFilterer<string>) =>
 		listFiles(filterer)(directory)
 			.then(suitesImport)
 			.then(suiteResultToStringMap)
-			.then(console.log)
-			.catch(console.error);
-
-export default run;
+			.finally(console.log);

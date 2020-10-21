@@ -30,5 +30,3 @@ export const compareArrays = <Wanted>(wanted: ReadOnlyObjectArray<Wanted>) =>
 						: compareArrayMatchingItems(last)(value)
 			)(diffArrays([...wanted], [...received])).flat()
 		)}\n]`;
-
-export default compareArrays;
