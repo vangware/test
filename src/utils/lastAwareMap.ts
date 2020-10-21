@@ -12,5 +12,3 @@ export const lastAwareMap = <Item, Output>(
 	 */
 	(source: ReadOnlyObjectArray<Item>) =>
 		source.map((item, index) => mapper(index === source.length - 1)(item));
-
-export default lastAwareMap;

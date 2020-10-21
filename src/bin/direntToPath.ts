@@ -12,5 +12,3 @@ export const direntToPath = (directory: string) =>
 	 */
 	(dirent: Dirent) =>
 		`${resolve(directory, dirent.name)}${dirent.isDirectory() ? sep : ""}`;
-
-export default direntToPath;

@@ -9,5 +9,3 @@ export const suiteImport = (path: string) =>
 	(import(path) as SuiteImport).then(({ default: suite }) =>
 		isFunction(suite) ? suite(path) : suite
 	);
-
-export default suiteImport;

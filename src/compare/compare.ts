@@ -28,5 +28,3 @@ export const compare = <Wanted>(wanted: ReadOnlyObject<Wanted>) =>
 			  isObject(received)
 			? compareObjects(wanted)(received)
 			: comparePrimitives(wanted)(received);
-
-export default compare;

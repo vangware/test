@@ -13,5 +13,3 @@ export const suiteResultToString = ({ name, failed }: SuiteResult) =>
 			? `\n\n${joinNewLine(testResultToStringMap(failed))}`
 			: ""
 	}`;
-
-export default suiteResultToString;

@@ -10,5 +10,3 @@ export const testName = ({ given, must, error }: TestResult) =>
 	`${(isUndefined(error) ? greenText : redText)(">")} ${dimmed(
 		"Given"
 	)} ${given}${dimmed(", must")} ${must}`;
-
-export default testName;

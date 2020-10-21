@@ -9,5 +9,3 @@ export type TestResult = Pick<Test<unknown>, "given" | "must"> & {
 	 */
 	readonly error?: string;
 };
-
-export default TestResult;

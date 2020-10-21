@@ -7,5 +7,3 @@ import { direntToPath } from "./direntToPath";
  */
 export const direntToPathMap = (directory: string) =>
 	arrayMap(direntToPath(directory));
-
-export default direntToPathMap;

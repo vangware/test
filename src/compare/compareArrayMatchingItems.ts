@@ -15,5 +15,3 @@ export const compareArrayMatchingItems = (last: boolean) =>
 		arrayMap((item: string) => `${INDENT}${item}${last ? "" : ","}`)(
 			stringifyMap(source)
 		);
-
-export default compareArrayMatchingItems;

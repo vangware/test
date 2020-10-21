@@ -14,5 +14,3 @@ export const compareArrayUnwantedItems = (lastParent: boolean) =>
 			"// Unwanted"
 		)}`
 	);
-
-export default compareArrayUnwantedItems;

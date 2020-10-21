@@ -15,5 +15,3 @@ export const comparePrimitives = <Wanted>(wanted: Wanted) =>
 			`${redText("Received:")} ${stringify(received)}`,
 			`${greenText("Wanted:")}   ${stringify(wanted)}`
 		]);
-
-export default comparePrimitives;

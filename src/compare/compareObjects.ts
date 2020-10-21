@@ -51,5 +51,3 @@ export const compareObjects = <Wanted extends Record<string, unknown>>(
 				: ""
 		}\n}`;
 	};
-
-export default compareObjects;

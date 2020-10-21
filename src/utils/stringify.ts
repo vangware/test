@@ -8,5 +8,3 @@ export const stringify = <Source>(source: Source) =>
 	isUndefined(source) || isRegExp(source)
 		? `${source}`
 		: JSON.stringify(source);
-
-export default stringify;
