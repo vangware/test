@@ -16,5 +16,3 @@ export const suiteResultToStringMap = (
 			)(suites)
 		)
 	);
-
-export default suiteResultToStringMap;

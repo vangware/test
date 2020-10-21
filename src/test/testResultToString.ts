@@ -10,5 +10,3 @@ export const testResultToString = (testResult: TestResult) =>
 	`${testName(testResult)}${
 		isPassedTestResult(testResult) ? "." : `:\n\n${testResult.error}\n`
 	}`;
-
-export default testResultToString;

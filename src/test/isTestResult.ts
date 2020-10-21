@@ -11,5 +11,3 @@ export const isTestResult = (value: unknown): value is TestResult =>
 	isString(value.given) &&
 	"must" in value &&
 	isString(value.must);
-
-export default isTestResult;
