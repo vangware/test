@@ -1,7 +1,7 @@
 {
   "name": "@vangware/test",
   "description": "Simple equality test with enforced legibility",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -13,8 +13,8 @@
     "url": "https://github.com/vangware/test/issues"
   },
   "dependencies": {
-    "@vangware/forcli": "^1.1.7",
-    "@vangware/utils": "^5.0.2",
+    "@vangware/forcli": "^1.1.8",
+    "@vangware/utils": "^5.0.3",
     "diff": "^4.0.2",
     "ts-node": "^9.0.0"
   },
@@ -25,7 +25,7 @@
     "@types/prettier": "^2.1.5",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
-    "@vangware/base": "^2.2.6",
+    "@vangware/base": "^2.2.7",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.13.0",
     "eslint-import-resolver-node": "^0.3.4",
