@@ -1,4 +1,4 @@
-import { SuiteResult } from "./SuiteResult";
+import type { SuiteResult } from "./SuiteResult";
 
 /**
  * Promise import of a file containing a suite.

@@ -1,6 +1,6 @@
 import { FAIL, PASS } from "../constants";
 import { testResultToStringMap } from "../test/testResultToStringMap";
-import { SuiteResult } from "../types/SuiteResult";
+import type { SuiteResult } from "../types/SuiteResult";
 import { joinNewLine } from "../utils/joinNewLine";
 
 /**

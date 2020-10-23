@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 4.0.5
+
+- :arrow_up: dependency upgrade.
+- :label: update typed imports/exports to be `import type { ...`.
+
 ## 4.0.4
 
 - :arrow_up: dependency upgrade.

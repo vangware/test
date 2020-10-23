@@ -1,6 +1,6 @@
 import { isArray, isObject, isString } from "@vangware/utils";
 import { isTestResult } from "../test/isTestResult";
-import { SuiteResult } from "../types/SuiteResult";
+import type { SuiteResult } from "../types/SuiteResult";
 
 /**
  * Check if given value is a `SuiteResult` object.

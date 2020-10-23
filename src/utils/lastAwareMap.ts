@@ -1,4 +1,4 @@
-import { ReadOnlyObjectArray } from "@vangware/utils";
+import type { ReadOnlyObjectArray } from "@vangware/utils";
 
 /**
  * Maps trough an array and sets an argument to `true` when is the last item.
