@@ -1,4 +1,4 @@
-import { Dirent } from "fs";
+import type { Dirent } from "fs";
 import { resolve, sep } from "path";
 
 /**

@@ -1,4 +1,4 @@
-import { UnguardedFilterer } from "@vangware/utils";
+import type { UnguardedFilterer } from "@vangware/utils";
 import { suiteResultToStringMap } from "../suite/suiteResultToStringMap";
 import { suitesImport } from "../suite/suitesImport";
 import { listFiles } from "./listFiles";
