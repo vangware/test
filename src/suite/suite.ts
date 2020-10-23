@@ -1,8 +1,8 @@
-import { ReadOnlyObjectArray } from "@vangware/utils";
+import type { ReadOnlyObjectArray } from "@vangware/utils";
 import { testMap } from "../test/testMap";
 import { testResultsFilterTuple } from "../test/testResultsFilterTuple";
-import { SuiteResult } from "../types/SuiteResult";
-import { Test } from "../types/Test";
+import type { SuiteResult } from "../types/SuiteResult";
+import type { Test } from "../types/Test";
 
 /**
  * Creates a new test suite (array of tests).

@@ -1,7 +1,7 @@
 import { equal } from "@vangware/utils";
 import { compare } from "../compare/compare";
-import { Test } from "../types/Test";
-import { TestResult } from "../types/TestResult";
+import type { Test } from "../types/Test";
+import type { TestResult } from "../types/TestResult";
 import { promiseWrap } from "../utils/promiseWrap";
 
 /**

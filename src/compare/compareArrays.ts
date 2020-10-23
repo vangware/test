@@ -1,4 +1,4 @@
-import { ReadOnlyObject, ReadOnlyObjectArray } from "@vangware/utils";
+import type { ReadOnlyObject, ReadOnlyObjectArray } from "@vangware/utils";
 import { ArrayChange, diffArrays } from "diff";
 import { joinNewLine } from "../utils/joinNewLine";
 import { lastAwareMap } from "../utils/lastAwareMap";

@@ -1,5 +1,5 @@
 import { isUndefined } from "@vangware/utils";
-import { TestResult } from "../types/TestResult";
+import type { TestResult } from "../types/TestResult";
 
 /**
  * Checks if given `TestResult` passed.
