@@ -1,5 +1,5 @@
 import { isObject, isString } from "@vangware/utils";
-import { TestResult } from "../types/TestResult";
+import type { TestResult } from "../types/TestResult";
 
 /**
  * Check if given value is a `TestResult` object.

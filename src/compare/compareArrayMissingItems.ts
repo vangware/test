@@ -1,5 +1,5 @@
 import { grayText } from "@vangware/forcli";
-import { ReadOnlyObjectArray } from "@vangware/utils";
+import type { ReadOnlyObjectArray } from "@vangware/utils";
 import { INDENT } from "../constants";
 import { joinComma } from "../utils/joinComma";
 import { stringifyMap } from "../utils/stringifyMap";

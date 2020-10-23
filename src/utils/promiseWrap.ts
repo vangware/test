@@ -1,5 +1,5 @@
 import { isPromise, ReadOnlyObject } from "@vangware/utils";
-import { ValueOrPromise } from "../types/ValueOrPromise";
+import type { ValueOrPromise } from "../types/ValueOrPromise";
 
 /**
  * Given a value that could be either a promise or a value, return the value

@@ -1,4 +1,4 @@
-import { TestResult } from "../types/TestResult";
+import type { TestResult } from "../types/TestResult";
 import { isPassedTestResult } from "./isPassedTestResult";
 import { testName } from "./testName";
 

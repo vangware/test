@@ -1,5 +1,5 @@
 import { isFunction } from "@vangware/utils";
-import { SuiteImport } from "../types/SuiteImport";
+import type { SuiteImport } from "../types/SuiteImport";
 
 /**
  * Import a file that exports a `suite`.

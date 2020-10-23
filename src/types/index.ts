@@ -1,5 +1,5 @@
-export { SuiteImport } from "./SuiteImport";
-export { SuiteResult } from "./SuiteResult";
-export { Test } from "./Test";
-export { TestResult } from "./TestResult";
-export { ValueOrPromise } from "./ValueOrPromise";
+export type { SuiteImport } from "./SuiteImport";
+export type { SuiteResult } from "./SuiteResult";
+export type { Test } from "./Test";
+export type { TestResult } from "./TestResult";
+export type { ValueOrPromise } from "./ValueOrPromise";

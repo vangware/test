@@ -1,5 +1,5 @@
-import { ReadOnlyObjectArray } from "@vangware/utils";
-import { TestResult } from "./TestResult";
+import type { ReadOnlyObjectArray } from "@vangware/utils";
+import type { TestResult } from "./TestResult";
 
 /**
  * Output object given by a suite.

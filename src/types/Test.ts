@@ -1,4 +1,4 @@
-import { ValueOrPromise } from "./ValueOrPromise";
+import type { ValueOrPromise } from "./ValueOrPromise";
 
 /**
  * Object that describes a test.

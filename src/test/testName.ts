@@ -1,6 +1,6 @@
 import { dimmed, greenText, redText } from "@vangware/forcli";
 import { isUndefined } from "@vangware/utils";
-import { TestResult } from "../types/TestResult";
+import type { TestResult } from "../types/TestResult";
 
 /**
  * Takes a `TestResult` and returns the name of the test.

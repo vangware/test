@@ -1,4 +1,4 @@
-import { Test } from "./Test";
+import type { Test } from "./Test";
 
 /**
  * Output of the test function.
