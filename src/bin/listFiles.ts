@@ -1,8 +1,4 @@
-import {
-	arrayMap,
-	ReadOnlyObjectArray,
-	UnguardedFilterer
-} from "@vangware/utils";
+import { arrayMap, UnguardedFilterer } from "@vangware/utils";
 import { readdir } from "fs/promises";
 import { sep } from "path";
 import { arrayFlat1 } from "../utils/arrayFlat1";
@@ -17,7 +13,7 @@ export const listFiles = (filterer: UnguardedFilterer<string>) =>
 	/**
 	 * @param directory Directory to search in.
 	 */
-	(directory: string): Promise<ReadOnlyObjectArray<string>> =>
+	(directory: string): Promise<readonly string[]> =>
 		readdir(directory, { withFileTypes: true }).then(files =>
 			Promise.all(
 				arrayMap((path: string) =>

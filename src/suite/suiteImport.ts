@@ -3,6 +3,7 @@ import type { SuiteImport } from "../types/SuiteImport";
 
 /**
  * Import a file that exports a `suite`.
+ *
  * @param path File path to load from.
  */
 export const suiteImport = (path: string) =>

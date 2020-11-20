@@ -5,6 +5,7 @@ import { listFiles } from "./listFiles";
 
 /**
  * Runs tests in given directory and log to the console.
+ *
  * @param filterer Filter function to be run with every file path.
  */
 export const run = (filterer: UnguardedFilterer<string>) =>

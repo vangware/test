@@ -6,6 +6,7 @@
     "target": "ESNext"
   },
   "exclude": [
-    "./src/bin/*"
+    "./src/bin/*",
+    "./tests/*"
   ]
 }

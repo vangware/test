@@ -2,10 +2,12 @@ import { equal } from "@vangware/utils";
 import { compare } from "../compare/compare";
 import type { Test } from "../types/Test";
 import type { TestResult } from "../types/TestResult";
-import { promiseWrap } from "../utils/promiseWrap";
+import { promiseWrapMap } from "../utils/promiseWrapMap";
 
 /**
  * Takes a `Test` object and returns a `TestResult` object.
+ *
+ * @template Value Value being tested.
  * @param options Test options object.
  */
 export const test = <Value>({
@@ -14,7 +16,7 @@ export const test = <Value>({
 	received,
 	wanted
 }: Test<Value>): Promise<TestResult> =>
-	Promise.all([received, wanted].map(promiseWrap))
+	Promise.all(promiseWrapMap([received, wanted]))
 		.then(([receivedValue, wantedValue]) =>
 			equal(receivedValue)(wantedValue)
 				? { given, must }
