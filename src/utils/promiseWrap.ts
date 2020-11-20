@@ -1,17 +1,11 @@
-import { isPromise, ReadOnlyObject } from "@vangware/utils";
-import type { ValueOrPromise } from "../types/ValueOrPromise";
+import type { MaybePromise } from "../types/MaybePromise";
 
 /**
  * Given a value that could be either a promise or a value, return the value
  * wrapped in a promise.
- * @param valueOrPromise Value or Promise value.
+ *
+ * @param maybePromise Value or Promise value.
  * @returns Promise of that value.
  */
-export const promiseWrap = <OutputType>(
-	valueOrPromise: ValueOrPromise<OutputType>
-) =>
-	(isPromise(valueOrPromise)
-		? valueOrPromise
-		: Promise.resolve(valueOrPromise)) as Promise<
-		ReadOnlyObject<OutputType>
-	>;
+export const promiseWrap = <Value>(maybePromise: MaybePromise<Value>) =>
+	Promise.resolve(maybePromise);
