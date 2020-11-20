@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 5.0.0
+
+- :arrow_up: dependency upgrade.
+- :white_check_mark: added tests for tests.
+- :boom: breaking rename from `test` to `@vangware/test`.
+- :memo: update README.md.
+
 ## 4.0.8
 
 - :arrow_up: dependency upgrade.

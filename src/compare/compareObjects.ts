@@ -1,4 +1,3 @@
-import { grayText, redText } from "@vangware/forcli";
 import {
 	arrayFilterIn,
 	arrayMap,
@@ -7,15 +6,19 @@ import {
 	isUndefined,
 	objectEntries
 } from "@vangware/utils";
-import { INDENT } from "../constants";
+import { COMMA, EMPTY, INDENT, UNWANTED_COMMENT } from "../constants";
 import { joinComma } from "../utils/joinComma";
 import { joinNewLine } from "../utils/joinNewLine";
 import { lastAwareMap } from "../utils/lastAwareMap";
+import { missingComment } from "../utils/missingComment";
 import { stringify } from "../utils/stringify";
+import { wantedComment } from "../utils/wantedComment";
 
 /**
  * Compare two objects and displays the differences (unwanted, missing and
  * matching items).
+ *
+ * @template Wanted The wanted value type.
  * @param wanted Wanted object.
  */
 export const compareObjects = <Wanted extends Record<string, unknown>>(
@@ -33,21 +36,19 @@ export const compareObjects = <Wanted extends Record<string, unknown>>(
 
 		return `Received: {\n${joinNewLine(
 			lastAwareMap(last => ([key, value]: Entry<Wanted>) =>
-				`${INDENT}${key}: ${value}${last ? " " : ","}${
+				`${INDENT}${key}: ${stringify(value)}${last ? EMPTY : COMMA}${
 					equal(wanted[key])(value)
-						? ""
-						: redText(
+						? EMPTY
+						: ` ${
 								isUndefined(wanted[key])
-									? " // Unwanted"
-									: ` // Wanted: ${stringify(wanted[key])}`
-						  )
+									? UNWANTED_COMMENT
+									: wantedComment(stringify(wanted[key]))
+						  }`
 				}`
 			)(objectEntries(received))
 		)}${
 			missingEntries.length > 0
-				? grayText(
-						`\n${INDENT}// Missing: ${joinComma(missingEntries)}`
-				  )
-				: ""
+				? `\n${INDENT}${missingComment(joinComma(missingEntries))}`
+				: EMPTY
 		}\n}`;
 	};
