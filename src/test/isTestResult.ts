@@ -10,8 +10,4 @@ import type { TestResult } from "../types/TestResult";
 export const isTestResult = <Actual>(
 	value: Actual | TestResult
 ): value is TestResult =>
-	isObject(value) &&
-	"given" in value &&
-	"must" in value &&
-	isString(value.given) &&
-	isString(value.must);
+	isObject(value) && isString(value.given) && isString(value.must);
