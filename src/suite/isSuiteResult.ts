@@ -11,9 +11,6 @@ export const isSuiteResult = <Actual>(
 	value: Actual | SuiteResult
 ): value is SuiteResult =>
 	isObject(value) &&
-	"name" in value &&
-	"failed" in value &&
-	"passed" in value &&
 	isString(value.name) &&
 	isArray(value.failed) &&
 	isArray(value.passed) &&
