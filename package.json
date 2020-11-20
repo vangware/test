@@ -1,32 +1,31 @@
 {
   "name": "@vangware/test",
-  "description": "Simple equality test with enforced legibility",
-  "version": "4.0.8",
+  "description": "✅ Equality test with enforced legibility",
+  "version": "5.0.0",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
   },
-  "bin": {
-    "test": "./cjs/bin/bin.js"
-  },
+  "bin": "./cjs/bin/index.js",
   "bugs": {
     "url": "https://github.com/vangware/test/issues"
   },
   "dependencies": {
-    "@vangware/forcli": "^1.1.13",
-    "@vangware/utils": "^5.0.8",
-    "diff": "^4.0.2",
+    "@vangware/forcli": "^1.1.14",
+    "@vangware/utils": "^6.0.0",
+    "diff": "^5.0.0",
     "ts-node": "^9.0.0"
   },
   "devDependencies": {
     "@types/diff": "^4.0.2",
-    "@types/eslint": "^7.2.4",
-    "@types/node": "^14.14.6",
+    "@types/eslint": "^7.2.5",
+    "@types/node": "^14.14.9",
     "@types/prettier": "^2.1.5",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
-    "@vangware/base": "4.0.0",
-    "eslint": "^7.12.1",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "@vangware/base": "4.1.4",
+    "c8": "^7.3.5",
+    "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-ban": "^1.5.1",
@@ -39,7 +38,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
     "typedoc": "^0.19.2",
-    "typescript": "^4.0.5"
+    "typescript": "^4.1.2"
   },
   "exports": {
     ".": {
@@ -54,14 +53,16 @@
   "homepage": "https://test.vangware.com",
   "husky": {
     "hooks": {
-      "pre-commit": "run-s clean pre-compile lint docs"
+      "pre-commit": "run-s clean pre-compile lint test docs"
     }
   },
   "keywords": [
     "legibility",
     "legible",
     "test",
-    "tests"
+    "testing",
+    "tests",
+    "vangware"
   ],
   "license": "MIT",
   "main": "./cjs/index.js",
@@ -76,12 +77,13 @@
     "compile:cjs": "tsc --project tsconfig.cjs.json",
     "compile:esm": "tsc --project tsconfig.esm.json",
     "docs": "typedoc --gitRevision main --mode file --out ./docs ./src/index.ts",
-    "lint": "eslint src/*.ts",
+    "lint": "eslint {src,tests}/**/*.ts",
     "pre-compile": "run-s pre-compile:*",
     "pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
     "pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
     "prepublishOnly": "run-s compile prettify",
-    "prettify": "prettier --write './{cjs,esm}/**/*.{js,ts}'"
+    "prettify": "prettier --write './{cjs,esm}/**/*.{js,ts}'",
+    "test": "c8 --reporter=html --reporter=text-summary --reporter=lcov ts-node ./tests"
   },
   "source": "./src/index.ts",
   "types": "./esm/index.d.ts"

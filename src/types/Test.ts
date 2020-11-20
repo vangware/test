@@ -1,4 +1,4 @@
-import type { ValueOrPromise } from "./ValueOrPromise";
+import type { MaybePromise } from "./MaybePromise";
 
 /**
  * Object that describes a test.
@@ -17,10 +17,10 @@ export type Test<Value> = {
 	/**
 	 * Value being tested.
 	 */
-	readonly received: ValueOrPromise<Value>;
+	readonly received: MaybePromise<Value>;
 
 	/**
 	 * Expected value.
 	 */
-	readonly wanted: ValueOrPromise<Value>;
+	readonly wanted: MaybePromise<Value>;
 };

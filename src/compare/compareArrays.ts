@@ -1,5 +1,6 @@
-import type { ReadOnlyObject, ReadOnlyObjectArray } from "@vangware/utils";
 import { ArrayChange, diffArrays } from "diff";
+import { arrayFlat1 } from "../utils/arrayFlat1";
+import { indentMap } from "../utils/indentMap";
 import { joinNewLine } from "../utils/joinNewLine";
 import { lastAwareMap } from "../utils/lastAwareMap";
 import { compareArrayMatchingItems } from "./compareArrayMatchingItems";
@@ -9,24 +10,30 @@ import { compareArrayUnwantedItems } from "./compareArrayUnwantedItems";
 /**
  * Compare two arrays and displays the differences (unwanted, missing and
  * matching items).
+ *
+ * @template Wanted The wanted value type.
  * @param wanted Wanted array.
  */
-export const compareArrays = <Wanted>(wanted: ReadOnlyObjectArray<Wanted>) =>
+export const compareArrays = <Wanted>(wanted: readonly Wanted[]) =>
 	/**
 	 * @param received Received array.
 	 */
-	(received: ReadOnlyObjectArray<Wanted>) =>
+	(received: readonly Wanted[]) =>
 		`Received: [\n${joinNewLine(
-			lastAwareMap(
-				last => ({
-					added,
-					removed,
-					value
-				}: ArrayChange<ReadOnlyObject<Wanted>>) =>
-					added
-						? compareArrayUnwantedItems(last)(value)
-						: removed
-						? compareArrayMissingItems(value)
-						: compareArrayMatchingItems(last)(value)
-			)(diffArrays([...wanted], [...received])).flat()
+			indentMap(
+				arrayFlat1(
+					lastAwareMap(
+						last => ({
+							added,
+							removed,
+							value
+						}: ArrayChange<Wanted>) =>
+							added
+								? compareArrayUnwantedItems(last)(value)
+								: removed
+								? compareArrayMissingItems(value)
+								: compareArrayMatchingItems(last)(value)
+					)(diffArrays([...wanted], [...received]))
+				)
+			)
 		)}\n]`;

@@ -1,4 +1,4 @@
-import { arrayMap, arraySort, ReadOnlyObjectArray } from "@vangware/utils";
+import { arrayMap, arraySort } from "@vangware/utils";
 import type { SuiteResult } from "../types/SuiteResult";
 import { joinNewLine } from "../utils/joinNewLine";
 import { suiteResultToString } from "./suiteResultToString";
@@ -6,9 +6,7 @@ import { suiteResultToString } from "./suiteResultToString";
 /**
  * Takes an array of `SuiteResult` and returns an array of strings.
  */
-export const suiteResultToStringMap = (
-	suites: ReadOnlyObjectArray<SuiteResult>
-) =>
+export const suiteResultToStringMap = (suites: readonly SuiteResult[]) =>
 	joinNewLine(
 		arrayMap(suiteResultToString)(
 			arraySort((nextSuite: SuiteResult) => (suite: SuiteResult) =>

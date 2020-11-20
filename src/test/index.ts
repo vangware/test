@@ -1,3 +1,4 @@
+export { everyIsTestResult } from "./everyIsTestResult";
 export { isPassedTestResult } from "./isPassedTestResult";
 export { isTestResult } from "./isTestResult";
 export { test } from "./test";

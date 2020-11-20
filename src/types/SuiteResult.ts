@@ -1,4 +1,3 @@
-import type { ReadOnlyObjectArray } from "@vangware/utils";
 import type { TestResult } from "./TestResult";
 
 /**
@@ -8,7 +7,7 @@ export type SuiteResult = {
 	/**
 	 * Array of failed tests.
 	 */
-	readonly failed: ReadOnlyObjectArray<TestResult>;
+	readonly failed: readonly TestResult[];
 
 	/**
 	 * Name of the test suite.
@@ -18,5 +17,5 @@ export type SuiteResult = {
 	/**
 	 * Array of passed tests.
 	 */
-	readonly passed: ReadOnlyObjectArray<TestResult>;
+	readonly passed: readonly TestResult[];
 };
