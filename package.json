@@ -1,7 +1,7 @@
 {
   "name": "@vangware/test",
   "description": "✅ Equality test with enforced legibility",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -11,8 +11,8 @@
     "url": "https://github.com/vangware/test/issues"
   },
   "dependencies": {
-    "@vangware/forcli": "^1.1.16",
-    "@vangware/utils": "^6.0.2",
+    "@vangware/forcli": "^1.1.17",
+    "@vangware/utils": "^6.1.0",
     "diff": "^5.0.0",
     "ts-node": "^9.0.0"
   },
