@@ -12,7 +12,7 @@ export const compareArrayMatchingItems = (lastParent: boolean) =>
 	/**
 	 * @param source Source array to be shown.
 	 */
-	<Item>(source: readonly Item[]) =>
+	<Item>(source: ReadonlyArray<Item>) =>
 		lastAwareMap(last => (item: string) =>
 			`${item}${last && lastParent ? EMPTY : COMMA}`
 		)(stringifyMap(source));

@@ -1,7 +1,7 @@
+import type { Entry } from "@vangware/utils";
 import {
 	arrayFilterIn,
 	arrayMap,
-	Entry,
 	equal,
 	isUndefined,
 	objectEntries

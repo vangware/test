@@ -11,5 +11,6 @@ export const lastAwareMap = <Item, Output>(
 	/**
 	 * @param source Source array to be mapped.
 	 */
-	(source: readonly Item[]) =>
+	(source: ReadonlyArray<Item>) =>
+		// eslint-disable-next-line max-params
 		source.map((item, index) => mapper(index === source.length - 1)(item));

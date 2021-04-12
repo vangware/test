@@ -7,6 +7,8 @@ import { isRegExp, isUndefined } from "@vangware/utils";
  * @param source Source value to be stringified.
  */
 export const stringify = <Source>(source: Source) =>
-	isUndefined(source) || isRegExp(source)
-		? `${source}`
+	isUndefined(source)
+		? `${(source as unknown) as string}`
+		: isRegExp(source)
+		? source.toString()
 		: JSON.stringify(source);
