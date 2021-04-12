@@ -6,7 +6,7 @@ import { suiteResultToString } from "./suiteResultToString";
 /**
  * Takes an array of `SuiteResult` and returns an array of strings.
  */
-export const suiteResultToStringMap = (suites: readonly SuiteResult[]) =>
+export const suiteResultToStringMap = (suites: ReadonlyArray<SuiteResult>) =>
 	joinNewLine(
 		arrayMap(suiteResultToString)(
 			arraySort((nextSuite: SuiteResult) => (suite: SuiteResult) =>

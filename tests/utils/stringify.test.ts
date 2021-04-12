@@ -37,5 +37,11 @@ export default suite([
 		must: "return stringified version of undefined",
 		received: stringify(undefined),
 		wanted: "undefined"
+	},
+	{
+		given: "a RegExp value",
+		must: "return stringified version of that RegExp",
+		received: stringify(/.+/gu),
+		wanted: "/.+/gu"
 	}
 ]);

@@ -106,7 +106,7 @@ export default suite([
 	{
 		given: "2 different types",
 		must: "return comparison message",
-		received: compare<number | readonly number[]>(13)([42]),
+		received: compare<ReadonlyArray<number> | number>(13)([42]),
 		wanted: joinNewLine([
 			`${redText("Received:")} [42]`,
 			`${greenText("Wanted:")}   13`

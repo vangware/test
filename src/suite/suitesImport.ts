@@ -7,7 +7,7 @@ import { suiteImport } from "./suiteImport";
  *
  * @param paths Array of file paths.
  */
-export const suitesImport = (paths: readonly string[]) =>
+export const suitesImport = (paths: ReadonlyArray<string>) =>
 	Promise.all(arrayMap(suiteImport)(paths)).then(
 		arrayFilterIn(isSuiteResult)
 	);

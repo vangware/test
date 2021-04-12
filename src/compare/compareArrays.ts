@@ -1,4 +1,6 @@
-import { ArrayChange, diffArrays } from "diff";
+import { isUndefined } from "@vangware/utils";
+import type { ArrayChange } from "diff";
+import { diffArrays } from "diff";
 import { arrayFlat1 } from "../utils/arrayFlat1";
 import { indentMap } from "../utils/indentMap";
 import { joinNewLine } from "../utils/joinNewLine";
@@ -14,23 +16,25 @@ import { compareArrayUnwantedItems } from "./compareArrayUnwantedItems";
  * @template Wanted The wanted value type.
  * @param wanted Wanted array.
  */
-export const compareArrays = <Wanted>(wanted: readonly Wanted[]) =>
+export const compareArrays = <Wanted>(wanted: ReadonlyArray<Wanted>) =>
 	/**
 	 * @param received Received array.
 	 */
-	(received: readonly Wanted[]) =>
+	(received: ReadonlyArray<Wanted>) =>
 		`Received: [\n${joinNewLine(
 			indentMap(
 				arrayFlat1(
 					lastAwareMap(
+						// ArrayChange type is not readonly -_-
+						// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 						last => ({
 							added,
 							removed,
 							value
 						}: ArrayChange<Wanted>) =>
-							added
+							!isUndefined(added) && added
 								? compareArrayUnwantedItems(last)(value)
-								: removed
+								: !isUndefined(removed) && removed
 								? compareArrayMissingItems(value)
 								: compareArrayMatchingItems(last)(value)
 					)(diffArrays([...wanted], [...received]))
