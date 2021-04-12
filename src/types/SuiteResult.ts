@@ -7,7 +7,7 @@ export type SuiteResult = {
 	/**
 	 * Array of failed tests.
 	 */
-	readonly failed: readonly TestResult[];
+	readonly failed: ReadonlyArray<TestResult>;
 
 	/**
 	 * Name of the test suite.
@@ -17,5 +17,5 @@ export type SuiteResult = {
 	/**
 	 * Array of passed tests.
 	 */
-	readonly passed: readonly TestResult[];
+	readonly passed: ReadonlyArray<TestResult>;
 };

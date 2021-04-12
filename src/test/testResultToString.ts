@@ -9,5 +9,7 @@ import { testName } from "./testName";
  */
 export const testResultToString = (testResult: TestResult) =>
 	`${testName(testResult)}${
-		isPassedTestResult(testResult) ? "." : `:\n\n${testResult.error}\n`
+		isPassedTestResult(testResult)
+			? "."
+			: `:\n\n${(testResult as Required<TestResult>).error}\n`
 	}`;

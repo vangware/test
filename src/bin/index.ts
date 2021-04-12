@@ -13,7 +13,7 @@ export const registry = register();
 /**
  * Takes the directory as a process argument, "./tests" by default.
  */
-const directory = process.argv[2] || resolve(process.cwd(), "./tests");
+const directory = process.argv[2] ?? resolve(process.cwd(), "./tests");
 
 /**
  * Only run the suite if the route exists.
