@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 5.1.0
+
+- :arrow_up: dependency upgrade.
+- :wrench: update `package.json` adding `lint:fix` script.
+- :wrench: update `package.json` `docs` script.
+- :building_construction: update code with new linting rules.
+- :memo: update docs.
+
 ## 5.0.5
 
 - :arrow_up: dependency upgrade.

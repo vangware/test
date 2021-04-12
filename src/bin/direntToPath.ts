@@ -12,7 +12,7 @@ export const direntToPath = (directory: string) =>
 	/**
 	 * @param dirent File dirent.
 	 */
-	(dirent: Dirent) =>
+	(dirent: Readonly<Dirent>) =>
 		`${resolve(directory, dirent.name)}${
 			dirent.isDirectory() ? sep : EMPTY
 		}`;
