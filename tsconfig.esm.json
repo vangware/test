@@ -1,12 +1,9 @@
 {
-  "extends": "./tsconfig.cjs.json",
-  "compilerOptions": {
-    "module": "ESNext",
-    "outDir": "./esm",
-    "target": "ESNext"
-  },
-  "exclude": [
-    "./src/bin/*",
-    "./tests/*"
-  ]
+	"extends": "./tsconfig.cjs.json",
+	"compilerOptions": {
+		"module": "ESNext",
+		"outDir": "./esm",
+		"target": "ESNext"
+	},
+	"exclude": ["./src/bin/*", "./tests/*"]
 }

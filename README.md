@@ -41,6 +41,7 @@ Then run:
 ```
 
 If let's say the first test fails, the error reads something like this:
+
 ```
 [FAIL] Example suite name (optional)
 
