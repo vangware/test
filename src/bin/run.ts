@@ -8,7 +8,8 @@ import { listFiles } from "./listFiles";
  *
  * @param filterer Filter function to be run with every file path.
  */
-export const run = (filterer: UnguardedFilterer<string>) =>
+export const run =
+	(filterer: UnguardedFilterer<string>) =>
 	/**
 	 * @param directory Directory to search in.
 	 */

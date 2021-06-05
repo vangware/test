@@ -16,7 +16,8 @@ import { compareArrayUnwantedItems } from "./compareArrayUnwantedItems";
  * @template Wanted The wanted value type.
  * @param wanted Wanted array.
  */
-export const compareArrays = <Wanted>(wanted: ReadonlyArray<Wanted>) =>
+export const compareArrays =
+	<Wanted>(wanted: ReadonlyArray<Wanted>) =>
 	/**
 	 * @param received Received array.
 	 */
@@ -26,17 +27,14 @@ export const compareArrays = <Wanted>(wanted: ReadonlyArray<Wanted>) =>
 				arrayFlat1(
 					lastAwareMap(
 						// ArrayChange type is not readonly -_-
-						// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
-						last => ({
-							added,
-							removed,
-							value
-						}: ArrayChange<Wanted>) =>
-							!isUndefined(added) && added
-								? compareArrayUnwantedItems(last)(value)
-								: !isUndefined(removed) && removed
-								? compareArrayMissingItems(value)
-								: compareArrayMatchingItems(last)(value)
+						last =>
+							// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
+							({ added, removed, value }: ArrayChange<Wanted>) =>
+								!isUndefined(added) && added
+									? compareArrayUnwantedItems(last)(value)
+									: !isUndefined(removed) && removed
+									? compareArrayMissingItems(value)
+									: compareArrayMatchingItems(last)(value)
 					)(diffArrays([...wanted], [...received]))
 				)
 			)
