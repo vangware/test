@@ -10,7 +10,8 @@ import { direntToPathMap } from "./direntToPathMap";
  *
  * @param filterer Filter function to be run with every file path.
  */
-export const listFiles = (filterer: UnguardedFilterer<string>) =>
+export const listFiles =
+	(filterer: UnguardedFilterer<string>) =>
 	/**
 	 * @param directory Directory to search in.
 	 */

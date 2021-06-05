@@ -21,9 +21,8 @@ import { wantedComment } from "../utils/wantedComment";
  * @template Wanted The wanted value type.
  * @param wanted Wanted object.
  */
-export const compareObjects = <Wanted extends Record<string, unknown>>(
-	wanted: Wanted
-) =>
+export const compareObjects =
+	<Wanted extends Record<string, unknown>>(wanted: Wanted) =>
 	/**
 	 * @param received Received object.
 	 */
@@ -35,16 +34,22 @@ export const compareObjects = <Wanted extends Record<string, unknown>>(
 		);
 
 		return `Received: {\n${joinNewLine(
-			lastAwareMap(last => ([key, value]: Entry<Wanted>) =>
-				`${INDENT}${key}: ${stringify(value)}${last ? EMPTY : COMMA}${
-					equal(wanted[key])(value)
-						? EMPTY
-						: ` ${
-								isUndefined(wanted[key])
-									? UNWANTED_COMMENT
-									: wantedComment(stringify(wanted[key]))
-						  }`
-				}`
+			lastAwareMap(
+				last =>
+					([key, value]: Entry<Wanted>) =>
+						`${INDENT}${key}: ${stringify(value)}${
+							last ? EMPTY : COMMA
+						}${
+							equal(wanted[key])(value)
+								? EMPTY
+								: ` ${
+										isUndefined(wanted[key])
+											? UNWANTED_COMMENT
+											: wantedComment(
+													stringify(wanted[key])
+											  )
+								  }`
+						}`
 			)(objectEntries(received))
 		)}${
 			missingEntries.length > 0

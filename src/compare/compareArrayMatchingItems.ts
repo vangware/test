@@ -8,11 +8,13 @@ import { stringifyMap } from "../utils/stringifyMap";
  *
  * @param last Is the last element on the array.
  */
-export const compareArrayMatchingItems = (lastParent: boolean) =>
+export const compareArrayMatchingItems =
+	(lastParent: boolean) =>
 	/**
 	 * @param source Source array to be shown.
 	 */
 	<Item>(source: ReadonlyArray<Item>) =>
-		lastAwareMap(last => (item: string) =>
-			`${item}${last && lastParent ? EMPTY : COMMA}`
+		lastAwareMap(
+			last => (item: string) =>
+				`${item}${last && lastParent ? EMPTY : COMMA}`
 		)(stringifyMap(source));

@@ -9,8 +9,9 @@ import { stringify } from "../utils/stringify";
  * @param lastParent Last item of the parent.
  */
 export const compareArrayUnwantedItems = (lastParent: boolean) =>
-	lastAwareMap(last => item =>
-		`${stringify(item)}${
-			last && lastParent ? " " : COMMA
-		} ${UNWANTED_COMMENT}`
+	lastAwareMap(
+		last => item =>
+			`${stringify(item)}${
+				last && lastParent ? " " : COMMA
+			} ${UNWANTED_COMMENT}`
 	);

@@ -9,8 +9,9 @@ import { suiteResultToString } from "./suiteResultToString";
 export const suiteResultToStringMap = (suites: ReadonlyArray<SuiteResult>) =>
 	joinNewLine(
 		arrayMap(suiteResultToString)(
-			arraySort((nextSuite: SuiteResult) => (suite: SuiteResult) =>
-				nextSuite.failed.length - suite.failed.length
+			arraySort(
+				(nextSuite: SuiteResult) => (suite: SuiteResult) =>
+					nextSuite.failed.length - suite.failed.length
 			)(suites)
 		)
 	);
