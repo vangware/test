@@ -8,7 +8,8 @@ import { EMPTY } from "../constants";
  * @param directory Base directory.
  * @returns Curried function with `directory` in context.
  */
-export const direntToPath = (directory: string) =>
+export const direntToPath =
+	(directory: string) =>
 	/**
 	 * @param dirent File dirent.
 	 */

@@ -5,15 +5,14 @@ import { EMPTY } from "../constants";
  *
  * @param formatter Color/style formatter for the text.
  */
-export const comment = (formatter: (source: string) => string) =>
+export const comment =
+	(formatter: (source: string) => string) =>
 	/**
 	 * @param title Comment title.
 	 */
 	(title: string) =>
-		/**
-		 * @param value Value to concat with comment.
-		 */
-		(value: string | undefined) =>
-			formatter(
-				`// ${title}${value !== undefined ? `: ${value}` : EMPTY}`
-			);
+	/**
+	 * @param value Value to concat with comment.
+	 */
+	(value: string | undefined) =>
+		formatter(`// ${title}${value !== undefined ? `: ${value}` : EMPTY}`);
