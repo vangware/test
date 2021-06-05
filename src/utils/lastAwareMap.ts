@@ -5,9 +5,8 @@
  * @template Output Output type after mapping.
  * @param mapper Mapping function with `last` boolean argument.
  */
-export const lastAwareMap = <Item, Output>(
-	mapper: (last: boolean) => (item: Item) => Output
-) =>
+export const lastAwareMap =
+	<Item, Output>(mapper: (last: boolean) => (item: Item) => Output) =>
 	/**
 	 * @param source Source array to be mapped.
 	 */

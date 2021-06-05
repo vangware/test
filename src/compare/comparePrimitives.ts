@@ -8,7 +8,8 @@ import { stringify } from "../utils/stringify";
  * @template Wanted The wanted value type.
  * @param wanted Wanted value.
  */
-export const comparePrimitives = <Wanted>(wanted: Wanted) =>
+export const comparePrimitives =
+	<Wanted>(wanted: Wanted) =>
 	/**
 	 * @param received Received value.
 	 */

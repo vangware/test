@@ -9,7 +9,8 @@ import { comparePrimitives } from "./comparePrimitives";
  * @template Wanted The wanted value type.
  * @param wanted Wanted value.
  */
-export const compare = <Wanted>(wanted: Wanted) =>
+export const compare =
+	<Wanted>(wanted: Wanted) =>
 	/**
 	 * @param received Received value.
 	 */

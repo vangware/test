@@ -9,7 +9,8 @@ import type { Test } from "../types/Test";
  * @template Value The value being checked in the test.
  * @param tests List of test descriptions.
  */
-export const suite = <Value>(tests: ReadonlyArray<Test<Value>>) =>
+export const suite =
+	<Value>(tests: ReadonlyArray<Test<Value>>) =>
 	/**
 	 * @param name Name of the suite.
 	 */
