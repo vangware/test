@@ -1,4 +1,4 @@
-import { dimmed, greenText, redText } from "@vangware/forcli";
+import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { isUndefined } from "@vangware/utils";
 import type { TestResult } from "../types/TestResult";
 
@@ -8,6 +8,6 @@ import type { TestResult } from "../types/TestResult";
  * @param testResult TestResult to get the name from.
  */
 export const testName = ({ given, must, error }: TestResult) =>
-	`${(isUndefined(error) ? greenText : redText)(">")} ${dimmed(
+	`${(isUndefined(error) ? foregroundGreen : foregroundRed)(">")} ${dimmed(
 		"Given"
 	)} ${given}${dimmed(", must")} ${must}`;

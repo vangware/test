@@ -1,7 +1,7 @@
-import { grayText } from "@vangware/forcli";
+import { foregroundGray } from "@vangware/ansi";
 import { comment } from "./comment";
 
 /**
  * Comment for missing items.
  */
-export const missingComment = comment(grayText)("Missing");
+export const missingComment = comment(foregroundGray)("Missing");

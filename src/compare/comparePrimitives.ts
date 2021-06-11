@@ -1,4 +1,4 @@
-import { greenText, redText } from "@vangware/forcli";
+import { foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { joinNewLine } from "../utils/joinNewLine";
 import { stringify } from "../utils/stringify";
 
@@ -15,6 +15,6 @@ export const comparePrimitives =
 	 */
 	<Received>(received: Received) =>
 		joinNewLine([
-			`${redText("Received:")} ${stringify(received)}`,
-			`${greenText("Wanted:")}   ${stringify(wanted)}`
+			`${foregroundRed("Received:")} ${stringify(received)}`,
+			`${foregroundGreen("Wanted:")}   ${stringify(wanted)}`
 		]);
