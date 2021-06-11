@@ -1,4 +1,4 @@
-import { greenText, redText } from "@vangware/forcli";
+import { foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { comparePrimitives } from "../../src/compare/comparePrimitives";
 import { suite } from "../../src/suite/suite";
 import { joinNewLine } from "../../src/utils/joinNewLine";
@@ -9,8 +9,8 @@ export default suite([
 		must: "return comparison message",
 		received: comparePrimitives("bar")("foo"),
 		wanted: joinNewLine([
-			`${redText("Received:")} "foo"`,
-			`${greenText("Wanted:")}   "bar"`
+			`${foregroundRed("Received:")} "foo"`,
+			`${foregroundGreen("Wanted:")}   "bar"`
 		])
 	},
 	{
@@ -18,8 +18,8 @@ export default suite([
 		must: "return comparison message",
 		received: comparePrimitives(13)(42),
 		wanted: joinNewLine([
-			`${redText("Received:")} 42`,
-			`${greenText("Wanted:")}   13`
+			`${foregroundRed("Received:")} 42`,
+			`${foregroundGreen("Wanted:")}   13`
 		])
 	},
 	{
@@ -27,8 +27,8 @@ export default suite([
 		must: "return comparison message",
 		received: comparePrimitives<ReadonlyArray<number> | number>(13)([42]),
 		wanted: joinNewLine([
-			`${redText("Received:")} [42]`,
-			`${greenText("Wanted:")}   13`
+			`${foregroundRed("Received:")} [42]`,
+			`${foregroundGreen("Wanted:")}   13`
 		])
 	}
 ]);

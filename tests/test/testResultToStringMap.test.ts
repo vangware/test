@@ -1,4 +1,4 @@
-import { dimmed, greenText, redText } from "@vangware/forcli";
+import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { suite } from "../../src/suite/suite";
 import { testResultToStringMap } from "../../src/test/testResultToStringMap";
 
@@ -13,7 +13,7 @@ export default suite([
 			}
 		]),
 		wanted: [
-			`${greenText(">")} ${dimmed("Given")} given${dimmed(
+			`${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
 				", must"
 			)} must.`
 		]
@@ -29,7 +29,7 @@ export default suite([
 			}
 		]),
 		wanted: [
-			`${redText(">")} ${dimmed("Given")} given${dimmed(
+			`${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
 				", must"
 			)} must:\n\nerror!\n`
 		]
@@ -49,10 +49,10 @@ export default suite([
 			}
 		]),
 		wanted: [
-			`${greenText(">")} ${dimmed("Given")} given${dimmed(
+			`${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
 				", must"
 			)} must.`,
-			`${redText(">")} ${dimmed("Given")} given${dimmed(
+			`${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
 				", must"
 			)} must:\n\nerror!\n`
 		]

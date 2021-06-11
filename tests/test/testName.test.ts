@@ -1,4 +1,4 @@
-import { dimmed, greenText, redText } from "@vangware/forcli";
+import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { suite } from "../../src/suite/suite";
 import { testName } from "../../src/test/testName";
 
@@ -10,7 +10,7 @@ export default suite([
 			given: "given",
 			must: "must"
 		}),
-		wanted: `${greenText(">")} ${dimmed("Given")} given${dimmed(
+		wanted: `${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
 			", must"
 		)} must`
 	},
@@ -22,7 +22,7 @@ export default suite([
 			given: "given",
 			must: "must"
 		}),
-		wanted: `${redText(">")} ${dimmed("Given")} given${dimmed(
+		wanted: `${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
 			", must"
 		)} must`
 	}
