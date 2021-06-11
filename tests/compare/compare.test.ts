@@ -1,4 +1,4 @@
-import { greenText, redText } from "@vangware/forcli";
+import { foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { compare } from "../../src/compare/compare";
 import { UNWANTED_COMMENT } from "../../src/constants";
 import { suite } from "../../src/suite/suite";
@@ -90,8 +90,8 @@ export default suite([
 		must: "return comparison message",
 		received: compare("bar")("foo"),
 		wanted: joinNewLine([
-			`${redText("Received:")} "foo"`,
-			`${greenText("Wanted:")}   "bar"`
+			`${foregroundRed("Received:")} "foo"`,
+			`${foregroundGreen("Wanted:")}   "bar"`
 		])
 	},
 	{
@@ -99,8 +99,8 @@ export default suite([
 		must: "return comparison message",
 		received: compare(13)(42),
 		wanted: joinNewLine([
-			`${redText("Received:")} 42`,
-			`${greenText("Wanted:")}   13`
+			`${foregroundRed("Received:")} 42`,
+			`${foregroundGreen("Wanted:")}   13`
 		])
 	},
 	{
@@ -108,8 +108,8 @@ export default suite([
 		must: "return comparison message",
 		received: compare<ReadonlyArray<number> | number>(13)([42]),
 		wanted: joinNewLine([
-			`${redText("Received:")} [42]`,
-			`${greenText("Wanted:")}   13`
+			`${foregroundRed("Received:")} [42]`,
+			`${foregroundGreen("Wanted:")}   13`
 		])
 	}
 ]);
