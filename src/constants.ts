@@ -1,10 +1,10 @@
 import {
-	greenBackground,
-	mix,
-	redBackground,
-	redText,
-	whiteText
-} from "@vangware/forcli";
+	backgroundGreen,
+	backgroundRed,
+	foregroundRed,
+	foregroundWhite,
+	mix
+} from "@vangware/ansi";
 import { comment } from "./utils/comment";
 
 /**
@@ -25,14 +25,14 @@ export const INDENT = "    ";
 /**
  * Fail message with colors.
  */
-export const FAIL = mix([whiteText, redBackground])("[FAIL]");
+export const FAIL = mix([foregroundWhite, backgroundRed])("[FAIL]");
 
 /**
  * Pass message with colors.
  */
-export const PASS = mix([whiteText, greenBackground])("[PASS]");
+export const PASS = mix([foregroundWhite, backgroundGreen])("[PASS]");
 
 /**
  * Unwanted comment (`// Unwanted` in red text).
  */
-export const UNWANTED_COMMENT = comment(redText)("Unwanted")(undefined);
+export const UNWANTED_COMMENT = comment(foregroundRed)("Unwanted")(undefined);
