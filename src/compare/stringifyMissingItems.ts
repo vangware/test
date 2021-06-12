@@ -3,9 +3,10 @@ import { missingComment } from "../utils/missingComment";
 import { stringifyMap } from "../utils/stringifyMap";
 
 /**
- * Takes a source array and returns a string for missing items.
+ * Takes an array and returns a string for missing items.
  *
  * @category Compare
  */
-export const compareArrayMissingItems = <Item>(source: ReadOnlyArray<Item>) =>
-	missingComment(stringifyMap(source).join(", "));
+export const stringifyMissingItems = <Item>(
+	missingItems: ReadOnlyArray<Item>
+) => missingComment(stringifyMap(missingItems).join(", "));

@@ -6,5 +6,5 @@ import { stringify } from "./stringify";
  *
  * @category Common
  */
-export const stringifyMap = <Source>(source: ReadOnlyArray<Source>) =>
-	source.map(stringify);
+export const stringifyMap = <Input>(input: ReadOnlyArray<Input>) =>
+	input.map(stringify);

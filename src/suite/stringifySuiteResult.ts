@@ -1,5 +1,5 @@
 import { FAIL, PASS } from "../constants";
-import { testResultToStringMap } from "../test/testResultToStringMap";
+import { stringifyTestResults } from "../test/stringifyTestResults";
 import type { SuiteResult } from "../types/SuiteResult";
 
 /**
@@ -7,9 +7,9 @@ import type { SuiteResult } from "../types/SuiteResult";
  *
  * @category Suite
  */
-export const suiteResultToString = ({ name, failed }: SuiteResult) =>
+export const stringifySuiteResult = ({ name, failed }: SuiteResult) =>
 	`${failed.length > 0 ? FAIL : PASS} ${name}${
 		failed.length > 0
-			? `\n\n${testResultToStringMap(failed).join("\n")}`
+			? `\n\n${stringifyTestResults(failed).join("\n")}`
 			: ""
 	}`;

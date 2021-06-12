@@ -1,11 +1,11 @@
 import type { ReadOnlyArray } from "@vangware/types";
 import type { TestResult } from "../types/TestResult";
-import { testResultToString } from "./testResultToString";
+import { stringifyTestResult } from "./stringifyTestResult";
 
 /**
  * Takes an array of `TestResult` and returns an array of strings.
  *
  * @category Test
  */
-export const testResultToStringMap = (source: ReadOnlyArray<TestResult>) =>
-	source.map(testResultToString);
+export const stringifyTestResults = (testResults: ReadOnlyArray<TestResult>) =>
+	testResults.map(stringifyTestResult);
