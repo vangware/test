@@ -1,4 +1,4 @@
-import { deepStrictEqual } from "assert/strict";
+import fastDeepEqual from "fast-deep-equal";
 
 /**
  * Deep compare using Node's `assert`.
@@ -7,14 +7,5 @@ import { deepStrictEqual } from "assert/strict";
  */
 export const deepEqual =
 	<Received>(received: Received) =>
-	<Wanted>(wanted: Wanted) => {
-		// eslint-disable-next-line functional/no-try-statement
-		try {
-			// eslint-disable-next-line functional/no-expression-statement
-			deepStrictEqual(received, wanted);
-
-			return true;
-		} catch {
-			return false;
-		}
-	};
+	<Wanted>(wanted: Wanted) =>
+		fastDeepEqual(received, wanted);
