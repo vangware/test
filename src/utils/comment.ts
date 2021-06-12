@@ -4,5 +4,5 @@
  * @category Common
  */
 export const comment =
-	(formatter: (source: string) => string) => (value: string) =>
+	(formatter: (input: string) => string) => (value: string) =>
 		formatter(`// ${value}`);

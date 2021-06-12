@@ -1,12 +1,12 @@
 import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { suite } from "../../src/suite/suite";
-import { testResultToStringMap } from "../../src/test/testResultToStringMap";
+import { stringifyTestResults } from "../../src/test/stringifyTestResults";
 
 export default suite([
 	{
 		given: "a test that passed",
 		must: "return correct message",
-		received: testResultToStringMap([
+		received: stringifyTestResults([
 			{
 				given: "given",
 				must: "must"
@@ -21,7 +21,7 @@ export default suite([
 	{
 		given: "a test that failed",
 		must: "return the correct message",
-		received: testResultToStringMap([
+		received: stringifyTestResults([
 			{
 				error: "error!",
 				given: "given",
@@ -37,7 +37,7 @@ export default suite([
 	{
 		given: "one of each test",
 		must: "return the correct message",
-		received: testResultToStringMap([
+		received: stringifyTestResults([
 			{
 				given: "given",
 				must: "must"

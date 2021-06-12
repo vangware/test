@@ -10,7 +10,7 @@ export default suite([
 		must: "return comparison message",
 		received: compareArrays([0, 1, 2, 3])([2, 3, 4, 0]),
 		wanted: [
-			"Received: [",
+			"Received:\t[",
 			...indentMap([
 				missingComment("0, 1"),
 				"2,",
@@ -26,7 +26,7 @@ export default suite([
 		must: "return comparison message",
 		received: compareArrays([0, 1, 2, 3])([13, 13, 2, 3]),
 		wanted: [
-			"Received: [",
+			"Received:\t[",
 			...indentMap([
 				missingComment("0, 1"),
 				`13, ${UNWANTED_COMMENT}`,

@@ -1,4 +1,4 @@
-import { suiteResultToStringMap } from "../suite/suiteResultToStringMap";
+import { stringifySuiteResults } from "../suite/stringifySuiteResults";
 import { suitesImport } from "../suite/suitesImport";
 import { listFiles } from "./listFiles";
 
@@ -11,6 +11,6 @@ export const run =
 	(filterer: (path: string) => boolean) => (directory: string) =>
 		listFiles(filterer)(directory)
 			.then(suitesImport)
-			.then(suiteResultToStringMap)
+			.then(stringifySuiteResults)
 			.then(console.log)
 			.catch(console.error);

@@ -14,7 +14,7 @@ export default suite([
 		must: "return comparison message",
 		received: compare([0, 1, 2, 3])([2, 3, 4, 0]),
 		wanted: [
-			"Received: [",
+			"Received:\t[",
 			...indentMap([
 				missingComment("0, 1"),
 				"2,",
@@ -30,7 +30,7 @@ export default suite([
 		must: "return comparison message",
 		received: compare([0, 1, 2, 3])([13, 13, 2, 3]),
 		wanted: [
-			"Received: [",
+			"Received:\t[",
 			...indentMap([
 				missingComment("0, 1"),
 				`13, ${UNWANTED_COMMENT}`,
@@ -54,7 +54,7 @@ export default suite([
 			foo: "foo"
 		}),
 		wanted: [
-			"Received: {",
+			"Received:\t{",
 			...indentMap([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,
@@ -76,7 +76,7 @@ export default suite([
 			foo: "foo"
 		}),
 		wanted: [
-			"Received: {",
+			"Received:\t{",
 			...indentMap([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,
@@ -90,8 +90,8 @@ export default suite([
 		must: "return comparison message",
 		received: compare("bar")("foo"),
 		wanted: [
-			`${foregroundRed("Received:")} "foo"`,
-			`${foregroundGreen("Wanted:")}   "bar"`
+			`${foregroundRed("Received:")}\t"foo"`,
+			`${foregroundGreen("Wanted:")}\t\t"bar"`
 		].join("\n")
 	},
 	{
@@ -99,8 +99,8 @@ export default suite([
 		must: "return comparison message",
 		received: compare(13)(42),
 		wanted: [
-			`${foregroundRed("Received:")} 42`,
-			`${foregroundGreen("Wanted:")}   13`
+			`${foregroundRed("Received:")}\t42`,
+			`${foregroundGreen("Wanted:")}\t\t13`
 		].join("\n")
 	},
 	{
@@ -108,8 +108,8 @@ export default suite([
 		must: "return comparison message",
 		received: compare<ReadOnlyArray<number> | number>(13)([42]),
 		wanted: [
-			`${foregroundRed("Received:")} [42]`,
-			`${foregroundGreen("Wanted:")}   13`
+			`${foregroundRed("Received:")}\t[42]`,
+			`${foregroundGreen("Wanted:")}\t\t13`
 		].join("\n")
 	}
 ]);

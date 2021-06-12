@@ -7,8 +7,10 @@ import { isPassedTestResult } from "./isPassedTestResult";
  *
  * @category Test
  */
-export const testResultsFilterTuple = (source: ReadOnlyArray<TestResult>) =>
+export const testResultsFilterTuple = (
+	testResults: ReadOnlyArray<TestResult>
+) =>
 	[
-		source.filter(isPassedTestResult),
-		source.filter(item => !isPassedTestResult(item))
+		testResults.filter(isPassedTestResult),
+		testResults.filter(item => !isPassedTestResult(item))
 	] as const;
