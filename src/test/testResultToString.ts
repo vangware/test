@@ -5,7 +5,7 @@ import { testName } from "./testName";
 /**
  * Takes a `TestResult` and returns a stringified version of it.
  *
- * @param testResult TestResult to generate the string from.
+ * @category Test
  */
 export const testResultToString = (testResult: TestResult) =>
 	`${testName(testResult)}${
