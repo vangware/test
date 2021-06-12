@@ -1,34 +1,34 @@
 import { foregroundGreen, foregroundRed } from "@vangware/ansi";
+import type { ReadOnlyArray } from "@vangware/types";
 import { comparePrimitives } from "../../src/compare/comparePrimitives";
 import { suite } from "../../src/suite/suite";
-import { joinNewLine } from "../../src/utils/joinNewLine";
 
 export default suite([
 	{
 		given: "2 different strings",
 		must: "return comparison message",
 		received: comparePrimitives("bar")("foo"),
-		wanted: joinNewLine([
+		wanted: [
 			`${foregroundRed("Received:")} "foo"`,
 			`${foregroundGreen("Wanted:")}   "bar"`
-		])
+		].join("\n")
 	},
 	{
 		given: "2 different numbers",
 		must: "return comparison message",
 		received: comparePrimitives(13)(42),
-		wanted: joinNewLine([
+		wanted: [
 			`${foregroundRed("Received:")} 42`,
 			`${foregroundGreen("Wanted:")}   13`
-		])
+		].join("\n")
 	},
 	{
 		given: "2 different types",
 		must: "return comparison message",
-		received: comparePrimitives<ReadonlyArray<number> | number>(13)([42]),
-		wanted: joinNewLine([
+		received: comparePrimitives<ReadOnlyArray<number> | number>(13)([42]),
+		wanted: [
 			`${foregroundRed("Received:")} [42]`,
 			`${foregroundGreen("Wanted:")}   13`
-		])
+		].join("\n")
 	}
 ]);

@@ -1,4 +1,3 @@
-import { EMPTY } from "../../src/constants";
 import { isSuiteResult } from "../../src/suite/isSuiteResult";
 import { suite } from "../../src/suite/suite";
 
@@ -8,7 +7,7 @@ export default suite([
 		must: "return true",
 		received: isSuiteResult({
 			failed: [],
-			name: EMPTY,
+			name: "",
 			passed: []
 		}),
 		wanted: true
@@ -23,7 +22,7 @@ export default suite([
 		given: "an invalid suite result with some properties missing",
 		must: "return false",
 		received: isSuiteResult({
-			name: EMPTY
+			name: ""
 		}),
 		wanted: false
 	},
@@ -31,9 +30,9 @@ export default suite([
 		given: "an invalid suite result with wrong types",
 		must: "return false",
 		received: isSuiteResult({
-			failed: EMPTY,
-			name: EMPTY,
-			passed: EMPTY
+			failed: "",
+			name: "",
+			passed: ""
 		}),
 		wanted: false
 	}

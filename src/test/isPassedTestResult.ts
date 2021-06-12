@@ -1,12 +1,10 @@
-import { isUndefined } from "@vangware/utils";
 import type { TestResult } from "../types/TestResult";
 import { isTestResult } from "./isTestResult";
 
 /**
  * Checks if given `TestResult` passed.
  *
- * @template Actual The actual type of the value.
- * @param testResult TestResult to check.
+ * @category Test
  */
 export const isPassedTestResult = <Actual>(value: Actual | TestResult) =>
-	isTestResult(value) && isUndefined(value.error);
+	isTestResult(value) && value.error === undefined;

@@ -1,14 +1,6 @@
-import type { Entry } from "@vangware/utils";
-import {
-	arrayFilterIn,
-	arrayMap,
-	equal,
-	isUndefined,
-	objectEntries
-} from "@vangware/utils";
-import { COMMA, EMPTY, INDENT, UNWANTED_COMMENT } from "../constants";
-import { joinComma } from "../utils/joinComma";
-import { joinNewLine } from "../utils/joinNewLine";
+import type { EntriesOf, EntryOf } from "@vangware/types";
+import { UNWANTED_COMMENT } from "../constants";
+import { deepEqual } from "../utils/deepEqual";
 import { lastAwareMap } from "../utils/lastAwareMap";
 import { missingComment } from "../utils/missingComment";
 import { stringify } from "../utils/stringify";
@@ -18,42 +10,32 @@ import { wantedComment } from "../utils/wantedComment";
  * Compare two objects and displays the differences (unwanted, missing and
  * matching items).
  *
- * @template Wanted The wanted value type.
- * @param wanted Wanted object.
+ * @category Compare
  */
 export const compareObjects =
 	<Wanted extends Record<string, unknown>>(wanted: Wanted) =>
-	/**
-	 * @param received Received object.
-	 */
 	(received: Wanted) => {
-		const missingEntries = arrayMap(([key]: Entry<Wanted>) => `"${key}"`)(
-			arrayFilterIn(([key]: Entry<Wanted>) => isUndefined(received[key]))(
-				objectEntries(wanted)
-			)
-		);
+		const missingEntries = Object.entries(wanted)
+			.filter(([key]) => received[key] === undefined)
+			.map(([key]) => `"${key}"`);
 
-		return `Received: {\n${joinNewLine(
-			lastAwareMap(
-				last =>
-					([key, value]: Entry<Wanted>) =>
-						`${INDENT}${key}: ${stringify(value)}${
-							last ? EMPTY : COMMA
-						}${
-							equal(wanted[key])(value)
-								? EMPTY
-								: ` ${
-										isUndefined(wanted[key])
-											? UNWANTED_COMMENT
-											: wantedComment(
-													stringify(wanted[key])
-											  )
-								  }`
-						}`
-			)(objectEntries(received))
+		return `Received: {\n${lastAwareMap(
+			last =>
+				([key, value]: EntryOf<Wanted>) =>
+					`\t${key}: ${stringify(value)}${last ? "" : ","}${
+						deepEqual(wanted[key])(value)
+							? ""
+							: ` ${
+									wanted[key] === undefined
+										? UNWANTED_COMMENT
+										: wantedComment(stringify(wanted[key]))
+							  }`
+					}`
+		)(Object.entries(received) as unknown as EntriesOf<Wanted>).join(
+			"\n"
 		)}${
 			missingEntries.length > 0
-				? `\n${INDENT}${missingComment(joinComma(missingEntries))}`
-				: EMPTY
+				? `\n\t${missingComment(missingEntries.join(", "))}`
+				: ""
 		}\n}`;
 	};

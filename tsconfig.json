@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
 		"alwaysStrict": true,
+		"baseUrl": ".",
 		"declaration": true,
 		"extendedDiagnostics": true,
 		"esModuleInterop": true,
@@ -14,6 +15,9 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"outDir": "./cjs",
+		"paths": {
+			"@vangware/types": ["node_modules/@vangware/types"]
+		},
 		"preserveConstEnums": true,
 		"strict": true,
 		"target": "ES2019"

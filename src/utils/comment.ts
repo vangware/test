@@ -1,18 +1,8 @@
-import { EMPTY } from "../constants";
-
 /**
  * Takes a title and a value and turns it into an inline comment.
  *
- * @param formatter Color/style formatter for the text.
+ * @category Common
  */
 export const comment =
-	(formatter: (source: string) => string) =>
-	/**
-	 * @param title Comment title.
-	 */
-	(title: string) =>
-	/**
-	 * @param value Value to concat with comment.
-	 */
-	(value: string | undefined) =>
-		formatter(`// ${title}${value !== undefined ? `: ${value}` : EMPTY}`);
+	(formatter: (source: string) => string) => (value: string) =>
+		formatter(`// ${value}`);

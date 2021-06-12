@@ -1,9 +1,9 @@
 import { foregroundGreen, foregroundRed } from "@vangware/ansi";
+import type { ReadOnlyArray } from "@vangware/types";
 import { compare } from "../../src/compare/compare";
 import { UNWANTED_COMMENT } from "../../src/constants";
 import { suite } from "../../src/suite/suite";
 import { indentMap } from "../../src/utils/indentMap";
-import { joinNewLine } from "../../src/utils/joinNewLine";
 import { missingComment } from "../../src/utils/missingComment";
 import { stringify } from "../../src/utils/stringify";
 import { wantedComment } from "../../src/utils/wantedComment";
@@ -89,27 +89,27 @@ export default suite([
 		given: "2 different strings",
 		must: "return comparison message",
 		received: compare("bar")("foo"),
-		wanted: joinNewLine([
+		wanted: [
 			`${foregroundRed("Received:")} "foo"`,
 			`${foregroundGreen("Wanted:")}   "bar"`
-		])
+		].join("\n")
 	},
 	{
 		given: "2 different numbers",
 		must: "return comparison message",
 		received: compare(13)(42),
-		wanted: joinNewLine([
+		wanted: [
 			`${foregroundRed("Received:")} 42`,
 			`${foregroundGreen("Wanted:")}   13`
-		])
+		].join("\n")
 	},
 	{
 		given: "2 different types",
 		must: "return comparison message",
-		received: compare<ReadonlyArray<number> | number>(13)([42]),
-		wanted: joinNewLine([
+		received: compare<ReadOnlyArray<number> | number>(13)([42]),
+		wanted: [
 			`${foregroundRed("Received:")} [42]`,
 			`${foregroundGreen("Wanted:")}   13`
-		])
+		].join("\n")
 	}
 ]);

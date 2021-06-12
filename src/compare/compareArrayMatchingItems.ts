@@ -1,4 +1,4 @@
-import { COMMA, EMPTY } from "../constants";
+import type { ReadOnlyArray } from "@vangware/types";
 import { lastAwareMap } from "../utils/lastAwareMap";
 import { stringifyMap } from "../utils/stringifyMap";
 
@@ -6,15 +6,11 @@ import { stringifyMap } from "../utils/stringifyMap";
  * Takes a boolean to know if this is the last item, and a source array and
  * returns a string for matching items.
  *
- * @param last Is the last element on the array.
+ * @category Compare
  */
 export const compareArrayMatchingItems =
 	(lastParent: boolean) =>
-	/**
-	 * @param source Source array to be shown.
-	 */
-	<Item>(source: ReadonlyArray<Item>) =>
+	<Item>(source: ReadOnlyArray<Item>) =>
 		lastAwareMap(
-			last => (item: string) =>
-				`${item}${last && lastParent ? EMPTY : COMMA}`
+			last => (item: string) => `${item}${last && lastParent ? "" : ","}`
 		)(stringifyMap(source));
