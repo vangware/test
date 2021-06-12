@@ -3,9 +3,7 @@
  *
  * @category Common
  */
-export const stringify = <Source>(source: Source) =>
-	source === undefined
-		? `${source as unknown as string}`
-		: source instanceof RegExp
-		? source.toString()
-		: JSON.stringify(source);
+export const stringify = <Input>(input: Input) =>
+	input === undefined || input instanceof RegExp
+		? `${input as unknown as string}`
+		: JSON.stringify(input);

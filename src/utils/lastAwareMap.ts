@@ -7,6 +7,6 @@ import type { ReadOnlyArray } from "@vangware/types";
  */
 export const lastAwareMap =
 	<Item, Output>(mapper: (last: boolean) => (item: Item) => Output) =>
-	(source: ReadOnlyArray<Item>) =>
+	(input: ReadOnlyArray<Item>) =>
 		// eslint-disable-next-line max-params
-		source.map((item, index) => mapper(index === source.length - 1)(item));
+		input.map((item, index) => mapper(index === input.length - 1)(item));

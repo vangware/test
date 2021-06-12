@@ -3,9 +3,9 @@ import type { ArrayChange } from "diff";
 import { diffArrays } from "diff";
 import { indentMap } from "../utils/indentMap";
 import { lastAwareMap } from "../utils/lastAwareMap";
-import { compareArrayMatchingItems } from "./compareArrayMatchingItems";
-import { compareArrayMissingItems } from "./compareArrayMissingItems";
-import { compareArrayUnwantedItems } from "./compareArrayUnwantedItems";
+import { stringifyMatchingItems } from "./stringifyMatchingItems";
+import { stringifyMissingItems } from "./stringifyMissingItems";
+import { stringifyUnwantedItems } from "./stringifyUnwantedItems";
 
 /**
  * Compare two arrays and displays the differences (unwanted, missing and
@@ -16,14 +16,14 @@ import { compareArrayUnwantedItems } from "./compareArrayUnwantedItems";
 export const compareArrays =
 	<Wanted>(wanted: ReadOnlyArray<Wanted>) =>
 	(received: ReadOnlyArray<Wanted>) =>
-		`Received: [\n${indentMap(
+		`Received:\t[\n${indentMap(
 			lastAwareMap<ArrayChange<Wanted>, ReadOnlyArray<string> | string>(
 				last =>
 					({ added = false, removed = false, value }) =>
 						(added
-							? compareArrayUnwantedItems(last)
+							? stringifyUnwantedItems(last)
 							: removed
-							? compareArrayMissingItems
-							: compareArrayMatchingItems(last))(value)
+							? stringifyMissingItems
+							: stringifyMatchingItems(last))(value)
 			)(diffArrays([...wanted], [...received])).flat()
 		).join("\n")}\n]`;

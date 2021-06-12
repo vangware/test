@@ -20,7 +20,7 @@ export default suite([
 			foo: "foo"
 		}),
 		wanted: [
-			"Received: {",
+			"Received:\t{",
 			...indentMap([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,
@@ -42,7 +42,7 @@ export default suite([
 			foo: "foo"
 		}),
 		wanted: [
-			"Received: {",
+			"Received:\t{",
 			...indentMap([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,

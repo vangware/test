@@ -1,12 +1,12 @@
 import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
 import { suite } from "../../src/suite/suite";
-import { testResultToString } from "../../src/test/testResultToString";
+import { stringifyTestResult } from "../../src/test/stringifyTestResult";
 
 export default suite([
 	{
 		given: "a test that passed",
 		must: "return correct message",
-		received: testResultToString({
+		received: stringifyTestResult({
 			given: "given",
 			must: "must"
 		}),
@@ -17,7 +17,7 @@ export default suite([
 	{
 		given: "a test that failed",
 		must: "return the correct message",
-		received: testResultToString({
+		received: stringifyTestResult({
 			error: "error!",
 			given: "given",
 			must: "must"

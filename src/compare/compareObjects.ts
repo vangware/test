@@ -19,7 +19,7 @@ export const compareObjects =
 			.filter(([key]) => received[key] === undefined)
 			.map(([key]) => `"${key}"`);
 
-		return `Received: {\n${lastAwareMap(
+		return `Received:\t{\n${lastAwareMap(
 			last =>
 				([key, value]: EntryOf<Wanted>) =>
 					`\t${key}: ${stringify(value)}${last ? "" : ","}${
