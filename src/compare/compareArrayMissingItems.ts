@@ -1,12 +1,11 @@
-import { joinComma } from "../utils/joinComma";
+import type { ReadOnlyArray } from "@vangware/types";
 import { missingComment } from "../utils/missingComment";
 import { stringifyMap } from "../utils/stringifyMap";
 
 /**
  * Takes a source array and returns a string for missing items.
  *
- * @template Item Type of the items in the arrays being compared.
- * @param source Source array of missing items.
+ * @category Compare
  */
-export const compareArrayMissingItems = <Item>(source: ReadonlyArray<Item>) =>
-	missingComment(joinComma(stringifyMap(source)));
+export const compareArrayMissingItems = <Item>(source: ReadOnlyArray<Item>) =>
+	missingComment(stringifyMap(source).join(", "));

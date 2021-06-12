@@ -1,18 +1,18 @@
-import { isArray, isObject, isString } from "@vangware/utils";
-import { everyIsTestResult } from "../test/everyIsTestResult";
+import { areTestResults } from "../test/areTestResults";
 import type { SuiteResult } from "../types/SuiteResult";
+import { isPlainObject } from "../utils/isPlainObject";
 
 /**
  * Check if given value is a `SuiteResult` object.
  *
- * @param value Value to check.
+ * @category Suite
  */
 export const isSuiteResult = <Actual>(
 	value: Actual | SuiteResult
 ): value is SuiteResult =>
-	isObject(value) &&
-	isString(value.name) &&
-	isArray(value.failed) &&
-	isArray(value.passed) &&
-	everyIsTestResult(value.failed) &&
-	everyIsTestResult(value.passed);
+	isPlainObject(value) &&
+	typeof value.name === "string" &&
+	Array.isArray(value.failed) &&
+	Array.isArray(value.passed) &&
+	areTestResults(value.failed) &&
+	areTestResults(value.passed);

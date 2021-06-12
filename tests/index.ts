@@ -10,7 +10,7 @@ import isSuiteResultSuite from "./suite/isSuiteResult.test";
 import suiteSuite from "./suite/suite.test";
 import suiteResultToStringSuite from "./suite/suiteResultToString.test";
 import suiteResultToStringMapSuite from "./suite/suiteResultToStringMap.test";
-import everyIsTestResultSuite from "./test/everyIsTestResult.test";
+import everyIsTestResultSuite from "./test/areTestResults.test";
 import isPassedTestResultSuite from "./test/isPassedTestResult.test";
 import isTestResultSuite from "./test/isTestResult.test";
 import testSuite from "./test/test.test";
@@ -19,7 +19,6 @@ import testNameSuite from "./test/testName.test";
 import testResultsFilterTupleSuite from "./test/testResultsFilterTuple.test";
 import testResultToStringSuite from "./test/testResultToString.test";
 import testResultToStringMapSuite from "./test/testResultToStringMap.test";
-import lastAwareMapTestSuite from "./utils/lastAwareMap.test";
 import promiseWrapSuite from "./utils/promiseWrap.test";
 import stringifySuite from "./utils/stringify.test";
 
@@ -48,7 +47,6 @@ export default Promise.all([
 	testResultToStringSuite("src/test/testResultToString.ts"),
 	testResultToStringMapSuite("src/test/testResultToStringMap.ts"),
 	/** Utils */
-	lastAwareMapTestSuite("src/utils/lastAwareMap.ts"),
 	promiseWrapSuite("src/utils/promiseWrap.ts"),
 	stringifySuite("src/utils/stringify.ts")
 ])

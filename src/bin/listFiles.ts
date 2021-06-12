@@ -1,27 +1,22 @@
-import type { UnguardedFilterer } from "@vangware/utils";
-import { arrayMap } from "@vangware/utils";
+import type { ReadOnlyArray } from "@vangware/types";
 import { readdir } from "fs/promises";
 import { sep } from "path";
-import { arrayFlat1 } from "../utils/arrayFlat1";
 import { direntToPathMap } from "./direntToPathMap";
 
 /**
  * Recursively search for files in the given directory.
  *
- * @param filterer Filter function to be run with every file path.
+ * @category Internal
  */
 export const listFiles =
-	(filterer: UnguardedFilterer<string>) =>
-	/**
-	 * @param directory Directory to search in.
-	 */
-	(directory: string): Promise<ReadonlyArray<string>> =>
+	(filterer: (path: string) => boolean) =>
+	(directory: string): Promise<ReadOnlyArray<string>> =>
 		readdir(directory, { withFileTypes: true }).then(files =>
 			Promise.all(
-				arrayMap((path: string) =>
+				direntToPathMap(directory)(files).map((path: string) =>
 					path.endsWith(sep)
 						? listFiles(filterer)(path)
 						: Promise.resolve(filterer(path) ? [path] : [])
-				)(direntToPathMap(directory)(files))
-			).then(arrayFlat1)
+				)
+			).then(paths => paths.flat())
 		);

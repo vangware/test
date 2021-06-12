@@ -1,13 +1,14 @@
-import { isObject, isString } from "@vangware/utils";
 import type { TestResult } from "../types/TestResult";
+import { isPlainObject } from "../utils/isPlainObject";
 
 /**
  * Check if given value is a `TestResult` object.
  *
- * @param Actual The actual type of the value.
- * @param value Value to check.
+ * @category Test
  */
 export const isTestResult = <Actual>(
 	value: Actual | TestResult
 ): value is TestResult =>
-	isObject(value) && isString(value.given) && isString(value.must);
+	isPlainObject(value) &&
+	typeof value.given === "string" &&
+	typeof value.must === "string";
