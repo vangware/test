@@ -3,5 +3,8 @@ import { comment } from "./comment";
 
 /**
  * Comment for missing items.
+ *
+ * @category Common
  */
-export const missingComment = comment(foregroundGray)("Missing");
+export const missingComment = (value: string) =>
+	comment(foregroundGray)(`Missing: ${value}`);

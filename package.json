@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@vangware/ansi": "^1.0.0",
-		"@vangware/utils": "^6.3.1",
+		"@vangware/types": "^1.0.0",
 		"diff": "^5.0.0",
 		"ts-node": "10.0.0"
 	},
