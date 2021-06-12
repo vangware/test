@@ -5,5 +5,5 @@ import type { ReadOnlyArray } from "@vangware/types";
  *
  * @category Common
  */
-export const indentMap = (source: ReadOnlyArray<string>) =>
-	source.map(item => `\t${item}`);
+export const indentMap = (lines: ReadOnlyArray<string>) =>
+	lines.map(line => `\t${line}`);

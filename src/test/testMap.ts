@@ -7,5 +7,5 @@ import { test } from "./test";
  *
  * @category Test
  */
-export const testMap = <Value>(source: ReadOnlyArray<Test<Value>>) =>
-	source.map(test);
+export const testMap = <Value>(tests: ReadOnlyArray<Test<Value>>) =>
+	tests.map(test);

@@ -8,5 +8,5 @@ import { promiseWrap } from "./promiseWrap";
  * @category Common
  */
 export const promiseWrapMap = <Value>(
-	source: ReadOnlyArray<MaybePromise<Value>>
-) => source.map(promiseWrap);
+	maybePromises: ReadOnlyArray<MaybePromise<Value>>
+) => maybePromises.map(promiseWrap);

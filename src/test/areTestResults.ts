@@ -8,5 +8,6 @@ import { isTestResult } from "./isTestResult";
  * @category Test
  */
 export const areTestResults = (
-	source: ReadOnlyArray
-): source is ReadOnlyArray<TestResult> => source.every(isTestResult);
+	maybeTestResults: ReadOnlyArray
+): maybeTestResults is ReadOnlyArray<TestResult> =>
+	maybeTestResults.every(isTestResult);

@@ -1,7 +1,7 @@
 import { comparePrimitives } from "../../src/compare/comparePrimitives";
 import { FAIL, PASS } from "../../src/constants";
+import { stringifySuiteResults } from "../../src/suite/stringifySuiteResults";
 import { suite } from "../../src/suite/suite";
-import { suiteResultToStringMap } from "../../src/suite/suiteResultToStringMap";
 import { testName } from "../../src/test/testName";
 
 const error = comparePrimitives(true)(false);
@@ -10,7 +10,7 @@ export default suite([
 	{
 		given: "a empty list of suites",
 		must: "return suite results",
-		received: suiteResultToStringMap([
+		received: stringifySuiteResults([
 			{
 				failed: [],
 				name: "test-1",
@@ -22,7 +22,7 @@ export default suite([
 	{
 		given: "a suite with a failed test",
 		must: "return suite results",
-		received: suiteResultToStringMap([
+		received: stringifySuiteResults([
 			{
 				failed: [
 					{
@@ -44,7 +44,7 @@ export default suite([
 	{
 		given: "a suite with a passed test",
 		must: "return suite results",
-		received: suiteResultToStringMap([
+		received: stringifySuiteResults([
 			{
 				failed: [],
 				name: "test-3",
@@ -61,7 +61,7 @@ export default suite([
 	{
 		given: "a suite with a passed and a failed test",
 		must: "return suite results",
-		received: suiteResultToStringMap([
+		received: stringifySuiteResults([
 			{
 				failed: [
 					{

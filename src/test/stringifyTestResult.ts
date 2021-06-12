@@ -7,7 +7,7 @@ import { testName } from "./testName";
  *
  * @category Test
  */
-export const testResultToString = (testResult: TestResult) =>
+export const stringifyTestResult = (testResult: TestResult) =>
 	`${testName(testResult)}${
 		isPassedTestResult(testResult)
 			? "."
