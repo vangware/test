@@ -19,16 +19,17 @@ import testSuite from "./test/test.test";
 import testMapSuite from "./test/testMap.test";
 import testNameSuite from "./test/testName.test";
 import testResultsFilterTupleSuite from "./test/testResultsFilterTuple.test";
+import deepEqualSuite from "./utils/deepEqual.test";
 import promiseWrapSuite from "./utils/promiseWrap.test";
 import stringifySuite from "./utils/stringify.test";
 
 export default Promise.all([
 	/** Compare */
 	compareSuite("src/compare/compare.ts"),
-	stringifyMatchingItemsSuite("src/compare/compareArrayMatchingItems.ts"),
+	stringifyMatchingItemsSuite("src/compare/stringifyMatchingItems.ts"),
 	stringifyMissingItemsSuite("src/compare/compareArrayMissingItems.ts"),
 	compareArraysSuite("src/compare/compareArrays.ts"),
-	stringifyUnwantedItemsSuite("src/compare/compareArrayUnwantedItems.ts"),
+	stringifyUnwantedItemsSuite("src/compare/stringifyUnwantedItemsSuite.ts"),
 	compareObjectsSuite("src/compare/compareObjects.ts"),
 	comparePrimitivesSuite("src/compare/comparePrimitives.ts"),
 	/** Suite */
@@ -47,6 +48,7 @@ export default Promise.all([
 	stringifyTestResultSuite("src/test/testResultToString.ts"),
 	stringifyTestResultsSuite("src/test/testResultToStringMap.ts"),
 	/** Utils */
+	deepEqualSuite("src/utils/deepEqual.ts"),
 	promiseWrapSuite("src/utils/promiseWrap.ts"),
 	stringifySuite("src/utils/stringify.ts")
 ])
