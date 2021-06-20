@@ -15,8 +15,8 @@ export const test = <Value>({
 	received,
 	wanted
 }: Test<Value>): Promise<TestResult> =>
-	Promise.all(promiseWrapMap([received, wanted]))
-		.then(([receivedValue, wantedValue]) =>
+	Promise.all(promiseWrapMap([wanted, received]))
+		.then(([wantedValue, receivedValue]) =>
 			deepEqual(receivedValue)(wantedValue)
 				? { given, must }
 				: Promise.reject(compare(wantedValue)(receivedValue))
