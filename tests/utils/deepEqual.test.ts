@@ -52,6 +52,16 @@ export default suite([
 		wanted: false
 	},
 	{
+		given: "two objects with different order in props",
+		must: "return false",
+		received: deepEqual({ bar: "bar", foo: "foo" })({
+			foo: "foo",
+			// eslint-disable-next-line sort-keys
+			bar: "bar"
+		}),
+		wanted: true
+	},
+	{
 		given: "two similar (but not equal) arrays",
 		must: "return false",
 		received: deepEqual([1, 2, 3])([1, 2, 3, 4]),

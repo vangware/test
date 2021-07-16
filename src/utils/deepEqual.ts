@@ -46,4 +46,8 @@ export const deepEqual =
 				  // eslint-disable-next-line @typescript-eslint/no-base-to-string
 				  (received as ReadOnlyRecord).toString()
 				: // Finally, compare property by property
-				  deepEqual(Object.entries(wanted))(Object.entries(received))));
+				  Object.entries(wanted).length ===
+						Object.entries(received).length &&
+				  Object.entries(wanted).every(([key, value]) =>
+						deepEqual(value)((received as ReadOnlyRecord)[key])
+				  )));
