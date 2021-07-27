@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 7.0.0
+
+-   :arrow_up: dependency upgrade.
+-   :building_construction: change output to `dist` directory.
+-   :wrench: update `package.json` with newer and simpler format.
+
 ## 6.0.5
 
 -   :arrow_up: dependency upgrade.
