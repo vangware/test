@@ -1,42 +1,42 @@
 {
 	"name": "@vangware/test",
 	"description": "✅ Equality test with enforced legibility",
-	"version": "7.0.0",
+	"version": "7.1.0",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
 		"url": "https://vangware.com"
 	},
-	"bin": "./dist/require/index.js",
+	"bin": "./dist/require/bin/index.js",
 	"bugs": "https://github.com/vangware/test/issues",
 	"dependencies": {
-		"@vangware/ansi": "^2.0.0",
-		"@vangware/types": "^1.0.7",
+		"@vangware/ansi": "^2.0.1",
+		"@vangware/types": "^1.0.9",
 		"diff": "^5.0.0",
 		"ts-node": "10.1.0"
 	},
 	"devDependencies": {
+		"@arkweid/lefthook": "^0.7.6",
 		"@types/diff": "5.0.1",
 		"@types/eslint": "7.28.0",
-		"@types/node": "16.4.3",
+		"@types/node": "16.4.9",
 		"@types/prettier": "^2.3.2",
 		"@typescript-eslint/eslint-plugin": "4.28.5",
 		"@typescript-eslint/parser": "4.28.5",
-		"@vangware/base": "5.0.0",
-		"c8": "^7.7.3",
-		"eslint": "7.31.0",
+		"@vangware/base": "5.0.2",
+		"c8": "^7.8.0",
+		"eslint": "7.32.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-import-resolver-node": "^0.3.4",
 		"eslint-plugin-ban": "^1.5.2",
-		"eslint-plugin-functional": "^3.3.0",
+		"eslint-plugin-functional": "^3.4.1",
 		"eslint-plugin-import": "2.23.4",
 		"eslint-plugin-no-null": "^1.0.2",
 		"eslint-plugin-prefer-arrow": "^1.2.3",
 		"eslint-plugin-prettier": "^3.4.0",
-		"husky": "4.3.8",
 		"npm-run-all": "^4.1.5",
 		"prettier": "2.3.2",
-		"typedoc": "^0.21.4",
+		"typedoc": "^0.21.5",
 		"typescript": "4.3.5"
 	},
 	"exports": {
@@ -47,11 +47,6 @@
 		"dist"
 	],
 	"homepage": "https://test.vangware.com",
-	"husky": {
-		"hooks": {
-			"pre-commit": "run-s clean pre-compile lint test docs"
-		}
-	},
 	"keywords": [
 		"legibility",
 		"legible",
@@ -67,7 +62,7 @@
 		"compile": "run-s compile:*",
 		"compile:import": "tsc --project tsconfig.import.json",
 		"compile:require": "tsc --project tsconfig.require.json",
-		"docs": "typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts",
+		"document": "typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts",
 		"lint": "eslint {src,tests}/**/*.ts",
 		"lint:fix": "eslint {src,tests}/**/*.ts --fix",
 		"pre-compile": "run-s pre-compile:*",
