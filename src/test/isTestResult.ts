@@ -9,6 +9,4 @@ import { isPlainObject } from "../utils/isPlainObject";
 export const isTestResult = <Actual>(
 	value: Actual | TestResult
 ): value is TestResult =>
-	isPlainObject(value) &&
-	typeof value.given === "string" &&
-	typeof value.must === "string";
+	isPlainObject(value) && "given" in value && "must" in value;

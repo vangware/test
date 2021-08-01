@@ -11,7 +11,7 @@ export const isSuiteResult = <Actual>(
 	value: Actual | SuiteResult
 ): value is SuiteResult =>
 	isPlainObject(value) &&
-	typeof value.name === "string" &&
+	"name" in value &&
 	Array.isArray(value.failed) &&
 	Array.isArray(value.passed) &&
 	areTestResults(value.failed) &&
