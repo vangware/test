@@ -9,4 +9,5 @@ export const isPlainObject = <Actual>(
 	input: Actual | ReadOnlyRecord
 ): input is ReadOnlyRecord =>
 	typeof input === "object" &&
-	(input as ReadOnlyRecord).constructor === Object;
+	"constructor" in input &&
+	input.constructor === Object;
