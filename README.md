@@ -41,7 +41,7 @@ Then run:
 
 If let's say the first test fails, the error reads something like this:
 
-```
+```text
 [FAIL] Example suite name (optional)
 
 > Given a 1 and a 2, must return 3.
