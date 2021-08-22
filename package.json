@@ -1,7 +1,7 @@
 {
 	"name": "@vangware/test",
 	"description": "✅ Equality test with enforced legibility",
-	"version": "7.1.3",
+	"version": "7.1.4",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
@@ -10,8 +10,8 @@
 	"bin": "./dist/require/bin/index.js",
 	"bugs": "https://github.com/vangware/test/issues",
 	"dependencies": {
-		"@vangware/ansi": "^2.0.4",
-		"@vangware/types": "^1.0.12",
+		"@vangware/ansi": "^2.0.6",
+		"@vangware/types": "^1.0.13",
 		"diff": "^5.0.0",
 		"ts-node": "10.2.1"
 	},
@@ -23,7 +23,7 @@
 		"@types/prettier": "^2.3.2",
 		"@typescript-eslint/eslint-plugin": "4.29.2",
 		"@typescript-eslint/parser": "4.29.2",
-		"@vangware/base": "5.1.0",
+		"@vangware/base": "5.2.1",
 		"c8": "^7.8.0",
 		"eslint": "7.32.0",
 		"eslint-config-prettier": "8.3.0",
@@ -62,7 +62,7 @@
 		"compile": "run-s compile:*",
 		"compile:import": "tsc --project tsconfig.import.json",
 		"compile:require": "tsc --project tsconfig.require.json",
-		"document": "typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts",
+		"document": "typedoc",
 		"lint": "eslint {src,tests}/**/*.ts",
 		"lint:fix": "eslint {src,tests}/**/*.ts --fix",
 		"pre-compile": "run-s pre-compile:*",
@@ -70,7 +70,7 @@
 		"pre-compile:require": "tsc --noemit --project tsconfig.require.json",
 		"prepublishOnly": "run-s compile prettify",
 		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
-		"test": "c8 --reporter=html --reporter=text-summary --reporter=lcov ts-node ./tests"
+		"test": "c8 ts-node ./tests"
 	},
 	"types": "./dist/import/index.d.ts"
 }
