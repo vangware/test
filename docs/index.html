@@ -216,27 +216,27 @@
 				<h2>Usage</h2>
 			</a>
 			<p>Write:</p>
-			<pre><code class="language-typescript"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> { suite } </span><span style="color: #F97583">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">&quot;@vangware/test&quot;</span><span style="color: #E1E4E8">;</span>
+			<pre><code class="language-typescript"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { suite } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&quot;@vangware/test&quot;</span><span style="color: #C9D1D9">;</span>
 
-<span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">addend2</span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">number</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">addend1</span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">number</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> addend1 </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> addend2;</span>
+<span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">add</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">addend2</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">number</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=&gt;</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">addend1</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">number</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=&gt;</span><span style="color: #C9D1D9"> addend1 </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> addend2;</span>
 
-<span style="color: #F97583">export</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">default</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">suite</span><span style="color: #E1E4E8">([</span>
-<span style="color: #E1E4E8">    {</span>
-<span style="color: #E1E4E8">        given: </span><span style="color: #9ECBFF">&quot;a 1 and a 2&quot;</span><span style="color: #E1E4E8">,</span>
-<span style="color: #E1E4E8">        must: </span><span style="color: #9ECBFF">&quot;return 3&quot;</span><span style="color: #E1E4E8">,</span>
-<span style="color: #E1E4E8">        received: </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">)(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">),</span>
-<span style="color: #E1E4E8">        wanted: </span><span style="color: #79B8FF">3</span>
-<span style="color: #E1E4E8">    },</span>
-<span style="color: #E1E4E8">    {</span>
-<span style="color: #E1E4E8">        given: </span><span style="color: #9ECBFF">&quot;a 1 and a -2&quot;</span><span style="color: #E1E4E8">,</span>
-<span style="color: #E1E4E8">        must: </span><span style="color: #9ECBFF">&quot;return -1&quot;</span><span style="color: #E1E4E8">,</span>
-<span style="color: #E1E4E8">        received: </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">-</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">)(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">),</span>
-<span style="color: #E1E4E8">        wanted: </span><span style="color: #F97583">-</span><span style="color: #79B8FF">1</span>
-<span style="color: #E1E4E8">    }</span>
-<span style="color: #E1E4E8">])(</span><span style="color: #9ECBFF">&quot;Example suite name (optional)&quot;</span><span style="color: #E1E4E8">);</span>
+<span style="color: #FF7B72">export</span><span style="color: #FFA657"> </span><span style="color: #FF7B72">default</span><span style="color: #FFA657"> </span><span style="color: #D2A8FF">suite</span><span style="color: #FFA657">([</span>
+<span style="color: #FFA657">    {</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">given: </span><span style="color: #A5D6FF">&quot;a 1 and a 2&quot;</span><span style="color: #FFA657">,</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">must: </span><span style="color: #A5D6FF">&quot;return 3&quot;</span><span style="color: #FFA657">,</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">received: </span><span style="color: #D2A8FF">add</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">)(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span><span style="color: #FFA657">,</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">wanted: </span><span style="color: #79C0FF">3</span>
+<span style="color: #C9D1D9">    </span><span style="color: #FFA657">},</span>
+<span style="color: #FFA657">    {</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">given: </span><span style="color: #A5D6FF">&quot;a 1 and a -2&quot;</span><span style="color: #FFA657">,</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">must: </span><span style="color: #A5D6FF">&quot;return -1&quot;</span><span style="color: #FFA657">,</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">received: </span><span style="color: #D2A8FF">add</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">-</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">)(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span><span style="color: #FFA657">,</span>
+<span style="color: #FFA657">        </span><span style="color: #C9D1D9">wanted: </span><span style="color: #FF7B72">-</span><span style="color: #79C0FF">1</span>
+<span style="color: #C9D1D9">    </span><span style="color: #FFA657">}</span>
+<span style="color: #FFA657">])(</span><span style="color: #A5D6FF">&quot;Example suite name (optional)&quot;</span><span style="color: #FFA657">)</span><span style="color: #C9D1D9">;</span>
 </code></pre>
 			<p>Then run:</p>
-			<pre><code class="language-bash"><span style="color: #E1E4E8">@vangware/test</span>
+			<pre><code class="language-bash"><span style="color: #C9D1D9">@vangware/test</span>
 </code></pre>
 			<p>If let&#39;s say the first test fails, the error reads something like this:</p>
 			<pre><code class="language-text">[FAIL] Example suite name (optional)
