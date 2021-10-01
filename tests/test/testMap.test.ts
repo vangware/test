@@ -12,17 +12,17 @@ export default suite([
 					given: "failed",
 					must: "fail",
 					received: false,
-					wanted: true
-				}
-			])
+					wanted: true,
+				},
+			]),
 		),
 		wanted: [
 			{
 				error: comparePrimitives(true)(false),
 				given: "failed",
-				must: "fail"
-			}
-		]
+				must: "fail",
+			},
+		],
 	},
 	{
 		given: "an array of test with a passed test",
@@ -33,15 +33,15 @@ export default suite([
 					given: "passed",
 					must: "pass",
 					received: true,
-					wanted: true
-				}
-			])
+					wanted: true,
+				},
+			]),
 		),
 		wanted: [
 			{
 				given: "passed",
-				must: "pass"
-			}
-		]
-	}
+				must: "pass",
+			},
+		],
+	},
 ]);

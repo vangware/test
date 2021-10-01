@@ -8,9 +8,9 @@ import { isPassedTestResult } from "./isPassedTestResult";
  * @category Test
  */
 export const testResultsFilterTuple = (
-	testResults: ReadOnlyArray<TestResult>
+	testResults: ReadOnlyArray<TestResult>,
 ) =>
 	[
 		testResults.filter(isPassedTestResult),
-		testResults.filter(item => !isPassedTestResult(item))
+		testResults.filter(item => !isPassedTestResult(item)),
 	] as const;

@@ -9,5 +9,5 @@ import { suiteImport } from "./suiteImport";
  */
 export const suitesImport = (paths: ReadOnlyArray<string>) =>
 	Promise.all(paths.map(suiteImport)).then(suites =>
-		suites.filter(suite => isSuiteResult(suite))
+		suites.filter(suite => isSuiteResult(suite)),
 	);

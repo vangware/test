@@ -8,11 +8,11 @@ export default suite([
 		must: "return correct message",
 		received: stringifyTestResult({
 			given: "given",
-			must: "must"
+			must: "must",
 		}),
 		wanted: `${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
-			", must"
-		)} must.`
+			", must",
+		)} must.`,
 	},
 	{
 		given: "a test that failed",
@@ -20,10 +20,10 @@ export default suite([
 		received: stringifyTestResult({
 			error: "error!",
 			given: "given",
-			must: "must"
+			must: "must",
 		}),
 		wanted: `${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
-			", must"
-		)} must:\n\nerror!\n`
-	}
+			", must",
+		)} must:\n\nerror!\n`,
+	},
 ]);

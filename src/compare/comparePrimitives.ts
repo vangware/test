@@ -11,5 +11,5 @@ export const comparePrimitives =
 	<Received>(received: Received) =>
 		[
 			`${foregroundRed("Received:")}\t${stringify(received)}`,
-			`${foregroundGreen("Wanted:")}\t\t${stringify(wanted)}`
+			`${foregroundGreen("Wanted:")}\t\t${stringify(wanted)}`,
 		].join("\n");

@@ -8,7 +8,7 @@ import { isPlainObject } from "../utils/isPlainObject";
  * @category Suite
  */
 export const isSuiteResult = <Actual>(
-	value: Actual | SuiteResult
+	value: Actual | SuiteResult,
 ): value is SuiteResult =>
 	isPlainObject(value) &&
 	"name" in value &&

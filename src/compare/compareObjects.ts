@@ -30,9 +30,9 @@ export const compareObjects =
 										? UNWANTED_COMMENT
 										: wantedComment(stringify(wanted[key]))
 							  }`
-					}`
+					}`,
 		)(Object.entries(received) as unknown as EntriesOf<Wanted>).join(
-			"\n"
+			"\n",
 		)}${
 			missingEntries.length > 0
 				? `\n\t${missingComment(missingEntries.join(", "))}`

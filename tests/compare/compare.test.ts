@@ -20,10 +20,10 @@ export default suite([
 				"2,",
 				"3,",
 				`4, ${UNWANTED_COMMENT}`,
-				`0  ${UNWANTED_COMMENT}`
+				`0  ${UNWANTED_COMMENT}`,
 			]),
-			"]"
-		].join("\n")
+			"]",
+		].join("\n"),
 	},
 	{
 		given: "2 different arrays with matching elements at the end",
@@ -36,10 +36,10 @@ export default suite([
 				`13, ${UNWANTED_COMMENT}`,
 				`13, ${UNWANTED_COMMENT}`,
 				"2,",
-				"3"
+				"3",
 			]),
-			"]"
-		].join("\n")
+			"]",
+		].join("\n"),
 	},
 	{
 		given: "2 different objects with missing property",
@@ -47,11 +47,11 @@ export default suite([
 		received: compare<Record<string, string>>({
 			bar: "bar",
 			foo: "foo",
-			foobar: "foobar"
+			foobar: "foobar",
 		})({
 			bar: "baz",
 			baz: "bar",
-			foo: "foo"
+			foo: "foo",
 		}),
 		wanted: [
 			"Received:\t{",
@@ -59,31 +59,31 @@ export default suite([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,
 				`foo: "foo"`,
-				missingComment(stringify("foobar"))
+				missingComment(stringify("foobar")),
 			]),
-			"}"
-		].join("\n")
+			"}",
+		].join("\n"),
 	},
 	{
 		given: "2 different objects (without missing property)",
 		must: "return comparison message",
 		received: compare<Record<string, string>>({
 			bar: "bar",
-			foo: "foo"
+			foo: "foo",
 		})({
 			bar: "baz",
 			baz: "bar",
-			foo: "foo"
+			foo: "foo",
 		}),
 		wanted: [
 			"Received:\t{",
 			...indentMap([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,
-				`foo: "foo"`
+				`foo: "foo"`,
 			]),
-			"}"
-		].join("\n")
+			"}",
+		].join("\n"),
 	},
 	{
 		given: "2 different strings",
@@ -91,8 +91,8 @@ export default suite([
 		received: compare("bar")("foo"),
 		wanted: [
 			`${foregroundRed("Received:")}\t"foo"`,
-			`${foregroundGreen("Wanted:")}\t\t"bar"`
-		].join("\n")
+			`${foregroundGreen("Wanted:")}\t\t"bar"`,
+		].join("\n"),
 	},
 	{
 		given: "2 different numbers",
@@ -100,8 +100,8 @@ export default suite([
 		received: compare(13)(42),
 		wanted: [
 			`${foregroundRed("Received:")}\t42`,
-			`${foregroundGreen("Wanted:")}\t\t13`
-		].join("\n")
+			`${foregroundGreen("Wanted:")}\t\t13`,
+		].join("\n"),
 	},
 	{
 		given: "2 different types",
@@ -109,7 +109,7 @@ export default suite([
 		received: compare<ReadOnlyArray<number> | number>(13)([42]),
 		wanted: [
 			`${foregroundRed("Received:")}\t[42]`,
-			`${foregroundGreen("Wanted:")}\t\t13`
-		].join("\n")
-	}
+			`${foregroundGreen("Wanted:")}\t\t13`,
+		].join("\n"),
+	},
 ]);
