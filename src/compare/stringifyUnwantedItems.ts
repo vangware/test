@@ -13,5 +13,5 @@ export const stringifyUnwantedItems = (lastParent: boolean) =>
 		last => item =>
 			`${stringify(item)}${
 				last && lastParent ? " " : ","
-			} ${UNWANTED_COMMENT}`
+			} ${UNWANTED_COMMENT}`,
 	);

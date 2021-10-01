@@ -8,5 +8,5 @@ import type { TestResult } from "../types/TestResult";
  */
 export const testName = ({ given, must, error }: TestResult) =>
 	`${(error === undefined ? foregroundGreen : foregroundRed)(">")} ${dimmed(
-		"Given"
+		"Given",
 	)} ${given}${dimmed(", must")} ${must}`;

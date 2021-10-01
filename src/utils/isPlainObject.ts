@@ -6,7 +6,7 @@ import type { ReadOnlyRecord } from "@vangware/types";
  * @category Common
  */
 export const isPlainObject = <Actual>(
-	input: Actual | ReadOnlyRecord
+	input: Actual | ReadOnlyRecord,
 ): input is ReadOnlyRecord =>
 	typeof input === "object" &&
 	"constructor" in input &&

@@ -13,9 +13,9 @@ export default suite([
 		received: stringifySuiteResult({
 			failed: [],
 			name: "test-1",
-			passed: []
+			passed: [],
 		}),
-		wanted: `${PASS} test-1`
+		wanted: `${PASS} test-1`,
 	},
 	{
 		given: "a suite with a failed test",
@@ -25,17 +25,17 @@ export default suite([
 				{
 					error,
 					given: "failed",
-					must: "fail"
-				}
+					must: "fail",
+				},
 			],
 			name: "test-2",
-			passed: []
+			passed: [],
 		}),
 		wanted: `${FAIL} test-2\n\n${testName({
 			error,
 			given: "failed",
-			must: "fail"
-		})}:\n\n${error}\n`
+			must: "fail",
+		})}:\n\n${error}\n`,
 	},
 	{
 		given: "a suite with a passed test",
@@ -46,11 +46,11 @@ export default suite([
 			passed: [
 				{
 					given: "passed",
-					must: "pass"
-				}
-			]
+					must: "pass",
+				},
+			],
 		}),
-		wanted: `${PASS} test-3`
+		wanted: `${PASS} test-3`,
 	},
 	{
 		given: "a suite with a passed and a failed test",
@@ -60,21 +60,21 @@ export default suite([
 				{
 					error,
 					given: "failed",
-					must: "fail"
-				}
+					must: "fail",
+				},
 			],
 			name: "test-4",
 			passed: [
 				{
 					given: "passed",
-					must: "pass"
-				}
-			]
+					must: "pass",
+				},
+			],
 		}),
 		wanted: `${FAIL} test-4\n\n${testName({
 			error,
 			given: "failed",
-			must: "fail"
-		})}:\n\n${error}\n`
-	}
+			must: "fail",
+		})}:\n\n${error}\n`,
+	},
 ]);

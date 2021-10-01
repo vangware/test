@@ -8,23 +8,23 @@ export default suite([
 		received: isSuiteResult({
 			failed: [],
 			name: "",
-			passed: []
+			passed: [],
 		}),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "an invalid suite result",
 		must: "return false",
 		received: isSuiteResult({}),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "an invalid suite result with some properties missing",
 		must: "return false",
 		received: isSuiteResult({
-			name: ""
+			name: "",
 		}),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "an invalid suite result with wrong types",
@@ -32,8 +32,8 @@ export default suite([
 		received: isSuiteResult({
 			failed: "",
 			name: "",
-			passed: ""
+			passed: "",
 		}),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

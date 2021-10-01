@@ -7,6 +7,6 @@ export default suite([
 		given: "an array of missing items",
 		must: "return comparison string",
 		received: stringifyMissingItems([0, 1, 2, 3]),
-		wanted: missingComment("0, 1, 2, 3")
-	}
+		wanted: missingComment("0, 1, 2, 3"),
+	},
 ]);
