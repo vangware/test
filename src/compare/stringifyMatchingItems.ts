@@ -12,5 +12,5 @@ export const stringifyMatchingItems =
 	(lastParent: boolean) =>
 	<Item>(matchingItems: ReadOnlyArray<Item>) =>
 		lastAwareMap(
-			last => (item: string) => `${item}${last && lastParent ? "" : ","}`
+			last => (item: string) => `${item}${last && lastParent ? "" : ","}`,
 		)(stringifyMap(matchingItems));

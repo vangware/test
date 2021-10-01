@@ -17,5 +17,5 @@ export const suite =
 			.then(([passed, failed]) => ({
 				failed,
 				name,
-				passed
+				passed,
 			}));

@@ -6,7 +6,7 @@ export default suite([
 		given: "an invalid test result",
 		must: "return false",
 		received: isTestResult({}),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "a valid test result with errors",
@@ -14,14 +14,14 @@ export default suite([
 		received: isTestResult({
 			error: "error!",
 			given: "failed",
-			must: "fail"
+			must: "fail",
 		}),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a valid test result without errors",
 		must: "return true",
 		received: isTestResult({ given: "passed", must: "pass" }),
-		wanted: true
-	}
+		wanted: true,
+	},
 ]);

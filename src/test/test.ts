@@ -13,16 +13,16 @@ export const test = <Value>({
 	given,
 	must,
 	received,
-	wanted
+	wanted,
 }: Test<Value>): Promise<TestResult> =>
 	Promise.all(promiseWrapMap([wanted, received]))
 		.then(([wantedValue, receivedValue]) =>
 			deepEqual(receivedValue)(wantedValue)
 				? { given, must }
-				: Promise.reject(compare(wantedValue)(receivedValue))
+				: Promise.reject(compare(wantedValue)(receivedValue)),
 		)
 		.catch((error: "Unknown Error") => ({
 			error,
 			given,
-			must
+			must,
 		}));

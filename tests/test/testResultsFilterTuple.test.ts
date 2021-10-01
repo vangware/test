@@ -8,18 +8,18 @@ export default suite([
 		received: testResultsFilterTuple([
 			{
 				given: "given",
-				must: "must"
-			}
+				must: "must",
+			},
 		]),
 		wanted: [
 			[
 				{
 					given: "given",
-					must: "must"
-				}
+					must: "must",
+				},
 			],
-			[]
-		]
+			[],
+		],
 	},
 	{
 		given: "a test that failed",
@@ -28,8 +28,8 @@ export default suite([
 			{
 				error: "error!",
 				given: "given",
-				must: "must"
-			}
+				must: "must",
+			},
 		]),
 		wanted: [
 			[],
@@ -37,10 +37,10 @@ export default suite([
 				{
 					error: "error!",
 					given: "given",
-					must: "must"
-				}
-			]
-		]
+					must: "must",
+				},
+			],
+		],
 	},
 	{
 		given: "one of each test",
@@ -49,27 +49,27 @@ export default suite([
 			{
 				error: "error!",
 				given: "given",
-				must: "must"
+				must: "must",
 			},
 			{
 				given: "given",
-				must: "must"
-			}
+				must: "must",
+			},
 		]),
 		wanted: [
 			[
 				{
 					given: "given",
-					must: "must"
-				}
+					must: "must",
+				},
 			],
 			[
 				{
 					error: "error!",
 					given: "given",
-					must: "must"
-				}
-			]
-		]
-	}
+					must: "must",
+				},
+			],
+		],
+	},
 ]);

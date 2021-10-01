@@ -8,5 +8,5 @@ import { stringifyMap } from "../utils/stringifyMap";
  * @category Compare
  */
 export const stringifyMissingItems = <Item>(
-	missingItems: ReadOnlyArray<Item>
+	missingItems: ReadOnlyArray<Item>,
 ) => missingComment(stringifyMap(missingItems).join(", "));

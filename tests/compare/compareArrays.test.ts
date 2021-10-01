@@ -16,10 +16,10 @@ export default suite([
 				"2,",
 				"3,",
 				`4, ${UNWANTED_COMMENT}`,
-				`0  ${UNWANTED_COMMENT}`
+				`0  ${UNWANTED_COMMENT}`,
 			]),
-			"]"
-		].join("\n")
+			"]",
+		].join("\n"),
 	},
 	{
 		given: "2 different arrays with matching elements at the end",
@@ -32,9 +32,9 @@ export default suite([
 				`13, ${UNWANTED_COMMENT}`,
 				`13, ${UNWANTED_COMMENT}`,
 				"2,",
-				"3"
+				"3",
 			]),
-			"]"
-		].join("\n")
-	}
+			"]",
+		].join("\n"),
+	},
 ]);
