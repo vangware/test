@@ -13,11 +13,11 @@ export default suite([
 		received: compareObjects<Record<string, string>>({
 			bar: "bar",
 			foo: "foo",
-			foobar: "foobar"
+			foobar: "foobar",
 		})({
 			bar: "baz",
 			baz: "bar",
-			foo: "foo"
+			foo: "foo",
 		}),
 		wanted: [
 			"Received:\t{",
@@ -25,30 +25,30 @@ export default suite([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,
 				`foo: ${stringify("foo")}`,
-				missingComment(stringify("foobar"))
+				missingComment(stringify("foobar")),
 			]),
-			"}"
-		].join("\n")
+			"}",
+		].join("\n"),
 	},
 	{
 		given: "2 different objects (without missing property)",
 		must: "return comparison message",
 		received: compareObjects<Record<string, string>>({
 			bar: "bar",
-			foo: "foo"
+			foo: "foo",
 		})({
 			bar: "baz",
 			baz: "bar",
-			foo: "foo"
+			foo: "foo",
 		}),
 		wanted: [
 			"Received:\t{",
 			...indentMap([
 				`bar: "baz", ${wantedComment(stringify("bar"))}`,
 				`baz: "bar", ${UNWANTED_COMMENT}`,
-				`foo: ${stringify("foo")}`
+				`foo: ${stringify("foo")}`,
 			]),
-			"}"
-		].join("\n")
-	}
+			"}",
+		].join("\n"),
+	},
 ]);

@@ -10,8 +10,8 @@ export default suite([
 		received: comparePrimitives("bar")("foo"),
 		wanted: [
 			`${foregroundRed("Received:")}\t"foo"`,
-			`${foregroundGreen("Wanted:")}\t\t"bar"`
-		].join("\n")
+			`${foregroundGreen("Wanted:")}\t\t"bar"`,
+		].join("\n"),
 	},
 	{
 		given: "2 different numbers",
@@ -19,8 +19,8 @@ export default suite([
 		received: comparePrimitives(13)(42),
 		wanted: [
 			`${foregroundRed("Received:")}\t42`,
-			`${foregroundGreen("Wanted:")}\t\t13`
-		].join("\n")
+			`${foregroundGreen("Wanted:")}\t\t13`,
+		].join("\n"),
 	},
 	{
 		given: "2 different types",
@@ -28,7 +28,7 @@ export default suite([
 		received: comparePrimitives<ReadOnlyArray<number> | number>(13)([42]),
 		wanted: [
 			`${foregroundRed("Received:")}\t[42]`,
-			`${foregroundGreen("Wanted:")}\t\t13`
-		].join("\n")
-	}
+			`${foregroundGreen("Wanted:")}\t\t13`,
+		].join("\n"),
+	},
 ]);

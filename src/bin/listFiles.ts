@@ -16,7 +16,7 @@ export const listFiles =
 				direntToPathMap(directory)(files).map((path: string) =>
 					path.endsWith(sep)
 						? listFiles(filterer)(path)
-						: Promise.resolve(filterer(path) ? [path] : [])
-				)
-			).then(paths => paths.flat())
+						: Promise.resolve(filterer(path) ? [path] : []),
+				),
+			).then(paths => paths.flat()),
 		);

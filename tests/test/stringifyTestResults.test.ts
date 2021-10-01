@@ -9,14 +9,14 @@ export default suite([
 		received: stringifyTestResults([
 			{
 				given: "given",
-				must: "must"
-			}
+				must: "must",
+			},
 		]),
 		wanted: [
 			`${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
-				", must"
-			)} must.`
-		]
+				", must",
+			)} must.`,
+		],
 	},
 	{
 		given: "a test that failed",
@@ -25,14 +25,14 @@ export default suite([
 			{
 				error: "error!",
 				given: "given",
-				must: "must"
-			}
+				must: "must",
+			},
 		]),
 		wanted: [
 			`${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
-				", must"
-			)} must:\n\nerror!\n`
-		]
+				", must",
+			)} must:\n\nerror!\n`,
+		],
 	},
 	{
 		given: "one of each test",
@@ -40,21 +40,21 @@ export default suite([
 		received: stringifyTestResults([
 			{
 				given: "given",
-				must: "must"
+				must: "must",
 			},
 			{
 				error: "error!",
 				given: "given",
-				must: "must"
-			}
+				must: "must",
+			},
 		]),
 		wanted: [
 			`${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
-				", must"
+				", must",
 			)} must.`,
 			`${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
-				", must"
-			)} must:\n\nerror!\n`
-		]
-	}
+				", must",
+			)} must:\n\nerror!\n`,
+		],
+	},
 ]);

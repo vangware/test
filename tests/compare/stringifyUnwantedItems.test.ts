@@ -8,15 +8,15 @@ export default suite([
 		must: "return comparison string array",
 		received: stringifyUnwantedItems(true)([0, 1, 2, 3]),
 		wanted: ["0,", "1,", "2,", "3 "].map(
-			value => `${value} ${UNWANTED_COMMENT}`
-		)
+			value => `${value} ${UNWANTED_COMMENT}`,
+		),
 	},
 	{
 		given: "an array of unwanted items in the middle of the parent",
 		must: "return comparison string array",
 		received: stringifyUnwantedItems(false)([0, 1, 2, 3]),
 		wanted: ["0,", "1,", "2,", "3,"].map(
-			value => `${value} ${UNWANTED_COMMENT}`
-		)
-	}
+			value => `${value} ${UNWANTED_COMMENT}`,
+		),
+	},
 ]);

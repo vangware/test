@@ -11,8 +11,8 @@ export default suite([
 		wanted: {
 			failed: [],
 			name: "test-1",
-			passed: []
-		}
+			passed: [],
+		},
 	},
 	{
 		given: "a suite with a failed test",
@@ -22,20 +22,20 @@ export default suite([
 				given: "failed",
 				must: "fail",
 				received: false,
-				wanted: true
-			}
+				wanted: true,
+			},
 		])("test-2"),
 		wanted: {
 			failed: [
 				{
 					error,
 					given: "failed",
-					must: "fail"
-				}
+					must: "fail",
+				},
 			],
 			name: "test-2",
-			passed: []
-		}
+			passed: [],
+		},
 	},
 	{
 		given: "a suite with a passed test",
@@ -45,8 +45,8 @@ export default suite([
 				given: "passed",
 				must: "pass",
 				received: true,
-				wanted: true
-			}
+				wanted: true,
+			},
 		])("test-3"),
 		wanted: {
 			failed: [],
@@ -54,10 +54,10 @@ export default suite([
 			passed: [
 				{
 					given: "passed",
-					must: "pass"
-				}
-			]
-		}
+					must: "pass",
+				},
+			],
+		},
 	},
 	{
 		given: "a suite with a passed and a failed test",
@@ -67,30 +67,30 @@ export default suite([
 				given: "failed",
 				must: "fail",
 				received: false,
-				wanted: true
+				wanted: true,
 			},
 			{
 				given: "passed",
 				must: "pass",
 				received: true,
-				wanted: true
-			}
+				wanted: true,
+			},
 		])("test-4"),
 		wanted: {
 			failed: [
 				{
 					error,
 					given: "failed",
-					must: "fail"
-				}
+					must: "fail",
+				},
 			],
 			name: "test-4",
 			passed: [
 				{
 					given: "passed",
-					must: "pass"
-				}
-			]
-		}
-	}
+					must: "pass",
+				},
+			],
+		},
+	},
 ]);

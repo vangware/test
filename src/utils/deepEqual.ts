@@ -24,8 +24,8 @@ export const deepEqual =
 				  // eslint-disable-next-line max-params
 				  wanted.every((value, index) =>
 						deepEqual(value)(
-							(received as unknown as ReadOnlyArray)[index]
-						)
+							(received as unknown as ReadOnlyArray)[index],
+						),
 				  )
 				: // If they are RegExps
 				wanted instanceof RegExp
@@ -49,5 +49,5 @@ export const deepEqual =
 				  Object.entries(wanted).length ===
 						Object.entries(received).length &&
 				  Object.entries(wanted).every(([key, value]) =>
-						deepEqual(value)((received as ReadOnlyRecord)[key])
+						deepEqual(value)((received as ReadOnlyRecord)[key]),
 				  )));

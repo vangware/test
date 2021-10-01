@@ -8,13 +8,13 @@ import { stringifySuiteResult } from "./stringifySuiteResult";
  * @category Suite
  */
 export const stringifySuiteResults = (
-	suiteResults: ReadOnlyArray<SuiteResult>
+	suiteResults: ReadOnlyArray<SuiteResult>,
 ) =>
 	[...suiteResults]
 		.sort(
 			// eslint-disable-next-line max-params
 			(nextSuite: SuiteResult, suite: SuiteResult) =>
-				nextSuite.failed.length - suite.failed.length
+				nextSuite.failed.length - suite.failed.length,
 		)
 		.map(stringifySuiteResult)
 		.join("\n");

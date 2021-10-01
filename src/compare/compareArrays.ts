@@ -24,6 +24,6 @@ export const compareArrays =
 							? stringifyUnwantedItems(last)
 							: removed
 							? stringifyMissingItems
-							: stringifyMatchingItems(last))(value)
-			)(diffArrays([...wanted], [...received])).flat()
+							: stringifyMatchingItems(last))(value),
+			)(diffArrays([...wanted], [...received])).flat(),
 		).join("\n")}\n]`;

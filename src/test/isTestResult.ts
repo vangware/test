@@ -7,6 +7,6 @@ import { isPlainObject } from "../utils/isPlainObject";
  * @category Test
  */
 export const isTestResult = <Actual>(
-	value: Actual | TestResult
+	value: Actual | TestResult,
 ): value is TestResult =>
 	isPlainObject(value) && "given" in value && "must" in value;
