@@ -1,5 +1,5 @@
-import type { TestResult } from "../types/TestResult";
-import { isPlainObject } from "../utils/isPlainObject";
+import type { TestResult } from "../types/TestResult.js";
+import { isPlainObject } from "../utils/isPlainObject.js";
 
 /**
  * Check if given value is a `TestResult` object.

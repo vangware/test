@@ -1,6 +1,6 @@
-import { comparePrimitives } from "../../src/compare/comparePrimitives";
-import { suite } from "../../src/suite/suite";
-import { testMap } from "../../src/test/testMap";
+import { comparePrimitives } from "../../src/compare/comparePrimitives.js";
+import { suite } from "../../src/suite/suite.js";
+import { testMap } from "../../src/test/testMap.js";
 
 export default suite([
 	{

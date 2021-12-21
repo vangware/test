@@ -1,5 +1,5 @@
 import { foregroundGreen, foregroundRed } from "@vangware/ansi";
-import { stringify } from "../utils/stringify";
+import { stringify } from "../utils/stringify.js";
 
 /**
  * Compares two primitive values.

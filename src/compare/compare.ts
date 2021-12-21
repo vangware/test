@@ -1,7 +1,7 @@
-import { isPlainObject } from "../utils/isPlainObject";
-import { compareArrays } from "./compareArrays";
-import { compareObjects } from "./compareObjects";
-import { comparePrimitives } from "./comparePrimitives";
+import { isPlainObject } from "../utils/isPlainObject.js";
+import { compareArrays } from "./compareArrays.js";
+import { compareObjects } from "./compareObjects.js";
+import { comparePrimitives } from "./comparePrimitives.js";
 
 /**
  * Compare two values and show the differences between them.

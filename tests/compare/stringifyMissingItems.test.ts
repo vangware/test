@@ -1,6 +1,6 @@
-import { stringifyMissingItems } from "../../src/compare/stringifyMissingItems";
-import { suite } from "../../src/suite/suite";
-import { missingComment } from "../../src/utils/missingComment";
+import { stringifyMissingItems } from "../../src/compare/stringifyMissingItems.js";
+import { suite } from "../../src/suite/suite.js";
+import { missingComment } from "../../src/utils/missingComment.js";
 
 export default suite([
 	{

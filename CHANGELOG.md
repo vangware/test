@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 8.0.0
+
+-   :truck: moved package type `module`.
+-   :arrow_up: dependency upgrade.
+-   :building_construction: change all imports to include extension.
+
 ## 7.1.9
 
 -   :arrow_up: dependency upgrade.

@@ -1,10 +1,10 @@
-import { compareObjects } from "../../src/compare/compareObjects";
-import { UNWANTED_COMMENT } from "../../src/constants";
-import { suite } from "../../src/suite/suite";
-import { indentMap } from "../../src/utils/indentMap";
-import { missingComment } from "../../src/utils/missingComment";
-import { stringify } from "../../src/utils/stringify";
-import { wantedComment } from "../../src/utils/wantedComment";
+import { compareObjects } from "../../src/compare/compareObjects.js";
+import { UNWANTED_COMMENT } from "../../src/constants.js";
+import { suite } from "../../src/suite/suite.js";
+import { indentMap } from "../../src/utils/indentMap.js";
+import { missingComment } from "../../src/utils/missingComment.js";
+import { stringify } from "../../src/utils/stringify.js";
+import { wantedComment } from "../../src/utils/wantedComment.js";
 
 export default suite([
 	{

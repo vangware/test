@@ -1,4 +1,4 @@
-import type { MaybePromise } from "../types/MaybePromise";
+import type { MaybePromise } from "../types/MaybePromise.js";
 
 /**
  * Given a value that could be either a promise or a value, return the value

@@ -1,6 +1,6 @@
 import type { ReadOnlyArray } from "@vangware/types";
-import { missingComment } from "../utils/missingComment";
-import { stringifyMap } from "../utils/stringifyMap";
+import { missingComment } from "../utils/missingComment.js";
+import { stringifyMap } from "../utils/stringifyMap.js";
 
 /**
  * Takes an array and returns a string for missing items.

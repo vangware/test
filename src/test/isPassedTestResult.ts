@@ -1,5 +1,5 @@
-import type { TestResult } from "../types/TestResult";
-import { isTestResult } from "./isTestResult";
+import type { TestResult } from "../types/TestResult.js";
+import { isTestResult } from "./isTestResult.js";
 
 /**
  * Checks if given `TestResult` passed.

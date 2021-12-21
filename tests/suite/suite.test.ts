@@ -1,5 +1,5 @@
-import { comparePrimitives } from "../../src/compare/comparePrimitives";
-import { suite } from "../../src/suite/suite";
+import { comparePrimitives } from "../../src/compare/comparePrimitives.js";
+import { suite } from "../../src/suite/suite.js";
 
 const error = comparePrimitives(true)(false);
 

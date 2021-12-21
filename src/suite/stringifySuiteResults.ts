@@ -1,6 +1,6 @@
 import type { ReadOnlyArray } from "@vangware/types";
-import type { SuiteResult } from "../types/SuiteResult";
-import { stringifySuiteResult } from "./stringifySuiteResult";
+import type { SuiteResult } from "../types/SuiteResult.js";
+import { stringifySuiteResult } from "./stringifySuiteResult.js";
 
 /**
  * Takes an array of `SuiteResult` and returns an array of strings.
