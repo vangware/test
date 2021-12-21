@@ -1,6 +1,6 @@
 import type { ReadOnlyArray } from "@vangware/types";
-import { lastAwareMap } from "../utils/lastAwareMap";
-import { stringifyMap } from "../utils/stringifyMap";
+import { lastAwareMap } from "../utils/lastAwareMap.js";
+import { stringifyMap } from "../utils/stringifyMap.js";
 
 /**
  * Takes a boolean to know if this is the last item, and an array and

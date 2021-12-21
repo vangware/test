@@ -1,9 +1,0 @@
-{
-	"extends": "./tsconfig.require.json",
-	"compilerOptions": {
-		"module": "ESNext",
-		"outDir": "./dist/import",
-		"target": "ESNext"
-	},
-	"exclude": ["./src/bin/*", "./tests/*"]
-}

@@ -1,5 +1,5 @@
-import { suite } from "../../src/suite/suite";
-import { areTestResults } from "../../src/test/areTestResults";
+import { suite } from "../../src/suite/suite.js";
+import { areTestResults } from "../../src/test/areTestResults.js";
 
 export default suite([
 	{

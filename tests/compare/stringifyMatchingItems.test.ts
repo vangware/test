@@ -1,5 +1,5 @@
-import { stringifyMatchingItems } from "../../src/compare/stringifyMatchingItems";
-import { suite } from "../../src/suite/suite";
+import { stringifyMatchingItems } from "../../src/compare/stringifyMatchingItems.js";
+import { suite } from "../../src/suite/suite.js";
 
 export default suite([
 	{

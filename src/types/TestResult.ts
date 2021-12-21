@@ -1,4 +1,4 @@
-import type { Test } from "./Test";
+import type { Test } from "./Test.js";
 
 /**
  * Output of the test function.
