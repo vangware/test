@@ -3,9 +3,9 @@ import {
 	backgroundRed,
 	foregroundBlack,
 	foregroundRed,
-	mix
+	mix,
 } from "@vangware/ansi";
-import { comment } from "./utils/comment";
+import { comment } from "./utils/comment.js";
 
 /** Fail message with colors. */
 export const FAIL = mix([foregroundBlack, backgroundRed])("[FAIL]");

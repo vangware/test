@@ -1,5 +1,5 @@
-import { suite } from "../../src/suite/suite";
-import { testResultsFilterTuple } from "../../src/test/testResultsFilterTuple";
+import { suite } from "../../src/suite/suite.js";
+import { testResultsFilterTuple } from "../../src/test/testResultsFilterTuple.js";
 
 export default suite([
 	{

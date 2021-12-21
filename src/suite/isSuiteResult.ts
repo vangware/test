@@ -1,6 +1,6 @@
-import { areTestResults } from "../test/areTestResults";
-import type { SuiteResult } from "../types/SuiteResult";
-import { isPlainObject } from "../utils/isPlainObject";
+import { areTestResults } from "../test/areTestResults.js";
+import type { SuiteResult } from "../types/SuiteResult.js";
+import { isPlainObject } from "../utils/isPlainObject.js";
 
 /**
  * Check if given value is a `SuiteResult` object.

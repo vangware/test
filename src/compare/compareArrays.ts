@@ -1,11 +1,11 @@
 import type { ReadOnlyArray } from "@vangware/types";
 import type { ArrayChange } from "diff";
 import { diffArrays } from "diff";
-import { indentMap } from "../utils/indentMap";
-import { lastAwareMap } from "../utils/lastAwareMap";
-import { stringifyMatchingItems } from "./stringifyMatchingItems";
-import { stringifyMissingItems } from "./stringifyMissingItems";
-import { stringifyUnwantedItems } from "./stringifyUnwantedItems";
+import { indentMap } from "../utils/indentMap.js";
+import { lastAwareMap } from "../utils/lastAwareMap.js";
+import { stringifyMatchingItems } from "./stringifyMatchingItems.js";
+import { stringifyMissingItems } from "./stringifyMissingItems.js";
+import { stringifyUnwantedItems } from "./stringifyUnwantedItems.js";
 
 /**
  * Compare two arrays and displays the differences (unwanted, missing and

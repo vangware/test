@@ -1,6 +1,6 @@
-import { FAIL, PASS } from "../constants";
-import { stringifyTestResults } from "../test/stringifyTestResults";
-import type { SuiteResult } from "../types/SuiteResult";
+import { FAIL, PASS } from "../constants.js";
+import { stringifyTestResults } from "../test/stringifyTestResults.js";
+import type { SuiteResult } from "../types/SuiteResult.js";
 
 /**
  * Takes a `SuiteResult` object and returns a stringified version of it.

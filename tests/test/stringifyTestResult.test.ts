@@ -1,6 +1,6 @@
 import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
-import { suite } from "../../src/suite/suite";
-import { stringifyTestResult } from "../../src/test/stringifyTestResult";
+import { suite } from "../../src/suite/suite.js";
+import { stringifyTestResult } from "../../src/test/stringifyTestResult.js";
 
 export default suite([
 	{

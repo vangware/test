@@ -1,5 +1,5 @@
-import { isSuiteResult } from "../../src/suite/isSuiteResult";
-import { suite } from "../../src/suite/suite";
+import { isSuiteResult } from "../../src/suite/isSuiteResult.js";
+import { suite } from "../../src/suite/suite.js";
 
 export default suite([
 	{

@@ -1,6 +1,6 @@
-import { stringifyUnwantedItems } from "../../src/compare/stringifyUnwantedItems";
-import { UNWANTED_COMMENT } from "../../src/constants";
-import { suite } from "../../src/suite/suite";
+import { stringifyUnwantedItems } from "../../src/compare/stringifyUnwantedItems.js";
+import { UNWANTED_COMMENT } from "../../src/constants.js";
+import { suite } from "../../src/suite/suite.js";
 
 export default suite([
 	{

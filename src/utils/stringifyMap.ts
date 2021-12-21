@@ -1,5 +1,5 @@
 import type { ReadOnlyArray } from "@vangware/types";
-import { stringify } from "./stringify";
+import { stringify } from "./stringify.js";
 
 /**
  * Applies `stringify` to every value in the given array.

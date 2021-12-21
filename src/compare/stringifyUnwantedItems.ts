@@ -1,6 +1,6 @@
-import { UNWANTED_COMMENT } from "../constants";
-import { lastAwareMap } from "../utils/lastAwareMap";
-import { stringify } from "../utils/stringify";
+import { UNWANTED_COMMENT } from "../constants.js";
+import { lastAwareMap } from "../utils/lastAwareMap.js";
+import { stringify } from "../utils/stringify.js";
 
 /**
  * Takes a boolean to know if the paren is in it's last item, and an array

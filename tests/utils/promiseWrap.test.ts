@@ -1,5 +1,5 @@
-import { suite } from "../../src/suite/suite";
-import { promiseWrap } from "../../src/utils/promiseWrap";
+import { suite } from "../../src/suite/suite.js";
+import { promiseWrap } from "../../src/utils/promiseWrap.js";
 
 export default suite([
 	{

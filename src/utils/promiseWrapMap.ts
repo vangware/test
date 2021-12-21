@@ -1,6 +1,6 @@
 import type { ReadOnlyArray } from "@vangware/types";
-import type { MaybePromise } from "../types/MaybePromise";
-import { promiseWrap } from "./promiseWrap";
+import type { MaybePromise } from "../types/MaybePromise.js";
+import { promiseWrap } from "./promiseWrap.js";
 
 /**
  * Maps using `promiseWrap`.

@@ -1,4 +1,4 @@
-import type { MaybePromise } from "./MaybePromise";
+import type { MaybePromise } from "./MaybePromise.js";
 
 /**
  * Object that describes a test.

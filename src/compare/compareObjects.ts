@@ -1,10 +1,10 @@
 import type { EntriesOf, EntryOf } from "@vangware/types";
-import { UNWANTED_COMMENT } from "../constants";
-import { deepEqual } from "../utils/deepEqual";
-import { lastAwareMap } from "../utils/lastAwareMap";
-import { missingComment } from "../utils/missingComment";
-import { stringify } from "../utils/stringify";
-import { wantedComment } from "../utils/wantedComment";
+import { UNWANTED_COMMENT } from "../constants.js";
+import { deepEqual } from "../utils/deepEqual.js";
+import { lastAwareMap } from "../utils/lastAwareMap.js";
+import { missingComment } from "../utils/missingComment.js";
+import { stringify } from "../utils/stringify.js";
+import { wantedComment } from "../utils/wantedComment.js";
 
 /**
  * Compare two objects and displays the differences (unwanted, missing and

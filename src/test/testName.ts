@@ -1,5 +1,5 @@
 import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
-import type { TestResult } from "../types/TestResult";
+import type { TestResult } from "../types/TestResult.js";
 
 /**
  * Takes a `TestResult` and returns the name of the test.
