@@ -1,8 +1,8 @@
-import { compare } from "../compare/compare";
-import type { Test } from "../types/Test";
-import type { TestResult } from "../types/TestResult";
-import { deepEqual } from "../utils/deepEqual";
-import { promiseWrapMap } from "../utils/promiseWrapMap";
+import { compare } from "../compare/compare.js";
+import type { Test } from "../types/Test.js";
+import type { TestResult } from "../types/TestResult.js";
+import { deepEqual } from "../utils/deepEqual.js";
+import { promiseWrapMap } from "../utils/promiseWrapMap.js";
 
 /**
  * Takes a `Test` object and returns a `TestResult` object.

@@ -1,4 +1,5 @@
-import type { SuiteResult } from "./SuiteResult";
+import type { SuiteResult } from "./SuiteResult.js";
+import type { URLOrString } from "./URLOrString.js";
 
 /**
  * Promise import of a file containing a suite.
@@ -6,5 +7,5 @@ import type { SuiteResult } from "./SuiteResult";
  * @category Suite
  */
 export type SuiteImport = Promise<{
-	readonly default: SuiteResult | ((name: string) => SuiteResult);
+	readonly default: SuiteResult | ((name: URLOrString) => SuiteResult);
 }>;

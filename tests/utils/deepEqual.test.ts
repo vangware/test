@@ -1,5 +1,5 @@
-import { suite } from "../../src/suite/suite";
-import { deepEqual } from "../../src/utils/deepEqual";
+import { suite } from "../../src/suite/suite.js";
+import { deepEqual } from "../../src/utils/deepEqual.js";
 
 // eslint-disable-next-line functional/functional-parameters
 const valueOfBase = { valueOf: () => "a" };

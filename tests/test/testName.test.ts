@@ -1,6 +1,6 @@
 import { dimmed, foregroundGreen, foregroundRed } from "@vangware/ansi";
-import { suite } from "../../src/suite/suite";
-import { testName } from "../../src/test/testName";
+import { suite } from "../../src/suite/suite.js";
+import { testName } from "../../src/test/testName.js";
 
 export default suite([
 	{

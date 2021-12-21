@@ -1,5 +1,5 @@
-import { suite } from "../../src/suite/suite";
-import { stringify } from "../../src/utils/stringify";
+import { suite } from "../../src/suite/suite.js";
+import { stringify } from "../../src/utils/stringify.js";
 
 export default suite([
 	{

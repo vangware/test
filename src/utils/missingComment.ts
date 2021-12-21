@@ -1,5 +1,5 @@
 import { foregroundGray } from "@vangware/ansi";
-import { comment } from "./comment";
+import { comment } from "./comment.js";
 
 /**
  * Comment for missing items.

@@ -1,8 +1,8 @@
-import { compareArrays } from "../../src/compare/compareArrays";
-import { UNWANTED_COMMENT } from "../../src/constants";
-import { suite } from "../../src/suite/suite";
-import { indentMap } from "../../src/utils/indentMap";
-import { missingComment } from "../../src/utils/missingComment";
+import { compareArrays } from "../../src/compare/compareArrays.js";
+import { UNWANTED_COMMENT } from "../../src/constants.js";
+import { suite } from "../../src/suite/suite.js";
+import { indentMap } from "../../src/utils/indentMap.js";
+import { missingComment } from "../../src/utils/missingComment.js";
 
 export default suite([
 	{

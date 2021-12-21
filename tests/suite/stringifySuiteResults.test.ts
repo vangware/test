@@ -1,8 +1,8 @@
-import { comparePrimitives } from "../../src/compare/comparePrimitives";
-import { FAIL, PASS } from "../../src/constants";
-import { stringifySuiteResults } from "../../src/suite/stringifySuiteResults";
-import { suite } from "../../src/suite/suite";
-import { testName } from "../../src/test/testName";
+import { comparePrimitives } from "../../src/compare/comparePrimitives.js";
+import { FAIL, PASS } from "../../src/constants.js";
+import { stringifySuiteResults } from "../../src/suite/stringifySuiteResults.js";
+import { suite } from "../../src/suite/suite.js";
+import { testName } from "../../src/test/testName.js";
 
 const error = comparePrimitives(true)(false);
 

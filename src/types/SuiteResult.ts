@@ -1,5 +1,5 @@
 import type { ReadOnlyArray } from "@vangware/types";
-import type { TestResult } from "./TestResult";
+import type { TestResult } from "./TestResult.js";
 
 /**
  * Output object given by a suite.

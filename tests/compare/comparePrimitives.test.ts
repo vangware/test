@@ -1,7 +1,7 @@
 import { foregroundGreen, foregroundRed } from "@vangware/ansi";
 import type { ReadOnlyArray } from "@vangware/types";
-import { comparePrimitives } from "../../src/compare/comparePrimitives";
-import { suite } from "../../src/suite/suite";
+import { comparePrimitives } from "../../src/compare/comparePrimitives.js";
+import { suite } from "../../src/suite/suite.js";
 
 export default suite([
 	{
