@@ -1,7 +1,7 @@
 {
 	"name": "@vangware/test",
 	"description": "✅ Equality test with enforced legibility",
-	"version": "8.0.1",
+	"version": "8.0.2",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
@@ -10,26 +10,26 @@
 	"bin": "./dist/bin/index.js",
 	"bugs": "https://github.com/vangware/test/issues",
 	"dependencies": {
-		"@vangware/ansi": "^3.0.3",
-		"@vangware/types": "^2.0.2",
+		"@vangware/ansi": "^3.0.4",
+		"@vangware/types": "^2.0.3",
 		"diff": "^5.0.0"
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.7",
 		"@types/diff": "5.0.2",
 		"@types/eslint": "8.2.1",
-		"@types/node": "17.0.5",
+		"@types/node": "17.0.8",
 		"@types/prettier": "^2.4.2",
-		"@typescript-eslint/eslint-plugin": "5.8.1",
-		"@typescript-eslint/parser": "5.8.1",
-		"@vangware/configs": "^1.0.10",
+		"@typescript-eslint/eslint-plugin": "5.9.0",
+		"@typescript-eslint/parser": "5.9.0",
+		"@vangware/configs": "^1.0.11",
 		"c8": "^7.11.0",
-		"eslint": "^8.5.0",
+		"eslint": "^8.6.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"eslint-plugin-ban": "^1.6.0",
 		"eslint-plugin-functional": "^4.0.2",
-		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-import": "^2.25.4",
 		"eslint-plugin-no-null": "^1.0.2",
 		"eslint-plugin-prefer-arrow": "^1.2.3",
 		"eslint-plugin-prettier": "^4.0.0",
@@ -57,7 +57,10 @@
 		"vangware"
 	],
 	"license": "MIT",
-	"repository": "vangware/test",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vangware/test.git"
+	},
 	"scripts": {
 		"clean": "rimraf ./dist",
 		"compile": "tsc --project tsconfig.dist.json",
