@@ -10,9 +10,7 @@ export default suite([
 			given: "given",
 			must: "must",
 		}),
-		wanted: `${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
-			", must",
-		)} must.`,
+		wanted: `${foregroundGreen`>`} ${dimmed`Given`} given${dimmed`, must`} must.`,
 	},
 	{
 		given: "a test that failed",
@@ -22,8 +20,6 @@ export default suite([
 			given: "given",
 			must: "must",
 		}),
-		wanted: `${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
-			", must",
-		)} must:\n\nerror!\n`,
+		wanted: `${foregroundRed`>`} ${dimmed`Given`} given${dimmed`, must`} must:\n\nerror!\n`,
 	},
 ]);

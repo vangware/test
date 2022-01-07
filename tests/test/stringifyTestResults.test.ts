@@ -13,9 +13,7 @@ export default suite([
 			},
 		]),
 		wanted: [
-			`${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
-				", must",
-			)} must.`,
+			`${foregroundGreen`>`} ${dimmed`Given`} given${dimmed`, must`} must.`,
 		],
 	},
 	{
@@ -29,9 +27,7 @@ export default suite([
 			},
 		]),
 		wanted: [
-			`${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
-				", must",
-			)} must:\n\nerror!\n`,
+			`${foregroundRed`>`} ${dimmed`Given`} given${dimmed`, must`} must:\n\nerror!\n`,
 		],
 	},
 	{
@@ -49,12 +45,8 @@ export default suite([
 			},
 		]),
 		wanted: [
-			`${foregroundGreen(">")} ${dimmed("Given")} given${dimmed(
-				", must",
-			)} must.`,
-			`${foregroundRed(">")} ${dimmed("Given")} given${dimmed(
-				", must",
-			)} must:\n\nerror!\n`,
+			`${foregroundGreen`>`} ${dimmed`Given`} given${dimmed`, must`} must.`,
+			`${foregroundRed`>`} ${dimmed`Given`} given${dimmed`, must`} must:\n\nerror!\n`,
 		],
 	},
 ]);
