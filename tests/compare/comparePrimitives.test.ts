@@ -9,8 +9,8 @@ export default suite([
 		must: "return comparison message",
 		received: comparePrimitives("bar")("foo"),
 		wanted: [
-			`${foregroundRed("Received:")}\t"foo"`,
-			`${foregroundGreen("Wanted:")}\t\t"bar"`,
+			`${foregroundRed`Received:`}\t"foo"`,
+			`${foregroundGreen`Wanted:`}\t\t"bar"`,
 		].join("\n"),
 	},
 	{
@@ -18,8 +18,8 @@ export default suite([
 		must: "return comparison message",
 		received: comparePrimitives(13)(42),
 		wanted: [
-			`${foregroundRed("Received:")}\t42`,
-			`${foregroundGreen("Wanted:")}\t\t13`,
+			`${foregroundRed`Received:`}\t42`,
+			`${foregroundGreen`Wanted:`}\t\t13`,
 		].join("\n"),
 	},
 	{
@@ -27,8 +27,8 @@ export default suite([
 		must: "return comparison message",
 		received: comparePrimitives<ReadOnlyArray<number> | number>(13)([42]),
 		wanted: [
-			`${foregroundRed("Received:")}\t[42]`,
-			`${foregroundGreen("Wanted:")}\t\t13`,
+			`${foregroundRed`Received:`}\t[42]`,
+			`${foregroundGreen`Wanted:`}\t\t13`,
 		].join("\n"),
 	},
 ]);
