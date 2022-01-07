@@ -7,6 +7,6 @@ import type { TestResult } from "../types/TestResult.js";
  * @category Test
  */
 export const testName = ({ given, must, error }: TestResult) =>
-	`${(error === undefined ? foregroundGreen : foregroundRed)(">")} ${dimmed(
-		"Given",
-	)} ${given}${dimmed(", must")} ${must}`;
+	`${(error === undefined
+		? foregroundGreen
+		: foregroundRed)`>`} ${dimmed`Given`} ${given}${dimmed`, must`} ${must}`;

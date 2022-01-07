@@ -7,4 +7,4 @@ import { comment } from "./comment.js";
  * @category Common
  */
 export const wantedComment = (value: string) =>
-	comment(foregroundRed)(`Wanted: ${value}`);
+	comment(foregroundRed)`Wanted: ${value}`;

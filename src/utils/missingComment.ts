@@ -7,4 +7,4 @@ import { comment } from "./comment.js";
  * @category Common
  */
 export const missingComment = (value: string) =>
-	comment(foregroundGray)(`Missing: ${value}`);
+	comment(foregroundGray)`Missing: ${value}`;
