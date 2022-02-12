@@ -8,46 +8,145 @@
 
 ✅ Equality test with enforced legibility (based on [RITEway][riteway] and inspired by [uvu](https://github.com/lukeed/uvu)).
 
-## Usage
+## Writing tests
 
-Write:
+### TypeScript
 
 ```typescript
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
+import { add } from "../src/add.js";
 
-const add = (addend2: number) => (addend1: number) => addend1 + addend2;
-
-export default suite([
+export default [
 	{
 		given: "a 1 and a 2",
 		must: "return 3",
 		received: add(2)(1),
-		wanted: 3
+		wanted: 3,
 	},
 	{
 		given: "a 1 and a -2",
 		must: "return -1",
 		received: add(-2)(1),
-		wanted: -1
-	}
-])("Example suite name (optional)");
+		wanted: -1,
+	},
+] as Tests<number>;
 ```
 
-Then run:
+### JavaScript
+
+```javascript
+import { add } from "../src/add.js";
+
+/** @type {import("@vangware/test").Tests<number>} */
+export default [
+	{
+		given: "a 1 and a 2",
+		must: "return 3",
+		received: add(2)(1),
+		wanted: 3,
+	},
+	{
+		given: "a 1 and a -2",
+		must: "return -1",
+		received: add(-2)(1),
+		wanted: -1,
+	},
+];
+```
+
+### Alternatives
+
+Instead of exporting an `Array` of `Test` as `default`, the export can also be a single `Test`:
+
+```typescript
+import type { Test } from "@vangware/test";
+import { add } from "../src/add.js";
+
+export default {
+	given: "a 1 and a 2",
+	must: "return 3",
+	received: add(2)(1),
+	wanted: 3,
+} as Test<number>;
+```
+
+Or multiple exports with different tests:
+
+```typescript
+import type { Test } from "@vangware/test";
+import { add } from "../src/add.js";
+
+export const test1: Test<number> = {
+	given: "a 1 and a 2",
+	must: "return 3",
+	received: add(2)(1),
+	wanted: 3,
+};
+
+export const test2: Test<number> = {
+	given: "a 1 and a -2",
+	must: "return -1",
+	received: add(-2)(1),
+	wanted: -1,
+};
+```
+
+It can also be used directly without the `test` bin, by importing the different utils directly:
+
+```typescript
+import { test } from "@vangware/test";
+import { customFormatter } from "./customFormatter.js";
+
+test({
+	given: "a 1 and a 2",
+	must: "return 3",
+	received: add(2)(1),
+	wanted: 3,
+}).then(customFormatter);
+```
+
+## Running
+
+This should suffice:
 
 ```bash
-@vangware/test
+npx test
 ```
 
-If let's say the first test fails, the error reads something like this:
+When working with TypeScript files directly, [ts-node](https://npm.im/ts-node) is required, and then to run it:
+
+```bash
+NODE_OPTIONS='--loader ts-node/esm' npx test
+```
+
+## Coverage
+
+[c8](https://npm.im/c8) can be added and then:
+
+```bash
+npx c8 test
+# or
+NODE_OPTIONS='--loader ts-node/esm' npx c8 test
+```
+
+## Output
+
+If a test fails, it looks like this:
 
 ```text
-[FAIL] Example suite name (optional)
+[TEST] ./tests/example.test.ts
+[FAIL] Given a 1 and a 2, must return 3, but...
+	└ it has the wrong value. Wanted 3 but received 4.
+```
 
-> Given a 1 and a 2, must return 3.
+And if the wanted/received type is more complex, like an object, then the output goes into details about the error:
 
-Received: 4
-Wanted:   3
+```text
+[TEST] ./tests/example.test.ts
+[FAIL] Given an object, must add a single property, but...
+	├ foo.bar has the wrong value. Wanted 1 but received 2.
+	├ foo.baz.1 is missing.
+	└ bar was set with the value "bar".
 ```
 
 ## Documentation

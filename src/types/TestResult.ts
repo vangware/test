@@ -1,11 +1,26 @@
+import type { Differences } from "./Differences.js";
 import type { Test } from "./Test.js";
 
 /**
- * Output of the test function.
+ * Object that describes a test result (given, must and differences).
  *
  * @category Test
+ * @example
+ * ```typescript
+ * const testResult: TestResult<string> = {
+ * 	given: "🟢",
+ * 	must: "🟩",
+ * 	differences: [
+ * 		{
+ * 			kind: "E",
+ * 			path: ["🟢", "🟩"],
+ * 			lhs: "🟢",
+ * 			rhs: "🟩",
+ * 		}
+ * 	],
+ * };
+ * ```
  */
-export type TestResult = Pick<Test<unknown>, "given" | "must"> & {
-	/** Error message (undefined when test passed). */
-	readonly error?: string;
+export type TestResult<Value = unknown> = Pick<Test, "given" | "must"> & {
+	readonly differences?: Differences<Value>;
 };
