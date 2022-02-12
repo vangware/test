@@ -1,17 +1,28 @@
 import {
 	backgroundGreen,
 	backgroundRed,
+	backgroundWhite,
 	foregroundBlack,
-	foregroundRed,
 	mix,
 } from "@vangware/ansi";
-import { comment } from "./utils/comment.js";
 
-/** Fail message with colors. */
+/**
+ * Fail message with colors.
+ *
+ * @category Output
+ */
 export const FAIL = mix([foregroundBlack, backgroundRed])`[FAIL]`;
 
-/** Pass message with colors. */
-export const PASS = mix([foregroundBlack, backgroundGreen])`[PASS]`;
+/**
+ * Test message to be shown next to the test path.
+ *
+ * @category Output
+ */
+export const TEST = mix([foregroundBlack, backgroundWhite])`[TEST]`;
 
-/** Unwanted comment (`// Unwanted` in red text). */
-export const UNWANTED_COMMENT = comment(foregroundRed)`Unwanted`;
+/**
+ * Pass message with colors.
+ *
+ * @category Output
+ */
+export const PASS = mix([foregroundBlack, backgroundGreen])`[PASS]`;

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 9.0.0
+
+-   :arrow_up: dependency upgrade.
+-   :building_construction: rework to a simplistic approach.
+-   :memo: improved docs.
+-   :wrench: update `.npmrc`.
+
 ## 8.0.4
 
 -   :arrow_up: dependency upgrade.

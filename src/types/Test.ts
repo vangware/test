@@ -1,15 +1,24 @@
-import type { MaybePromise } from "./MaybePromise.js";
+import type { MaybePromise } from "@vangware/types";
 
 /**
  * Object that describes a test.
  *
  * @category Test
+ * @example
+ * ```typescript
+ * const test: Test<number> = {
+ * 	given: "a number",
+ * 	must: "make it double",
+ * 	received: double(2),
+ * 	wanted: 4,
+ * };
+ * ```
  */
-export type Test<Value> = {
-	/** String explaining the given value. */
+export type Test<Value = unknown> = {
+	/** Description of the given value. */
 	readonly given: string;
 
-	/** String explaining what the test must return. */
+	/** Description of the wanted value. */
 	readonly must: string;
 
 	/** Value being tested. */
