@@ -7,6 +7,6 @@ pre-push:
         lint:
             run: eslint {src,tests}/**/*.ts
         test:
-            run: c8 node --loader ts-node/esm ./tests/index.ts
+            run: c8 node --loader ts-node/esm ./src/bin.ts
         document:
             run: typedoc
