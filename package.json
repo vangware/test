@@ -1,7 +1,7 @@
 {
 	"name": "@vangware/test",
 	"description": "✅ Equality test with enforced legibility",
-	"version": "9.0.0",
+	"version": "9.0.1",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
