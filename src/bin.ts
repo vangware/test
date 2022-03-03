@@ -6,7 +6,7 @@ import { isTestFilePath } from "./isTestFilePath.js";
 import { runAndStringifyTests } from "./runAndStringifyTests.js";
 import { testsImport } from "./testsImport.js";
 
-getFilePaths(pathToFileURL(process.argv.at(2) ?? "./tests/"))
+getFilePaths(pathToFileURL(process.argv[2] ?? "./tests/"))
 	.then(paths => paths.filter(isTestFilePath))
 	.then(testsImport)
 	.then(runAndStringifyTests)
