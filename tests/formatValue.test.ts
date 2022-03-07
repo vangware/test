@@ -81,4 +81,22 @@ export default [
 		received: formatValue(undefined),
 		wanted: foregroundBlue`undefined`,
 	},
+	{
+		given: "a Map value",
+		must: "return formatted Map",
+		received: formatValue(new Map([["🟢", "🟩"]])),
+		wanted: `${foregroundBrightGreen`Map`}({ ${foregroundBrightRed`"🟢"`}: ${foregroundBrightRed`"🟩"`} })`,
+	},
+	{
+		given: "a URL value",
+		must: "return formatted URL",
+		received: formatValue(new URL("https://vangware.com/")),
+		wanted: `${foregroundBrightGreen`URL`}(${foregroundBrightRed`"https://vangware.com/"`})`,
+	},
+	{
+		given: "a URLSearchParams value",
+		must: "return formatted URLSearchParams",
+		received: formatValue(new URLSearchParams([["🟢", "🟩"]])),
+		wanted: `${foregroundBrightGreen`URLSearchParams`}({ ${foregroundBrightRed`"🟢"`}: ${foregroundBrightRed`"🟩"`} })`,
+	},
 ] as Tests<string>;

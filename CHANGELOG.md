@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 9.1.0
+
+-   :arrow_up: dependency upgrade.
+-   :bug: fix case of objects without `constructor`.
+-   :sparkles: add formatting for `URL` and objects with an `entries` method.
+
 ## 9.0.4
 
 -   :arrow_up: dependency upgrade.
