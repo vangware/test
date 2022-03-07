@@ -34,15 +34,24 @@ export const formatValueDictionary: Record<
 			? `${foregroundBrightGreen`RegExp`}(${foregroundBrightRed(
 					value.toString(),
 			  )})`
+			: value instanceof URL
+			? `${foregroundBrightGreen`URL`}(${foregroundBrightRed`"${value.href}"`})`
 			: `${foregroundBrightGreen(
-					// eslint-disable-next-line @typescript-eslint/ban-types
-					(value as Object).constructor.name,
-			  )}({ ${Object.entries(value as ReadOnlyRecord)
+					(
+						value as {
+							readonly constructor?: { readonly name: string };
+						}
+					).constructor?.name ?? "Object",
+			  )}({ ${(typeof (value as ReadonlyMap<unknown, unknown>)
+					.entries === "function"
+					? [...(value as ReadonlyMap<unknown, unknown>).entries()]
+					: Object.entries(value as ReadOnlyRecord)
+			  )
 					.map(
 						([key, propertyValue]) =>
-							`${foregroundBrightRed`"${key.toString()}"`}: ${formatValue(
-								propertyValue,
-							)}`,
+							`${foregroundBrightRed`"${
+								key as string
+							}"`}: ${formatValue(propertyValue)}`,
 					)
 					.join(", ")} })`,
 	string: value => foregroundBrightRed`"${value}"`,
