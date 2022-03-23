@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 9.1.3
+
+-   :arrow_up: dependency upgrade.
+
 ## 9.1.2
 
 -   :arrow_up: dependency upgrade.
@@ -299,7 +303,8 @@ All notable changes to this project will be documented in this file.
 
 ## 1.0.5
 
--   :bug: fix bug where expected and actual were being showed in the wrong order.
+-   :bug: fix bug where expected and actual were being showed in the wrong
+    order.
 
 ## 1.0.4
 
@@ -308,7 +313,8 @@ All notable changes to this project will be documented in this file.
 ## 1.0.3
 
 -   :arrow_up: dependency upgrade.
--   :sparkles: add TestError class extending Error with errors tailored to @vangware/test.
+-   :sparkles: add TestError class extending Error with errors tailored to
+    @vangware/test.
 
 ## 1.0.2
 
