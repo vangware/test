@@ -1,5 +1,5 @@
 /**
- * Read-only {@link URL}.
+ * Read-only `URL`.
  *
  * @category File System
  */
