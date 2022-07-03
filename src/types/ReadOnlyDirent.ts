@@ -1,7 +1,7 @@
 import type { Dirent } from "node:fs";
 
 /**
- * Read-only {@link Dirent}.
+ * Read-only `Dirent`.
  *
  * @category File System
  */
