@@ -15,4 +15,5 @@ import { formatValueDictionary } from "./formatValueDictionary.js";
  * @returns Colorized value as a string.
  */
 export const formatValue = (value: unknown) =>
-	formatValueDictionary[typeof value](value);
+	// eslint-disable-next-line no-null/no-null
+	formatValueDictionary[value === null ? "null" : typeof value](value);

@@ -19,12 +19,10 @@ export const formatValueDictionary: Record<
 	bigint: value => `${foregroundBrightGreen`${value}`}${foregroundBlue`n`}`,
 	boolean: value => foregroundBlue`${value}`,
 	function: () => foregroundYellow`Function`,
+	null: () => foregroundBlue`null`,
 	number: value => foregroundBrightGreen`${value}`,
 	object: value =>
-		// eslint-disable-next-line no-null/no-null
-		value === null
-			? foregroundBlue`null`
-			: Array.isArray(value)
+		Array.isArray(value)
 			? `${foregroundBrightGreen`Array`}([ ${value
 					.map(formatValue)
 					.join(", ")} ])`
