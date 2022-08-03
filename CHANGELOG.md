@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 ## 9.1.22
 
 -   :arrow_up: dependency upgrade.
+-   :white_check_mark: better coverage.
+-   :art: update logo.
+
+## 9.1.22
+
+-   :arrow_up: dependency upgrade.
 -   :memo: update docs.
 
 ## 9.1.21
