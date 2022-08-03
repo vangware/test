@@ -1,4 +1,4 @@
-<img alt="Vangware's Test" src="./logo.svg" height="192" />
+<img alt="Vangware's Test" src="./logo.svg" height="128" />
 
 ![Build Status][build-status-badge] ![Coverage][coverage-badge]
 ![License][license-badge] ![NPM Version][npm-version-badge]
@@ -172,18 +172,18 @@ Test coverage can be found [HERE][coverage].
 <!-- Reference -->
 
 [build-status-badge]:
-	https://img.shields.io/github/workflow/status/vangware/test/Test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/actions
+	https://img.shields.io/github/workflow/status/vangware/test/Test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/test/actions
 [changelog]: https://github.com/vangware/test/blob/main/CHANGELOG.md
 [coverage-badge]:
-	https://img.shields.io/coveralls/github/vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://coveralls.io/github/vangware/test
+	https://img.shields.io/coveralls/github/vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://coveralls.io/github/vangware/test
 [coverage]: https://coveralls.io/github/vangware/test
 [documentation]: https://test.vangware.com
 [license-badge]:
-	https://img.shields.io/npm/l/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/blob/main/LICENSE
+	https://img.shields.io/npm/l/@vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/test/blob/main/LICENSE
 [npm-version-badge]:
-	https://img.shields.io/npm/v/@vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://npm.im/@vangware/test
+	https://img.shields.io/npm/v/@vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://npm.im/@vangware/test
 [open-issues-badge]:
-	https://img.shields.io/github/issues/vangware/test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/test/issues
+	https://img.shields.io/github/issues/vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/test/issues
 [riteway]: https://github.com/ericelliott/riteway
 [typedoc]: https://typedoc.org/
 [uvu]: https://github.com/lukeed/uvu
