@@ -64,6 +64,16 @@ export default [
 		wanted: `${foregroundBrightGreen`Object`}({ ${foregroundBrightRed`"🟢"`}: ${foregroundBrightRed`"🟩"`} })`,
 	},
 	{
+		given: "an Object without a constructor",
+		must: "return formatted Object",
+		received: formatValue(
+			Object.defineProperty({ "🟢": "🟩" }, "constructor", {
+				value: undefined,
+			}),
+		),
+		wanted: `${foregroundBrightGreen`Object`}({ ${foregroundBrightRed`"🟢"`}: ${foregroundBrightRed`"🟩"`} })`,
+	},
+	{
 		given: "a String",
 		must: "return formatted String",
 		received: formatValue("🟢"),
