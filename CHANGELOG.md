@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 
 -   :arrow_up: dependency upgrade.
 
-## 9.1.22
+## 9.1.23
 
 -   :arrow_up: dependency upgrade.
 -   :white_check_mark: better coverage.
