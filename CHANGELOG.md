@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 9.2.0
+
+-   :arrow_up: dependency update.
+-   :building_construction: change getFilePaths to add support to run only one
+    test.
+-   :building_construction: change runAndStringifyTests to sort results (fails
+    at the bottom).
+-   :bug: fix issues with getFilePaths.
+-   :white_check_mark: improve test coverage for getFilePaths.
+
 ## 9.1.23
 
 -   :arrow_up: dependency upgrade.

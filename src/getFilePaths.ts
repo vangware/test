@@ -19,27 +19,26 @@ import type { ReadOnlyURLs } from "./types/ReadOnlyURLs.js";
 export const getFilePaths = (
 	fileOrDirectory: ReadOnlyURL,
 ): Promise<ReadOnlyURLs> =>
-	stat(fileOrDirectory).then(stats =>
-		stats.isDirectory()
-			? readdir(fileOrDirectory, { withFileTypes: true })
-					.then(direntArray =>
-						Promise.all(
-							direntArray.map(dirent =>
-								dirent.isDirectory()
-									? getFilePaths(
-											new URL(
-												`${dirent.name}/`,
-												fileOrDirectory,
-											),
-									  )
-									: new URL(dirent.name, fileOrDirectory),
-							),
-						).then(paths => paths.flat()),
-					)
-					.catch(() =>
-						Promise.reject(
-							`Can't read ${relativePath(fileOrDirectory)}`,
-						),
-					)
-			: Promise.resolve([fileOrDirectory]),
-	);
+	stat(fileOrDirectory)
+		.then(stats =>
+			stats.isDirectory()
+				? readdir(fileOrDirectory, { withFileTypes: true }).then(
+						direntArray =>
+							Promise.all(
+								direntArray.map(dirent =>
+									dirent.isDirectory()
+										? getFilePaths(
+												new URL(
+													`${dirent.name}/`,
+													fileOrDirectory,
+												),
+										  )
+										: new URL(dirent.name, fileOrDirectory),
+								),
+							).then(paths => paths.flat()),
+				  )
+				: Promise.resolve([fileOrDirectory]),
+		)
+		.catch(() =>
+			Promise.reject(`Can't read ${relativePath(fileOrDirectory)}`),
+		);
