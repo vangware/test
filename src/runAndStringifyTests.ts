@@ -37,12 +37,32 @@ export const runAndStringifyTests = (testsRecord: TestsRecord) =>
 				),
 				lines: [
 					`${TEST} ${underlined(relativePath(path))}`,
-					...results.map(stringifyTest),
+					...[...results]
+						.sort((resultA, resultB) =>
+							(resultA.differences !== undefined) ===
+							(resultB.differences !== undefined)
+								? 0
+								: resultA.differences !== undefined
+								? 1
+								: -1,
+						)
+						.map(stringifyTest),
 				],
 			})),
 		),
 	).then(results =>
 		Promise[
 			results.some(({ hasFails }) => hasFails) ? "reject" : "resolve"
-		](results.flatMap(({ lines }) => lines).join("\n")),
+		](
+			[...results]
+				.sort((resultA, resultB) =>
+					resultA.hasFails === resultB.hasFails
+						? 0
+						: resultA.hasFails
+						? 1
+						: -1,
+				)
+				.flatMap(({ lines }) => lines)
+				.join("\n"),
+		),
 	);
