@@ -10,8 +10,8 @@
 	"bin": "./dist/bin.js",
 	"bugs": "https://github.com/vangware/test/issues",
 	"dependencies": {
-		"@vangware/ansi": "^3.2.0",
-		"@vangware/types": "^3.2.0",
+		"@vangware/ansi": "^3.2.1",
+		"@vangware/types": "^3.3.0",
 		"deep-diff": "^1.0.2"
 	},
 	"devDependencies": {
