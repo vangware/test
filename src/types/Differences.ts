@@ -2,7 +2,7 @@ import type { ReadOnlyArray } from "@vangware/types";
 import type { Difference } from "./Difference.js";
 
 /**
- * Array of {@link Difference}.
+ * Array of `Difference`.
  *
  * @category Test
  * @example

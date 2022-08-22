@@ -8,7 +8,7 @@ import type { ReadOnlyRecord, TypeOfValue } from "@vangware/types";
 import { formatValue } from "./formatValue.js";
 
 /**
- * Dictionary type->formatter to be used by {@link formatValue}.
+ * Dictionary type->formatter to be used by `formatValue`.
  *
  * @category Output
  */
@@ -34,6 +34,10 @@ export const formatValueDictionary: Record<
 			  )})`
 			: value instanceof URL
 			? `${foregroundBrightGreen`URL`}(${foregroundBrightRed`"${value.href}"`})`
+			: value instanceof Error
+			? `${foregroundBrightGreen(
+					value.name,
+			  )}(${foregroundBrightRed`"${value.message}"`})`
 			: `${foregroundBrightGreen(
 					(
 						value as {
@@ -52,7 +56,12 @@ export const formatValueDictionary: Record<
 							}"`}: ${formatValue(propertyValue)}`,
 					)
 					.join(", ")} })`,
-	string: value => foregroundBrightRed`"${value}"`,
+	string: value =>
+		foregroundBrightRed`"${(value as string).replace(
+			// eslint-disable-next-line no-control-regex
+			/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/gu,
+			"",
+		)}"`,
 	symbol: () => foregroundBrightGreen`Symbol`,
 	undefined: () => foregroundBlue`undefined`,
 };

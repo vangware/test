@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { Maybe } from "@vangware/types";
 import deepDiff from "deep-diff";
-import type { Differences } from "./types/Differences.js";
+import type { Difference } from "./types/Difference.js";
 import type { Test } from "./types/Test.js";
 import type { TestResult } from "./types/TestResult.js";
 
 /**
- * Takes a {@link Test} object and returns a promise with a {@link TestResult}.
+ * Takes a `Test` object and returns a promise with a `TestResult`.
  *
  * @category Test
  * @example
@@ -14,42 +14,49 @@ import type { TestResult } from "./types/TestResult.js";
  * test({
  * 	given: "🟢",
  * 	must: "🟩",
- * 	received: "🟩",
- * 	wanted: "🟩",
+ * 	received: () => "🟩",
+ * 	wanted: () => "🟩",
  * }); // Promise<{ given: "🟢", , must: "🟩" }>
  * test({
  * 	given: "🟢",
  * 	must: "🟩",
- * 	received: "❌",
- * 	wanted: "🟩",
+ * 	received: () => "❌",
+ * 	wanted: () => "🟩",
  * }); // Promise<{ differences: [...], given: "🟢", , must: "🟩" }>
  * ```
- * @param test A {@link Test} object.
- * @returns A promise with a {@link TestResult} object.
+ * @param test A `Test` object.
+ * @returns A promise with a `TestResult` object.
  */
-export const test = <Value>({ given, must, received, wanted }: Test<Value>) =>
-	Promise.all([wanted, received])
-		.then(
-			([awaitedWanted, awaitedReceived]): Maybe<Differences<Value>> =>
-				deepDiff
-					.diff(awaitedWanted, awaitedReceived)
-					?.filter(
-						difference =>
-							difference.kind !== "N" ||
-							typeof difference.rhs !== "undefined",
-					),
-		)
-		.catch(
-			(error: unknown = "Unknown Error"): Differences<Value> => [
-				{ error, kind: "X" },
-			],
-		)
-		.then(
-			differences =>
-				({
-					differences:
-						differences?.length === 0 ? undefined : differences,
-					given,
-					must,
-				} as TestResult<Value>),
-		);
+export const test = async <Value>({
+	given,
+	must,
+	received,
+	wanted,
+}: Test<Value>) => {
+	// eslint-disable-next-line @typescript-eslint/init-declarations, functional/no-let
+	let differences: Maybe<ReadonlyArray<Difference<Awaited<Value>>>>;
+
+	// eslint-disable-next-line functional/no-try-statement
+	try {
+		const awaitedWanted = await wanted();
+		const awaitedReceived = await received();
+
+		differences = deepDiff
+			.diff(awaitedWanted, awaitedReceived)
+			?.filter(
+				difference =>
+					difference.kind !== "N" ||
+					typeof difference.rhs !== "undefined",
+			);
+	} catch (error: unknown) {
+		differences = [
+			{ error: error ?? new Error("Unknown Error"), kind: "X" },
+		];
+	}
+
+	return {
+		differences: differences?.length === 0 ? undefined : differences,
+		given,
+		must,
+	} as TestResult<Value>;
+};

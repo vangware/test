@@ -2,7 +2,7 @@ import { stringifyDifferenceDictionary } from "./stringifyDifferenceDictionary.j
 import type { Difference } from "./types/Difference.js";
 
 /**
- * Takes a {@link Difference} object and returns a string using {@link stringifyDifferenceDictionary}.
+ * Takes a `Difference` object and returns a string using `stringifyDifferenceDictionary`.
  *
  * @category Output
  * @example

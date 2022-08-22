@@ -1,9 +1,9 @@
-import type { ReadOnlyArray } from "@vangware/types";
+import type { AsynchronousIterable } from "@vangware/types";
 import type { ReadOnlyURL } from "./ReadOnlyURL.js";
 
 /**
- * Array of {@link ReadOnlyURL}.
+ * Iterable of `ReadOnlyURL`s.
  *
  * @category File System
  */
-export type ReadOnlyURLs = ReadOnlyArray<ReadOnlyURL>;
+export type ReadOnlyURLs = AsynchronousIterable<ReadOnlyURL>;
