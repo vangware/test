@@ -1,5 +1,6 @@
 import { isTest } from "./isTest.js";
 import type { ReadOnlyURL } from "./types/ReadOnlyURL.js";
+import type { Tests } from "./types/Tests.js";
 import type { TestsImport } from "./types/TestsImport.js";
 
 /**
@@ -8,23 +9,47 @@ import type { TestsImport } from "./types/TestsImport.js";
  * @category File System
  * @example
  * ```typescript
- * testImport(new URL("file:///example/test.js"));
- * // Promise<[
- * // 	{ given: "example", must: "example", received: "value", wanted: "value" },
- * // 	{ given: "example", must: "example", received: "value", wanted: "value" },
+ * testImport(new URL("file:///example/test.test.js"));
+ * // AsyncIterable<[
+ * // 	{
+ * // 		given: "example 1",
+ * // 		must: "example 1",
+ * // 		received: () => "value 1",
+ * // 		wanted: () => "value 1"
+ * // 	},
+ * // 	{
+ * // 		given: "example 2",
+ * // 		must: "example 2",
+ * // 		received: () => "value 2",
+ * // 		wanted: () => "value 2"
+ * // 	},
  * // ]>
  * ```
  * @param path Path to the test file.
- * @returns A promise with an array of `Test` and the path.
+ * @yields Imported tests.
  */
-export const testImport = (path: ReadOnlyURL) =>
-	(import(path.href) as TestsImport).then(tests =>
-		Object.values(tests)
-			.map(importedTest =>
-				(Array.isArray(importedTest)
-					? importedTest
-					: [importedTest]
-				).filter(isTest),
-			)
-			.flat(),
-	);
+export const testImport = async function* ({ href }: ReadOnlyURL) {
+	// eslint-disable-next-line functional/no-loop-statement
+	for await (const test of Object.values(
+		await (import(href) as TestsImport),
+	)) {
+		// eslint-disable-next-line functional/no-conditional-statement
+		if (
+			(typeof test === "object" && Symbol.iterator in test) ||
+			Symbol.asyncIterator in test
+		) {
+			// eslint-disable-next-line functional/no-loop-statement
+			for await (const testItem of test as Tests) {
+				// eslint-disable-next-line functional/no-conditional-statement
+				if (isTest(testItem)) {
+					yield testItem;
+				}
+			}
+		} else {
+			// eslint-disable-next-line functional/no-conditional-statement
+			if (isTest(test)) {
+				yield test;
+			}
+		}
+	}
+};

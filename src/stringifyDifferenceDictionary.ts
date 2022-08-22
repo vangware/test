@@ -6,7 +6,7 @@ import { stringifyDifference } from "./stringifyDifference.js";
 import type { Difference } from "./types/Difference.js";
 
 /**
- * Dictionary {@link Difference} kind->formatter.
+ * Dictionary `Difference` kind->formatter.
  *
  * @category Output
  */

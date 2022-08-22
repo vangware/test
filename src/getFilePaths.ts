@@ -1,12 +1,9 @@
 import { readdir, stat } from "node:fs/promises";
-import { relativePath } from "./relativePath.js";
 import type { ReadOnlyURL } from "./types/ReadOnlyURL.js";
-import type { ReadOnlyURLs } from "./types/ReadOnlyURLs.js";
 
 /**
- * Recursively search for files in the given directory and filters them based on
- * given filterer function. If a file path is passed, it returns an array
- * containing only that path.
+ * Recursively search for files in the given directory and yields every file. If
+ * a file path is passed initially, that file is shielded directly.
  *
  * @category File System
  * @example
@@ -14,31 +11,25 @@ import type { ReadOnlyURLs } from "./types/ReadOnlyURLs.js";
  * getFiles("./tests/"); // ["./tests/vangware.test.ts"]
  * ```
  * @param fileOrDirectory Directory to get files from.
- * @returns Array of files in given `directory` that match `filterer`.
+ * @yields Files recursively found in the given directory.
  */
-export const getFilePaths = (
+export const getFilePaths = async function* (
 	fileOrDirectory: ReadOnlyURL,
-): Promise<ReadOnlyURLs> =>
-	stat(fileOrDirectory)
-		.then(stats =>
-			stats.isDirectory()
-				? readdir(fileOrDirectory, { withFileTypes: true }).then(
-						direntArray =>
-							Promise.all(
-								direntArray.map(dirent =>
-									dirent.isDirectory()
-										? getFilePaths(
-												new URL(
-													`${dirent.name}/`,
-													fileOrDirectory,
-												),
-										  )
-										: new URL(dirent.name, fileOrDirectory),
-								),
-							).then(paths => paths.flat()),
+): AsyncGenerator<ReadOnlyURL, void, unknown> {
+	// eslint-disable-next-line functional/no-conditional-statement
+	if ((await stat(fileOrDirectory)).isDirectory()) {
+		// eslint-disable-next-line functional/no-loop-statement
+		for (const dirent of await readdir(fileOrDirectory, {
+			withFileTypes: true,
+		})) {
+			// eslint-disable-next-line @typescript-eslint/no-unused-expressions
+			dirent.isDirectory()
+				? yield* getFilePaths(
+						new URL(`${dirent.name}/`, fileOrDirectory),
 				  )
-				: Promise.resolve([fileOrDirectory]),
-		)
-		.catch(() =>
-			Promise.reject(`Can't read ${relativePath(fileOrDirectory)}`),
-		);
+				: yield new URL(dirent.name, fileOrDirectory);
+		}
+	} else {
+		yield fileOrDirectory;
+	}
+};

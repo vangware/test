@@ -16,5 +16,4 @@ const { href: cwd } = pathToFileURL(process.cwd());
  * @param path Path to make relative.
  * @returns Relative path.
  */
-export const relativePath = (path: ReadOnlyURL | string) =>
-	(typeof path === "string" ? path : path.href).replace(cwd, ".");
+export const relativePath = ({ href }: ReadOnlyURL) => href.replace(cwd, ".");

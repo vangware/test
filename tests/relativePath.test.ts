@@ -9,13 +9,13 @@ export default [
 	{
 		given: "a relative path to CWD",
 		must: "return path without CWD",
-		received: relativePath(new URL(`${cwd.toString()}/${filename}`)),
-		wanted: `./${filename}`,
+		received: () => relativePath(new URL(`${cwd.toString()}/${filename}`)),
+		wanted: () => `./${filename}`,
 	},
 	{
 		given: "a absolute path",
 		must: "return full path",
-		received: relativePath(new URL(`file:///${filename}`)),
-		wanted: `file:///${filename}`,
+		received: () => relativePath(new URL(`file:///${filename}`)),
+		wanted: () => `file:///${filename}`,
 	},
 ] as Tests<string>;

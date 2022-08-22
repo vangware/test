@@ -1,16 +1,32 @@
 #!/usr/bin/env node
 
+// eslint-disable-next-line capitalized-comments
+/* c8 ignore start */
 import { pathToFileURL } from "node:url";
+import { FAILED_TESTS } from "./constants.js";
+import { filterTestFilePaths } from "./filterTestFilePaths.js";
 import { getFilePaths } from "./getFilePaths.js";
-import { isTestFilePath } from "./isTestFilePath.js";
 import { runAndStringifyTests } from "./runAndStringifyTests.js";
 import { testsImport } from "./testsImport.js";
 
-getFilePaths(pathToFileURL(process.argv[2] ?? "./tests/"))
-	.then(paths => paths.filter(isTestFilePath))
-	.then(testsImport)
-	.then(runAndStringifyTests)
+// eslint-disable-next-line functional/no-let
+let hasFailedTests = false;
+
+const testPath = pathToFileURL(process.argv[2] ?? "./tests/");
+const pathsIterable = getFilePaths(testPath);
+const testsPathsIterable = filterTestFilePaths(pathsIterable);
+const testsImportsIterable = testsImport(testsPathsIterable);
+const testsStringsIterable = runAndStringifyTests(testsImportsIterable);
+
+// eslint-disable-next-line functional/no-loop-statement
+for await (const testString of testsStringsIterable) {
 	// eslint-disable-next-line no-console
-	.then(console.log)
-	// eslint-disable-next-line no-console
-	.catch(results => (console.error(results), process.exit(1)));
+	console.log(testString);
+	hasFailedTests ||= testString === FAILED_TESTS;
+}
+
+// eslint-disable-next-line functional/no-expression-statement
+globalThis.process.exit(hasFailedTests ? 1 : 0);
+
+// eslint-disable-next-line capitalized-comments
+/* c8 ignore end */
