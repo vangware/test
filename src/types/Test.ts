@@ -22,8 +22,8 @@ export type Test<Value = unknown> = {
 	readonly must: string;
 
 	/** Value being tested. */
-	readonly received: MaybePromise<Value>;
+	readonly received: () => MaybePromise<Value>;
 
 	/** Expected value. */
-	readonly wanted: MaybePromise<Value>;
+	readonly wanted: () => MaybePromise<Value>;
 };

@@ -8,13 +8,13 @@ export default [
 	{
 		given: "an array with a few items",
 		must: 'return a concatenation using "."',
-		received: formatPropertyPath(pathArray),
-		wanted: pathArray.map(foregroundCyan).join("."),
+		received: () => formatPropertyPath(pathArray),
+		wanted: () => pathArray.map(foregroundCyan).join("."),
 	},
 	{
 		given: "an empty array",
 		must: 'return "it"',
-		received: formatPropertyPath([]),
-		wanted: "it",
+		received: () => formatPropertyPath([]),
+		wanted: () => "it",
 	},
 ] as Tests<string>;

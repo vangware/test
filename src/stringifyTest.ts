@@ -4,7 +4,7 @@ import { stringifyDifference } from "./stringifyDifference.js";
 import type { TestResult } from "./types/TestResult.js";
 
 /**
- * Takes a {@link TestResult} and returns a readable string..
+ * Takes a `TestResult` and returns a readable string..
  *
  * @category Output
  * @example

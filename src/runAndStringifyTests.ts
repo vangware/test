@@ -1,68 +1,79 @@
 import { underlined } from "@vangware/ansi";
-import { TEST } from "./constants.js";
+import type { AsynchronousIterable } from "@vangware/types";
+import { FAILED_TESTS, TEST } from "./constants.js";
 import { relativePath } from "./relativePath.js";
 import { stringifyTest } from "./stringifyTest.js";
 import { test } from "./test.js";
-import type { TestsRecord } from "./types/TestsRecord.js";
+import type { ReadOnlyURL } from "./types/ReadOnlyURL.js";
+import type { TestTuple } from "./types/TestTuple.js";
 
 /**
- * Run tests in given {@link TestsRecord} and return a string with the results.
+ * Run tests in given iterable of urls and test objects and return a string with
+ * the results.
  *
  * @category Output
  * @category Test
  * @example
  * ```typescript
- * runAndStringifyTests({
- * 	"file:///tests/example.test.ts": [
- * 		{
- * 			given: "🟢",
- * 			must: "🟩",
- * 			received: "🟩",
- * 			wanted: "🟩",
- * 		},
- * 	],
- * });
- * // "[TEST] file:///tests/example.test.ts
- * // [PASS] Given 🟢, must 🟩."
+ * runAndStringifyTests([
+ * 	"file:///tests/example.test.ts",
+ * 	{
+ * 		given: "🟢",
+ * 		must: "🟩",
+ * 		received: () => "🟩",
+ * 		wanted: () => "🟩",
+ * 	},
+ * ]);
+ * // [TEST] file:///tests/example.test.ts
+ * // [PASS] Given 🟢, must 🟩.
  * ```
- * @param testsRecord Object with paths and array of tests.
- * @returns Promise with a readable strings of the test results.
+ * @param testTuples Iterable of test tuples.
+ * @yields Strings to be shown to the consumer.
  */
-export const runAndStringifyTests = (testsRecord: TestsRecord) =>
-	Promise.all(
-		Object.entries(testsRecord).map(([path, tests]) =>
-			Promise.all(tests.map(test)).then(results => ({
-				hasFails: results.some(
-					({ differences }) => differences !== undefined,
-				),
-				lines: [
-					`${TEST} ${underlined(relativePath(path))}`,
-					...[...results]
-						.sort((resultA, resultB) =>
-							(resultA.differences !== undefined) ===
-							(resultB.differences !== undefined)
-								? 0
-								: resultA.differences !== undefined
-								? 1
-								: -1,
-						)
-						.map(stringifyTest),
-				],
-			})),
-		),
-	).then(results =>
-		Promise[
-			results.some(({ hasFails }) => hasFails) ? "reject" : "resolve"
-		](
-			[...results]
-				.sort((resultA, resultB) =>
-					resultA.hasFails === resultB.hasFails
-						? 0
-						: resultA.hasFails
-						? 1
-						: -1,
-				)
-				.flatMap(({ lines }) => lines)
-				.join("\n"),
-		),
-	);
+export const runAndStringifyTests = async function* (
+	testTuples: AsynchronousIterable<TestTuple>,
+) {
+	// eslint-disable-next-line functional/prefer-readonly-type
+	const fails: Array<[url: ReadOnlyURL, resultString: string]> = [];
+	// eslint-disable-next-line functional/no-let
+	let lastPath = "";
+
+	// eslint-disable-next-line functional/no-loop-statement
+	for await (const [url, testObject] of testTuples) {
+		const result = await test(testObject);
+		const resultString = stringifyTest(result);
+
+		// eslint-disable-next-line functional/no-conditional-statement
+		if (lastPath !== url.href) {
+			// eslint-disable-next-line functional/immutable-data
+			lastPath = url.href;
+			yield `${TEST} ${underlined(relativePath(url))}`;
+		}
+
+		// eslint-disable-next-line functional/no-conditional-statement
+		if (result.differences !== undefined) {
+			// eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
+			fails.push([url, resultString]);
+		}
+
+		yield resultString;
+	}
+
+	// eslint-disable-next-line functional/no-conditional-statement
+	if (fails.length > 0) {
+		// eslint-disable-next-line functional/immutable-data
+		lastPath = "";
+		yield FAILED_TESTS;
+		// eslint-disable-next-line functional/no-loop-statement
+		for (const [url, resultString] of fails) {
+			// eslint-disable-next-line functional/no-conditional-statement
+			if (lastPath !== url.href) {
+				// eslint-disable-next-line functional/immutable-data
+				lastPath = url.href;
+				yield `${TEST} ${underlined(relativePath(url))}`;
+			}
+
+			yield resultString;
+		}
+	}
+};

@@ -1,8 +1,8 @@
-import type { ReadOnlyArray } from "@vangware/types";
+import type { AsynchronousIterable } from "@vangware/types";
 import type { Test } from "./Test.js";
 
 /**
- * Array of {@link Test}.
+ * Array of `Test`.
  *
  * @category Test
  * @example
@@ -17,4 +17,4 @@ import type { Test } from "./Test.js";
  * ];
  * ```
  */
-export type Tests<Value = unknown> = ReadOnlyArray<Test<Value>>;
+export type Tests<Value = unknown> = AsynchronousIterable<Test<Value>>;

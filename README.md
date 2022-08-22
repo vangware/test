@@ -19,14 +19,14 @@ export default [
 	{
 		given: "a 1 and a 2",
 		must: "return 3",
-		received: add(2)(1),
-		wanted: 3,
+		received: () => add(2)(1),
+		wanted: () => 3,
 	},
 	{
 		given: "a 1 and a -2",
 		must: "return -1",
-		received: add(-2)(1),
-		wanted: -1,
+		received: () => add(-2)(1),
+		wanted: () => -1,
 	},
 ] as Tests<number>;
 ```
@@ -41,14 +41,14 @@ export default [
 	{
 		given: "a 1 and a 2",
 		must: "return 3",
-		received: add(2)(1),
-		wanted: 3,
+		received: () => add(2)(1),
+		wanted: () => 3,
 	},
 	{
 		given: "a 1 and a -2",
 		must: "return -1",
-		received: add(-2)(1),
-		wanted: -1,
+		received: () => add(-2)(1),
+		wanted: () => -1,
 	},
 ];
 ```
@@ -65,8 +65,8 @@ import { add } from "../src/add.js";
 export default {
 	given: "a 1 and a 2",
 	must: "return 3",
-	received: add(2)(1),
-	wanted: 3,
+	received: () => add(2)(1),
+	wanted: () => 3,
 } as Test<number>;
 ```
 
@@ -79,15 +79,15 @@ import { add } from "../src/add.js";
 export const test1: Test<number> = {
 	given: "a 1 and a 2",
 	must: "return 3",
-	received: add(2)(1),
-	wanted: 3,
+	received: () => add(2)(1),
+	wanted: () => 3,
 };
 
 export const test2: Test<number> = {
 	given: "a 1 and a -2",
 	must: "return -1",
-	received: add(-2)(1),
-	wanted: -1,
+	received: () => add(-2)(1),
+	wanted: () => -1,
 };
 ```
 
@@ -101,8 +101,8 @@ import { customFormatter } from "./customFormatter.js";
 test({
 	given: "a 1 and a 2",
 	must: "return 3",
-	received: add(2)(1),
-	wanted: 3,
+	received: () => add(2)(1),
+	wanted: () => 3,
 }).then(customFormatter);
 ```
 
@@ -158,7 +158,7 @@ goes into details about the error:
 
 Documentation can be found [HERE][documentation]. It is auto-generated with
 [typedoc][typedoc] based on the JSDocs and the types in the source. Shouldn't be
-necessary to read this, code editors like [VSCode][vscode] integrate the
+necessary to read this, code editors like [VS Code][vscode] integrate the
 documentation in the UI.
 
 ## Changelog

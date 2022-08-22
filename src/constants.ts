@@ -3,6 +3,7 @@ import {
 	backgroundRed,
 	backgroundWhite,
 	foregroundBlack,
+	foregroundRed,
 	mix,
 } from "@vangware/ansi";
 
@@ -26,3 +27,12 @@ export const TEST = mix([foregroundBlack, backgroundWhite])`[TEST]`;
  * @category Output
  */
 export const PASS = mix([foregroundBlack, backgroundGreen])`[PASS]`;
+
+/**
+ * Failed test title with colors.
+ *
+ * @category Output
+ */
+export const FAILED_TESTS = foregroundRed`
+================================= Failed tests =================================
+`;
