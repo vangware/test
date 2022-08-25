@@ -3,7 +3,7 @@ import type { ReadOnlyURLs } from "./types/ReadOnlyURLs.js";
 import type { TestTuple } from "./types/TestTuple.js";
 
 /**
- * Imports all the tests of the given array of urls and yields `TestTuple`.
+ * Imports all the tests of the given Iterable of urls and yields `TestTuple`.
  *
  * @category File System
  * @example
