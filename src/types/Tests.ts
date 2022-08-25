@@ -2,7 +2,7 @@ import type { AsynchronousIterable } from "@vangware/types";
 import type { Test } from "./Test.js";
 
 /**
- * Array of `Test`.
+ * Iterable of `Test`.
  *
  * @category Test
  * @example
@@ -11,8 +11,8 @@ import type { Test } from "./Test.js";
  * 	{
  * 		given: "a number",
  * 		must: "make it double",
- * 		received: double(2),
- * 		wanted: 4,
+ * 		received: () => double(2),
+ * 		wanted: () => 4,
  * 	}
  * ];
  * ```
