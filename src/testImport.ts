@@ -4,7 +4,7 @@ import type { Tests } from "./types/Tests.js";
 import type { TestsImport } from "./types/TestsImport.js";
 
 /**
- * Import a file that exports a `Test` or an array of `Test`.
+ * Import a file that exports a `Test` or an Iterable of `Test`.
  *
  * @category File System
  * @example

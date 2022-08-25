@@ -9,8 +9,8 @@ import type { MaybePromise } from "@vangware/types";
  * const test: Test<number> = {
  * 	given: "a number",
  * 	must: "make it double",
- * 	received: double(2),
- * 	wanted: 4,
+ * 	received: () => double(2),
+ * 	wanted: () => 4,
  * };
  * ```
  */
@@ -21,9 +21,9 @@ export type Test<Value = unknown> = {
 	/** Description of the wanted value. */
 	readonly must: string;
 
-	/** Value being tested. */
+	/** Function that returns a value being tested. */
 	readonly received: () => MaybePromise<Value>;
 
-	/** Expected value. */
+	/** Functions that returns the expected value. */
 	readonly wanted: () => MaybePromise<Value>;
 };
