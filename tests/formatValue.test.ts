@@ -88,8 +88,15 @@ export default [
 	{
 		given: "a Symbol",
 		must: "return formatted Symbol",
-		received: () => formatValue(Symbol(13)),
+		received: () => formatValue(Symbol()),
 		wanted: () => foregroundBrightGreen`Symbol`,
+	},
+	{
+		given: "a Symbol with a description",
+		must: "return formatted Symbol",
+		received: () => formatValue(Symbol("🟢")),
+		wanted: () =>
+			foregroundBrightGreen`Symbol(${foregroundBrightRed`"🟢"`})`,
 	},
 	{
 		given: "an undefined value",

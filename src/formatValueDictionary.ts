@@ -62,6 +62,11 @@ export const formatValueDictionary: Record<
 			/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/gu,
 			"",
 		)}"`,
-	symbol: () => foregroundBrightGreen`Symbol`,
+	symbol: value =>
+		foregroundBrightGreen`Symbol${
+			(value as symbol).description !== undefined
+				? `(${foregroundBrightRed`"${(value as symbol).description}"`})`
+				: ""
+		}`,
 	undefined: () => foregroundBlue`undefined`,
 };
