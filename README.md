@@ -1,8 +1,7 @@
 <img alt="Vangware's Test" src="./logo.svg" height="128" />
 
-![Build Status][build-status-badge] ![Coverage][coverage-badge]
-![License][license-badge] ![NPM Version][npm-version-badge]
-![Open Issues][open-issues-badge]
+![Coverage][coverage-badge] ![License][license-badge]
+![NPM Version][npm-version-badge] ![Open Issues][open-issues-badge]
 
 ✅ Equality test with enforced legibility (based on [RITEway][riteway] and
 inspired by [uvu](https://github.com/lukeed/uvu)).
@@ -171,8 +170,6 @@ Test coverage can be found [HERE][coverage].
 
 <!-- Reference -->
 
-[build-status-badge]:
-	https://img.shields.io/github/workflow/status/vangware/test/Test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/test/actions
 [changelog]: https://github.com/vangware/test/blob/main/CHANGELOG.md
 [coverage-badge]:
 	https://img.shields.io/coveralls/github/vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://coveralls.io/github/vangware/test
