@@ -54,18 +54,18 @@ utils directly:</p>
   <h2>Running</h2>
 </a>
 <p>This should suffice:</p>
-<pre><code class="language-bash"><span class="hl-1">npx </span><span class="hl-4">test</span>
+<pre><code class="language-bash"><span class="hl-1">npx </span><span class="hl-3">test</span>
 </code></pre>
 <p>When working with TypeScript files directly, <a href="https://npm.im/ts-node">ts-node</a>
 is required, and then to run it:</p>
-<pre><code class="language-bash"><span class="hl-1">NODE_OPTIONS=</span><span class="hl-3">&#39;--loader ts-node/esm&#39;</span><span class="hl-1"> npx </span><span class="hl-4">test</span>
+<pre><code class="language-bash"><span class="hl-2">NODE_OPTIONS</span><span class="hl-1">=</span><span class="hl-3">&#39;--loader ts-node/esm&#39;</span><span class="hl-1"> npx test</span>
 </code></pre>
 
 <a href="#coverage" id="coverage" style="color: inherit; text-decoration: none;">
   <h2>Coverage</h2>
 </a>
 <p><a href="https://npm.im/c8">c8</a> can be added and then:</p>
-<pre><code class="language-bash"><span class="hl-8"># For JavaScript</span><br/><span class="hl-1">npx c8 </span><span class="hl-4">test</span><br/><br/><span class="hl-8"># For TypesScript</span><br/><span class="hl-1">NODE_OPTIONS=</span><span class="hl-3">&#39;--loader ts-node/esm&#39;</span><span class="hl-1"> npx c8 </span><span class="hl-4">test</span>
+<pre><code class="language-bash"><span class="hl-8"># For JavaScript</span><br/><span class="hl-1">npx </span><span class="hl-3">c8</span><span class="hl-1"> </span><span class="hl-3">test</span><br/><br/><span class="hl-8"># For TypesScript</span><br/><span class="hl-2">NODE_OPTIONS</span><span class="hl-1">=</span><span class="hl-3">&#39;--loader ts-node/esm&#39;</span><span class="hl-1"> npx c8 test</span>
 </code></pre>
 
 <a href="#output" id="output" style="color: inherit; text-decoration: none;">
