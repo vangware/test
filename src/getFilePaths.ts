@@ -15,10 +15,10 @@ import type { ReadOnlyURL } from "./types/ReadOnlyURL.js";
  */
 export const getFilePaths = async function* (
 	fileOrDirectory: ReadOnlyURL,
-): AsyncGenerator<ReadOnlyURL, void, unknown> {
-	// eslint-disable-next-line functional/no-conditional-statement
+): AsyncGenerator<ReadOnlyURL, void> {
+	// eslint-disable-next-line functional/no-conditional-statements
 	if ((await stat(fileOrDirectory)).isDirectory()) {
-		// eslint-disable-next-line functional/no-loop-statement
+		// eslint-disable-next-line functional/no-loop-statements
 		for (const dirent of await readdir(fileOrDirectory, {
 			withFileTypes: true,
 		})) {
@@ -29,6 +29,7 @@ export const getFilePaths = async function* (
 				  )
 				: yield new URL(dirent.name, fileOrDirectory);
 		}
+		// eslint-disable-next-line functional/no-conditional-statements
 	} else {
 		yield fileOrDirectory;
 	}

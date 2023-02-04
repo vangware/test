@@ -55,7 +55,7 @@ export default [
 				given: "🟢",
 				must: "🟩",
 				received: () => {
-					// eslint-disable-next-line functional/no-throw-statement
+					// eslint-disable-next-line functional/no-throw-statements
 					throw new Error("❌");
 				},
 				wanted: () => "🟩",
@@ -74,7 +74,7 @@ export default [
 				given: "🟢",
 				must: "🟩",
 				received: () => {
-					// eslint-disable-next-line functional/no-throw-statement, no-throw-literal, @typescript-eslint/no-throw-literal
+					// eslint-disable-next-line functional/no-throw-statements, no-throw-literal, @typescript-eslint/no-throw-literal
 					throw undefined;
 				},
 				wanted: () => "🟩",

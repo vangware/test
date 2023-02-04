@@ -29,24 +29,25 @@ import type { TestsImport } from "./types/TestsImport.js";
  * @yields Imported tests.
  */
 export const testImport = async function* ({ href }: ReadOnlyURL) {
-	// eslint-disable-next-line functional/no-loop-statement
+	// eslint-disable-next-line functional/no-loop-statements
 	for await (const test of Object.values(
 		await (import(href) as TestsImport),
 	)) {
-		// eslint-disable-next-line functional/no-conditional-statement
+		// eslint-disable-next-line functional/no-conditional-statements
 		if (
 			(typeof test === "object" && Symbol.iterator in test) ||
 			Symbol.asyncIterator in test
+			// eslint-disable-next-line functional/no-conditional-statements
 		) {
-			// eslint-disable-next-line functional/no-loop-statement
+			// eslint-disable-next-line functional/no-loop-statements
 			for await (const testItem of test as Tests) {
-				// eslint-disable-next-line functional/no-conditional-statement
+				// eslint-disable-next-line functional/no-conditional-statements
 				if (isTest(testItem)) {
 					yield testItem;
 				}
 			}
 		} else {
-			// eslint-disable-next-line functional/no-conditional-statement
+			// eslint-disable-next-line functional/no-conditional-statements
 			if (isTest(test)) {
 				yield test;
 			}

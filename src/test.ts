@@ -36,7 +36,7 @@ export const test = async <Value>({
 	// eslint-disable-next-line @typescript-eslint/init-declarations, functional/no-let
 	let differences: Maybe<ReadonlyArray<Difference<Awaited<Value>>>>;
 
-	// eslint-disable-next-line functional/no-try-statement
+	// eslint-disable-next-line functional/no-try-statements
 	try {
 		const awaitedWanted = await wanted();
 		const awaitedReceived = await received();
