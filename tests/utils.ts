@@ -5,9 +5,9 @@ export const iterableToArray = async <Item>(
 ): Promise<ReadOnlyArray<Item>> => {
 	const output = [];
 
-	// eslint-disable-next-line functional/no-loop-statement
+	// eslint-disable-next-line functional/no-loop-statements
 	for await (const item of iterable) {
-		// eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
+		// eslint-disable-next-line functional/no-expression-statements, functional/immutable-data
 		output.push(item);
 	}
 

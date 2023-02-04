@@ -33,40 +33,40 @@ import type { TestTuple } from "./types/TestTuple.js";
 export const runAndStringifyTests = async function* (
 	testTuples: AsynchronousIterable<TestTuple>,
 ) {
-	// eslint-disable-next-line functional/prefer-readonly-type
+	// eslint-disable-next-line functional/prefer-immutable-types
 	const fails: Array<[url: ReadOnlyURL, resultString: string]> = [];
 	// eslint-disable-next-line functional/no-let
 	let lastPath = "";
 
-	// eslint-disable-next-line functional/no-loop-statement
+	// eslint-disable-next-line functional/no-loop-statements
 	for await (const [url, testObject] of testTuples) {
 		const result = await test(testObject);
 		const resultString = stringifyTest(result);
 
-		// eslint-disable-next-line functional/no-conditional-statement
+		// eslint-disable-next-line functional/no-conditional-statements
 		if (lastPath !== url.href) {
 			// eslint-disable-next-line functional/immutable-data
 			lastPath = url.href;
 			yield `${TEST} ${underlined(relativePath(url))}`;
 		}
 
-		// eslint-disable-next-line functional/no-conditional-statement
+		// eslint-disable-next-line functional/no-conditional-statements
 		if (result.differences !== undefined) {
-			// eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
+			// eslint-disable-next-line functional/no-expression-statements, functional/immutable-data
 			fails.push([url, resultString]);
 		}
 
 		yield resultString;
 	}
 
-	// eslint-disable-next-line functional/no-conditional-statement
+	// eslint-disable-next-line functional/no-conditional-statements
 	if (fails.length > 0) {
 		// eslint-disable-next-line functional/immutable-data
 		lastPath = "";
 		yield FAILED_TESTS;
-		// eslint-disable-next-line functional/no-loop-statement
+		// eslint-disable-next-line functional/no-loop-statements
 		for (const [url, resultString] of fails) {
-			// eslint-disable-next-line functional/no-conditional-statement
+			// eslint-disable-next-line functional/no-conditional-statements
 			if (lastPath !== url.href) {
 				// eslint-disable-next-line functional/immutable-data
 				lastPath = url.href;

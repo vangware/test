@@ -18,14 +18,14 @@ const testsPathsIterable = filterTestFilePaths(pathsIterable);
 const testsImportsIterable = testsImport(testsPathsIterable);
 const testsStringsIterable = runAndStringifyTests(testsImportsIterable);
 
-// eslint-disable-next-line functional/no-loop-statement
+// eslint-disable-next-line functional/no-loop-statements
 for await (const testString of testsStringsIterable) {
 	// eslint-disable-next-line no-console
 	console.log(testString);
 	hasFailedTests ||= testString === FAILED_TESTS;
 }
 
-// eslint-disable-next-line functional/no-expression-statement
+// eslint-disable-next-line functional/no-expression-statements
 globalThis.process.exit(hasFailedTests ? 1 : 0);
 
 // eslint-disable-next-line capitalized-comments

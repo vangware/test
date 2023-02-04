@@ -39,9 +39,9 @@ import type { TestTuple } from "./types/TestTuple.js";
  * @yields `TestTuple` containing url and test for it.
  */
 export const testsImport = async function* (urls: ReadOnlyURLs) {
-	// eslint-disable-next-line functional/no-loop-statement
+	// eslint-disable-next-line functional/no-loop-statements
 	for await (const url of urls) {
-		// eslint-disable-next-line functional/no-loop-statement
+		// eslint-disable-next-line functional/no-loop-statements
 		for await (const test of testImport(url)) {
 			yield [url, test] as TestTuple;
 		}
