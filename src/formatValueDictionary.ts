@@ -12,9 +12,9 @@ import { formatValue } from "./formatValue.js";
  *
  * @category Output
  */
-export const formatValueDictionary: Record<
-	TypeOfValue,
-	(value: unknown) => string
+export const formatValueDictionary: ReadOnlyRecord<
+	(value: unknown) => string,
+	TypeOfValue
 > = {
 	bigint: value => `${foregroundBrightGreen`${value}`}${foregroundBlue`n`}`,
 	boolean: value => foregroundBlue`${value}`,
