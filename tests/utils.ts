@@ -1,9 +1,9 @@
-import type { AsynchronousIterable, ReadOnlyArray } from "@vangware/types";
+import type { IsomorphicIterable, ReadOnlyArray } from "@vangware/types";
 
 export const iterableToArray = async <Item>(
-	iterable: AsynchronousIterable<Item>,
-): Promise<ReadOnlyArray<Item>> => {
-	const output = [];
+	iterable: IsomorphicIterable<Item>,
+) => {
+	const output: Array<Item> = [];
 
 	// eslint-disable-next-line functional/no-loop-statements
 	for await (const item of iterable) {
@@ -11,5 +11,5 @@ export const iterableToArray = async <Item>(
 		output.push(item);
 	}
 
-	return output;
+	return output as ReadOnlyArray<Item>;
 };

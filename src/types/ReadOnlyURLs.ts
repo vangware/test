@@ -1,4 +1,4 @@
-import type { AsynchronousIterable } from "@vangware/types";
+import type { IsomorphicIterable } from "@vangware/types";
 import type { ReadOnlyURL } from "./ReadOnlyURL.js";
 
 /**
@@ -6,4 +6,4 @@ import type { ReadOnlyURL } from "./ReadOnlyURL.js";
  *
  * @category File System
  */
-export type ReadOnlyURLs = AsynchronousIterable<ReadOnlyURL>;
+export type ReadOnlyURLs = IsomorphicIterable<ReadOnlyURL>;

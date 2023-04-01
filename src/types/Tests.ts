@@ -1,4 +1,4 @@
-import type { AsynchronousIterable } from "@vangware/types";
+import type { IsomorphicIterable } from "@vangware/types";
 import type { Test } from "./Test.js";
 
 /**
@@ -17,4 +17,4 @@ import type { Test } from "./Test.js";
  * ];
  * ```
  */
-export type Tests<Value = unknown> = AsynchronousIterable<Test<Value>>;
+export type Tests<Value = unknown> = IsomorphicIterable<Test<Value>>;

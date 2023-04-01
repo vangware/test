@@ -1,4 +1,13 @@
 import type { ReadOnlyURL } from "./ReadOnlyURL.js";
 import type { Test } from "./Test.js";
 
-export type TestTuple<Value = unknown> = readonly [ReadOnlyURL, Test<Value>];
+/**
+ * Tuple used to describe a test result and its path.
+ *
+ * @category File System
+ * @category Test
+ */
+export type TestTuple<Value = unknown> = readonly [
+	path: ReadOnlyURL,
+	test: Test<Value>,
+];
