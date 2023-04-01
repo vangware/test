@@ -1,5 +1,5 @@
 import { underlined } from "@vangware/ansi";
-import type { AsynchronousIterable } from "@vangware/types";
+import type { IsomorphicIterable } from "@vangware/types";
 import { FAILED_TESTS, TEST } from "./constants.js";
 import { relativePath } from "./relativePath.js";
 import { stringifyTest } from "./stringifyTest.js";
@@ -31,7 +31,7 @@ import type { TestTuple } from "./types/TestTuple.js";
  * @yields Strings to be shown to the consumer.
  */
 export const runAndStringifyTests = async function* (
-	testTuples: AsynchronousIterable<TestTuple>,
+	testTuples: IsomorphicIterable<TestTuple>,
 ) {
 	// eslint-disable-next-line functional/prefer-immutable-types
 	const fails: Array<[url: ReadOnlyURL, resultString: string]> = [];

@@ -14,25 +14,46 @@ import type { ReadOnlyArray } from "@vangware/types";
  * };
  * ```
  */
-export type Difference<Value = unknown> = {
-	/** Only has a value when kind is X. */
-	readonly error?: unknown;
-
-	/** Indicates the array index where the change occurred (kind A). */
-	readonly index?: number;
-
-	/** Contains a nested change record indicating the change that occurred at the array index (kind A). */
-	readonly item?: Difference<Value>;
-
-	/** Indicates the kind of change. */
-	readonly kind: "A" | "D" | "E" | "N" | "X";
-
-	/** The value on the left-hand-side of the comparison (`undefined` for kind N). */
-	readonly lhs?: Value;
-
-	/** The property path. */
-	readonly path?: ReadOnlyArray<string>;
-
-	/** The value on the right-hand-side of the comparison (`undefined` for kind D). */
-	readonly rhs?: Value;
-};
+export type Difference<Value = unknown> =
+	| {
+			/** Array index. */
+			readonly index: number;
+			/** Difference item kind. */
+			readonly item: Difference<Value>;
+			/** Difference array kind. */
+			readonly kind: "A";
+			/** Difference path. */
+			readonly path?: ReadOnlyArray<string>;
+	  }
+	| {
+			/** Difference delete kind. */
+			readonly kind: "D";
+			/** Original value (left side). */
+			readonly lhs: Value;
+			/** Difference path. */
+			readonly path?: ReadOnlyArray<string>;
+	  }
+	| {
+			/** Difference edit kind. */
+			readonly kind: "E";
+			/** Original value (left side). */
+			readonly lhs: Value;
+			/** Difference path. */
+			readonly path?: ReadOnlyArray<string>;
+			/** New value (right side). */
+			readonly rhs: Value;
+	  }
+	| {
+			/** Difference new kind. */
+			readonly kind: "N";
+			/** Difference path. */
+			readonly path: ReadOnlyArray<string>;
+			/** New value (right side). */
+			readonly rhs: Value;
+	  }
+	| {
+			/** Error object or message. */
+			readonly error: unknown;
+			/** Difference exception kind. */
+			readonly kind: "X";
+	  };

@@ -22,5 +22,6 @@ import type { Test } from "./Test.js";
  * ```
  */
 export type TestResult<Value = unknown> = Pick<Test, "given" | "must"> & {
+	/** Differences between `given` and `must` (`undefined` when equal). */
 	readonly differences?: Differences<Value>;
 };

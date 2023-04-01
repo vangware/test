@@ -1,4 +1,4 @@
-import type { MaybePromise } from "@vangware/types";
+import type { Awaitable } from "@vangware/types";
 
 /**
  * Object that describes a test.
@@ -22,8 +22,8 @@ export type Test<Value = unknown> = {
 	readonly must: string;
 
 	/** Function that returns a value being tested. */
-	readonly received: () => MaybePromise<Value>;
+	readonly received: () => Awaitable<Value>;
 
 	/** Functions that returns the expected value. */
-	readonly wanted: () => MaybePromise<Value>;
+	readonly wanted: () => Awaitable<Value>;
 };

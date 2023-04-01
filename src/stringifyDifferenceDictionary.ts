@@ -1,5 +1,4 @@
 import { foregroundRed } from "@vangware/ansi";
-import type { ReadOnlyRecord } from "@vangware/types";
 import { formatPropertyPath } from "./formatPropertyPath.js";
 import { formatValue } from "./formatValue.js";
 import { stringifyDifference } from "./stringifyDifference.js";
@@ -10,10 +9,11 @@ import type { Difference } from "./types/Difference.js";
  *
  * @category Output
  */
-export const stringifyDifferenceDictionary: ReadOnlyRecord<
-	(difference: Difference) => string,
-	Difference["kind"]
-> = {
+export const stringifyDifferenceDictionary: {
+	readonly [Kind in Difference["kind"]]: (
+		difference: Difference & { readonly kind: Kind },
+	) => string;
+} = {
 	// eslint-disable-next-line @typescript-eslint/naming-convention, id-length
 	A: ({ index, item, path = [] }) =>
 		stringifyDifference({

@@ -21,5 +21,8 @@ import type { Difference } from "./types/Difference.js";
  * @param difference Difference object.
  * @returns Formatted string.
  */
-export const stringifyDifference = <Value>(difference: Difference<Value>) =>
-	stringifyDifferenceDictionary[difference.kind](difference);
+export const stringifyDifference = <Value>({
+	kind,
+	...difference
+}: Difference<Value>) =>
+	stringifyDifferenceDictionary[kind](difference as never);
