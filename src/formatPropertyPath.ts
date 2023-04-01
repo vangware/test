@@ -13,5 +13,7 @@ import type { ReadOnlyArray } from "@vangware/types";
  * @param propertyPath Path to format.
  * @returns String with formatted path.
  */
-export const formatPropertyPath = (propertyPath: ReadOnlyArray<string>) =>
-	propertyPath.map(foregroundCyan).join(".") || "it";
+export const formatPropertyPath = (propertyPath: ReadOnlyArray<PropertyKey>) =>
+	propertyPath
+		.map(property => foregroundCyan(property.toString()))
+		.join(".") || "it";

@@ -1,4 +1,4 @@
-import type { ReadOnlyArray, ReadOnlyDeep } from "@vangware/types";
+import type { ReadOnly, ReadOnlyArray } from "@vangware/types";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { getFilePaths } from "../src/getFilePaths.js";
@@ -42,7 +42,7 @@ export default [
 		received: () =>
 			iterableToArray(
 				getFilePaths(currentDirectoryURLResolve("../nope")),
-			).catch((error: ReadOnlyDeep<Error>) => error.message),
+			).catch((error: ReadOnly<Error>) => error.message),
 		wanted: () =>
 			`ENOENT: no such file or directory, stat '${currentDirectoryURLResolve(
 				"../nope",

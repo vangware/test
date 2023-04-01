@@ -1,8 +1,8 @@
-import type { ReadOnlyDeep } from "@vangware/types";
+import type { ReadOnly } from "@vangware/types";
 
 /**
  * Read-only `URL`.
  *
  * @category File System
  */
-export type ReadOnlyURL = ReadOnlyDeep<URL>;
+export type ReadOnlyURL = ReadOnly<URL>;

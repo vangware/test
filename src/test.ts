@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { Maybe } from "@vangware/types";
 import deepDiff from "deep-diff";
-import type { Difference } from "./types/Difference.js";
+import type { Differences } from "./index.js";
 import type { Test } from "./types/Test.js";
 import type { TestResult } from "./types/TestResult.js";
 
@@ -34,7 +34,7 @@ export const test = async <Value>({
 	wanted,
 }: Test<Value>) => {
 	// eslint-disable-next-line @typescript-eslint/init-declarations, functional/no-let
-	let differences: Maybe<ReadonlyArray<Difference<Awaited<Value>>>>;
+	let differences: Maybe<Differences<Awaited<Value>>>;
 
 	// eslint-disable-next-line functional/no-try-statements
 	try {
@@ -47,7 +47,7 @@ export const test = async <Value>({
 				difference =>
 					difference.kind !== "N" ||
 					typeof difference.rhs !== "undefined",
-			);
+			) as typeof differences;
 	} catch (error: unknown) {
 		differences = [
 			{ error: error ?? new Error("Unknown Error"), kind: "X" },

@@ -9,5 +9,5 @@ import type { Tests } from "./Tests.js";
  * @category Test
  */
 export type TestsImport<Value = unknown> = Promise<
-	ReadOnlyRecord<Test<Value> | Tests<Value>>
+	ReadOnlyRecord<PropertyKey, Test<Value> | Tests<Value>>
 >;
