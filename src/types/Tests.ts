@@ -16,5 +16,8 @@ import type { Test } from "./Test.js";
  * 	}
  * ];
  * ```
+ * @see {@link Test}
+ *
+ * @template Value Type of value being tested.
  */
 export type Tests<Value = unknown> = IsomorphicIterable<Test<Value>>;

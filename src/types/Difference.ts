@@ -13,6 +13,9 @@ import type { ReadOnlyArray } from "@vangware/types";
  * 	rhs: "🟩",
  * };
  * ```
+ * @see [deep-diff](https://npm.im/deep-diff)
+ *
+ * @template Value Type of value being compared.
  */
 export type Difference<Value = unknown> =
 	| {

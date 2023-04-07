@@ -6,6 +6,8 @@ import type { Test } from "./Test.js";
  *
  * @category File System
  * @category Test
+ * @see {@link Test}
+ * @see {@link ReadOnlyURL}
  */
 export type TestTuple<Value = unknown> = readonly [
 	path: ReadOnlyURL,

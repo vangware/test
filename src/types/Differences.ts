@@ -16,5 +16,9 @@ import type { Difference } from "./Difference.js";
  * 	}
  * ];
  * ```
+ * @see [deep-diff](https://npm.im/deep-diff)
+ * @see {@link Difference}
+ *
+ * @template Value Type of values being compared.
  */
 export type Differences<Value = unknown> = ReadOnlyArray<Difference<Value>>;
