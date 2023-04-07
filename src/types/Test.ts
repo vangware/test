@@ -13,6 +13,8 @@ import type { Awaitable } from "@vangware/types";
  * 	wanted: () => 4,
  * };
  * ```
+ *
+ * @template Value Type of value being tested.
  */
 export type Test<Value = unknown> = {
 	/** Description of the given value. */
