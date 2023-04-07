@@ -20,6 +20,10 @@ import type { Test } from "./Test.js";
  * 	],
  * };
  * ```
+ * @see {@link Differences}
+ * @see {@link Test}
+ *
+ * @template Value Type of value being tested.
  */
 export type TestResult<Value = unknown> = Pick<Test, "given" | "must"> & {
 	/** Differences between `given` and `must` (`undefined` when equal). */

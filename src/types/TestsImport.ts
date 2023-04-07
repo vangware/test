@@ -7,6 +7,8 @@ import type { Tests } from "./Tests.js";
  *
  * @category File System
  * @category Test
+ * @see {@link Test}
+ * @see {@link Tests}
  */
 export type TestsImport<Value = unknown> = Promise<
 	ReadOnlyRecord<PropertyKey, Test<Value> | Tests<Value>>
