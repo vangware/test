@@ -3,5 +3,5 @@
 	"cname": "test.vangware.com",
 	"entryPoints": ["./src"],
 	"extends": ["@vangware/configs/typedoc.json"],
-	"name": "@vangware/test"
+	"name": "Test by Vangware"
 }
