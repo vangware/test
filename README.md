@@ -3,8 +3,141 @@
 ![Coverage][coverage-badge] ![License][license-badge]
 ![NPM Version][npm-version-badge] ![Open Issues][open-issues-badge]
 
-✅ Equality test with enforced legibility (based on [RITEway][riteway] and
-inspired by [uvu](https://github.com/lukeed/uvu)).
+✅ Equality test with enforced readability, based on the concept of
+[RITEway][riteway] and inspired by [uvu](https://github.com/lukeed/uvu).
+
+## Usage
+
+All this configurations are setup automatically by
+[@vangware/create-package][create-package] when creating a new package. For
+manual setup of each file, follow the instructions below.
+
+### 📦 Node
+
+Install `@vangware/tests` as a dev dependency:
+
+```bash
+pnpm add -D @vangware/test
+# or
+npm install -D @vangware/test
+# or
+yarn add --dev @vangware/test
+```
+
+Add a `test` script to `package.json`:
+
+```json
+{
+	"scripts": {
+		"test": "test"
+	}
+}
+```
+
+<details>
+	<summary>Add TypeScript support</summary>
+
+To support TypeScript, install [ts-node](https://npm.im/ts-node) as a dev
+dependency:
+
+```bash
+pnpm add -D ts-node
+# or
+npm install -D ts-node
+# or
+yarn add --dev ts-node
+```
+
+And update `package.json`:
+
+```json
+{
+	"scripts": {
+		"test": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' test"
+	}
+}
+```
+
+</details>
+
+<details>
+	<summary>Add coverage</summary>
+
+To add coverage, install `c8` as a dev dependency:
+
+```bash
+pnpm add -D c8
+# or
+npm install -D c8
+# or
+yarn add --dev c8
+```
+
+And update `package.json`:
+
+```json
+{
+	"scripts": {
+		"test": "c8 test"
+	}
+}
+```
+
+If you added TypeScript support, then update `package.json` like this instead:
+
+And update `package.json`:
+
+```json
+{
+	"scripts": {
+		"test": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' c8 test"
+	}
+}
+```
+
+</details>
+
+Run tests:
+
+```bash
+pnpm test
+# or
+npm test
+# or
+yarn test
+```
+
+### 🦕 Deno
+
+Import `@vangware/test` using the `npm:` prefix, and use it directly:
+
+```typescript
+import { test } from "npm:@vangware/test";
+import { add } from "../src/add.js";
+
+test({
+	given: "a 1 and a 2",
+	must: "return 3",
+	received: () => add(2)(1),
+	wanted: () => 3,
+}).then(console.log);
+```
+
+### 🌎 Browser
+
+Import `@vangware/test` using [esm.sh][esm.sh], and use it directly:
+
+```typescript
+import { test } from "https://esm.sh/@vangware/test";
+import { add } from "../src/add.js";
+
+test({
+	given: "a 1 and a 2",
+	must: "return 3",
+	received: () => add(2)(1),
+	wanted: () => 3,
+}).then(console.log);
+```
 
 ## Writing tests
 
@@ -27,7 +160,7 @@ export default [
 		received: () => add(-2)(1),
 		wanted: () => -1,
 	},
-] as Tests<number>;
+] satisfies Tests<number>;
 ```
 
 ### JavaScript
@@ -52,7 +185,7 @@ export default [
 ];
 ```
 
-### Alternatives
+### Other alternatives
 
 Instead of exporting an `Array` of `Test` as `default`, the export can also be a
 single `Test`:
@@ -66,7 +199,7 @@ export default {
 	must: "return 3",
 	received: () => add(2)(1),
 	wanted: () => 3,
-} as Test<number>;
+} satisfies Test<number>;
 ```
 
 Or multiple exports with different tests:
@@ -91,7 +224,7 @@ export const test2: Test<number> = {
 ```
 
 It can also be used directly without the `test` bin by importing the different
-utils directly:
+utils directly (like with the Deno and Browser examples above):
 
 ```typescript
 import { test } from "@vangware/test";
@@ -105,36 +238,9 @@ test({
 }).then(customFormatter);
 ```
 
-## Running
+## Default output
 
-This should suffice:
-
-```bash
-npx test
-```
-
-When working with TypeScript files directly, [ts-node](https://npm.im/ts-node)
-is required, and then to run it:
-
-```bash
-NODE_OPTIONS='--loader ts-node/esm' npx test
-```
-
-## Coverage
-
-[c8](https://npm.im/c8) can be added and then:
-
-```bash
-# For JavaScript
-npx c8 test
-
-# For TypesScript
-NODE_OPTIONS='--loader ts-node/esm' npx c8 test
-```
-
-## Output
-
-If a test fails, it looks like this:
+`@vangware/tests` provides a default output for the tests. It looks like this:
 
 ```text
 [TEST] ./tests/example.test.ts
@@ -153,20 +259,14 @@ goes into details about the error:
 	└ bar was set with the value "bar".
 ```
 
-## Documentation
+But developers can choose to run `test` directly and use their own formatter, as
+it was pointed out in the previous section.
 
-Documentation is available [HERE][documentation]. It is auto-generated with
-[typedoc][typedoc] based on the JSDocs and the types in the source. It shouldn't
-be necessary to read this. Code editors like [VS Code][vscode] integrate the
-documentation in the UI.
+## Useful links
 
-## Changelog
-
-Changelog can be found [HERE][changelog].
-
-## Test coverage
-
-Test coverage can be found [HERE][coverage].
+-   📝 [Documentation][documentation]: TypeDoc generated documentation.
+-   ⏳ [Changelog][changelog]: List of changes between versions.
+-   ✅ [Tests Coverage][coverage]: Coveralls page with tests coverage.
 
 <!-- Reference -->
 
@@ -174,7 +274,9 @@ Test coverage can be found [HERE][coverage].
 [coverage-badge]:
 	https://img.shields.io/coveralls/github/vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://coveralls.io/github/vangware/test
 [coverage]: https://coveralls.io/github/vangware/test
+[create-package]: https://create-package.vangware.com
 [documentation]: https://test.vangware.com
+[esm.sh]: https://esm.sh
 [license-badge]:
 	https://img.shields.io/npm/l/@vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/test/blob/main/LICENSE
 [npm-version-badge]:
