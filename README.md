@@ -168,7 +168,7 @@ export default [
 ```javascript
 import { add } from "../src/add.js";
 
-/** @type {import("@vangware/test").Tests<number>} */
+/** @satisfies {import("@vangware/test").Tests<number>} */
 export default [
 	{
 		given: "a 1 and a 2",
