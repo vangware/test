@@ -33,4 +33,4 @@ export default [
 		received: () => isTest(undefined),
 		wanted: () => false,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

@@ -2,6 +2,7 @@
 
 // eslint-disable-next-line capitalized-comments
 /* c8 ignore start */
+import { argv, exit } from "node:process";
 import { pathToFileURL } from "node:url";
 import { FAILED_TESTS } from "./constants.js";
 import { filterTestFilePaths } from "./filterTestFilePaths.js";
@@ -12,7 +13,7 @@ import { testsImport } from "./testsImport.js";
 // eslint-disable-next-line functional/no-let
 let hasFailedTests = false;
 
-const testPath = pathToFileURL(process.argv[2] ?? "./tests/");
+const testPath = pathToFileURL(argv[2] ?? "./tests/");
 const pathsIterable = getFilePaths(testPath);
 const testsPathsIterable = filterTestFilePaths(pathsIterable);
 const testsImportsIterable = testsImport(testsPathsIterable);
@@ -26,7 +27,7 @@ for await (const testString of testsStringsIterable) {
 }
 
 // eslint-disable-next-line functional/no-expression-statements
-globalThis.process.exit(hasFailedTests ? 1 : 0);
+exit(hasFailedTests ? 1 : 0);
 
 // eslint-disable-next-line capitalized-comments
 /* c8 ignore end */

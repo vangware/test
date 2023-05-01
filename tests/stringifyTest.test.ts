@@ -44,4 +44,4 @@ export default [
 		wanted: () =>
 			`${FAIL} Given ${bold`🟢`}, must ${bold`🟩`}, but...\n\t├ ${foregroundRed`there was an uncaught error: ❌.`}\n\t└ ${foregroundRed`there was an uncaught error: ❌.`}`,
 	},
-] as Tests<string>;
+] satisfies Tests<string>;

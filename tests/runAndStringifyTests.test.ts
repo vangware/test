@@ -206,4 +206,4 @@ export default [
 		received: () => iterableToArray(runAndStringifyTests([])),
 		wanted: () => [],
 	},
-] as Tests<ReadOnlyArray<string>>;
+] satisfies Tests<ReadOnlyArray<string>>;

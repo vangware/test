@@ -76,4 +76,4 @@ export default [
 			}),
 		wanted: () => foregroundRed`there was an uncaught error: ❌.`,
 	},
-] as Tests<string>;
+] satisfies Tests<string>;

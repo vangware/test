@@ -4,7 +4,7 @@
 ![NPM Version][npm-version-badge] ![Open Issues][open-issues-badge]
 
 ✅ Equality test with enforced readability, based on the concept of
-[RITEway][riteway] and inspired by [uvu](https://github.com/lukeed/uvu).
+[RITEway][riteway] and inspired by [uvu][uvu].
 
 ## Usage
 
@@ -37,15 +37,14 @@ Add a `test` script to `package.json`:
 <details>
 	<summary>Add TypeScript support</summary>
 
-To support TypeScript, install [ts-node](https://npm.im/ts-node) as a dev
-dependency:
+To support TypeScript, install [tsx][tsx] as a dev dependency:
 
 ```bash
-pnpm add -D ts-node
+pnpm add -D tsx
 # or
-npm install -D ts-node
+npm install -D tsx
 # or
-yarn add --dev ts-node
+yarn add --dev tsx
 ```
 
 And update `package.json`:
@@ -53,7 +52,7 @@ And update `package.json`:
 ```json
 {
 	"scripts": {
-		"test": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' test"
+		"test": "NODE_OPTIONS='--loader tsx --no-warnings' test"
 	}
 }
 ```
@@ -90,7 +89,7 @@ And update `package.json`:
 ```json
 {
 	"scripts": {
-		"test": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' c8 test"
+		"test": "NODE_OPTIONS='--loader tsx --no-warnings' c8 test"
 	}
 }
 ```
@@ -284,6 +283,5 @@ it was pointed out in the previous section.
 [open-issues-badge]:
 	https://img.shields.io/github/issues/vangware/test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/test/issues
 [riteway]: https://github.com/ericelliott/riteway
-[typedoc]: https://typedoc.org/
+[tsx]: https://npm.im/tsx
 [uvu]: https://github.com/lukeed/uvu
-[vscode]: https://code.visualstudio.com/

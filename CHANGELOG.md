@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 10.3.0
+
+-   ⬆️ dependency upgrade.
+-   ➖ remove `ts-node`.
+-   ➕ add `tsx`.
+-   🔧 replace `ts-node` with `tsx`.
+
 ## 10.2.5
 
 -   🔧 update `engines` to suggest `node@>=19` (something isn't right with

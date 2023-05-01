@@ -1,15 +1,19 @@
+import { cwd } from "node:process";
 import { pathToFileURL } from "node:url";
 import { relativePath } from "../src/relativePath.js";
 import type { Tests } from "../src/types/Tests.js";
 
-const cwd = pathToFileURL(process.cwd());
+const currentWorkingDirectory = pathToFileURL(cwd());
 const filename = "vangware.test.ts";
 
 export default [
 	{
 		given: "a relative path to CWD",
 		must: "return path without CWD",
-		received: () => relativePath(new URL(`${cwd.toString()}/${filename}`)),
+		received: () =>
+			relativePath(
+				new URL(`${currentWorkingDirectory.toString()}/${filename}`),
+			),
 		wanted: () => `./${filename}`,
 	},
 	{
@@ -18,4 +22,4 @@ export default [
 		received: () => relativePath(new URL(`file:///${filename}`)),
 		wanted: () => `file:///${filename}`,
 	},
-] as Tests<string>;
+] satisfies Tests<string>;

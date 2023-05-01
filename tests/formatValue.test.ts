@@ -139,4 +139,4 @@ export default [
 		wanted: () =>
 			`${foregroundBrightGreen`TypeError`}(${foregroundBrightRed`"Test"`})`,
 	},
-] as Tests<string>;
+] satisfies Tests<string>;

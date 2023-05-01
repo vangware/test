@@ -5,4 +5,4 @@ export default {
 	must: "work",
 	received: () => true,
 	wanted: () => true,
-} as Test;
+} satisfies Test;
