@@ -26,7 +26,7 @@
 		"eslint": "^8.39.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.8.8",
-		"ts-node": "^10.9.1",
+		"tsx": "^3.12.7",
 		"typescript": "5.0.4"
 	},
 	"engines": {
@@ -64,7 +64,7 @@
 		"prepare": "lefthook install",
 		"prepublishOnly": "run-s --print-label compile prettify",
 		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
-		"test": "c8 node --loader ts-node/esm --no-warnings ./src/bin.ts"
+		"test": "c8 node --loader tsx --no-warnings ./src/bin.ts"
 	},
 	"sideEffects": false,
 	"type": "module",

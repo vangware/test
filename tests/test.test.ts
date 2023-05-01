@@ -85,4 +85,20 @@ export default [
 			must: "🟩",
 		}),
 	},
-] as Tests<TestResult>;
+	{
+		given: "a unexpected error throwing test",
+		must: "return object with error",
+		received: () =>
+			test({
+				given: "🟢",
+				must: "🟩",
+				received: () => ({ "🟢": "🟩" }),
+				wanted: () => ({}),
+			}),
+		wanted: () => ({
+			differences: [{ kind: "N", path: ["🟢"], rhs: "🟩" }],
+			given: "🟢",
+			must: "🟩",
+		}),
+	},
+] satisfies Tests<TestResult>;

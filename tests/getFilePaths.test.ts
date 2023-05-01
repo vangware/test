@@ -50,4 +50,4 @@ export default [
 				.toString()
 				.replace("file://", "")}'`,
 	},
-] as Tests<ReadOnlyArray<ReadOnlyURL> | string>;
+] satisfies Tests<ReadOnlyArray<ReadOnlyURL> | string>;

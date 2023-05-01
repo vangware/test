@@ -31,6 +31,8 @@ import type { TestsImport } from "./types/TestsImport.js";
 export const testImport = async function* ({ href }: ReadOnlyURL) {
 	// eslint-disable-next-line functional/no-loop-statements
 	for await (const test of Object.values(
+		// eslint-disable-next-line capitalized-comments
+		/* c8 ignore next */
 		await (import(href) as TestsImport),
 	)) {
 		// eslint-disable-next-line functional/no-conditional-statements

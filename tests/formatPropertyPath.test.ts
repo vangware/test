@@ -17,4 +17,4 @@ export default [
 		received: () => formatPropertyPath([]),
 		wanted: () => "it",
 	},
-] as Tests<string>;
+] satisfies Tests<string>;
