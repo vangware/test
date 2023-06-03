@@ -13,8 +13,8 @@
 		"url": "https://github.com/vangware/test/issues"
 	},
 	"dependencies": {
-		"@vangware/ansi": "^6.3.6",
-		"@vangware/types": "^5.1.19",
+		"@vangware/ansi": "^6.3.7",
+		"@vangware/types": "^6.0.0",
 		"deep-diff": "^1.0.2"
 	},
 	"devDependencies": {
