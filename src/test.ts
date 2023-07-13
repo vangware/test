@@ -53,5 +53,5 @@ export const test = <Value>({ given, must, received, wanted }: Test<Value>) =>
 					...(differences.length > 0 ? { differences } : undefined),
 					given,
 					must,
-				} as TestResult<Value>),
+				}) as TestResult<Value>,
 		);
