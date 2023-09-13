@@ -13,19 +13,19 @@
 		"url": "https://github.com/vangware/test/issues"
 	},
 	"dependencies": {
-		"@vangware/ansi": "^6.3.24",
-		"@vangware/types": "^6.2.5",
+		"@vangware/ansi": "^6.3.25",
+		"@vangware/types": "^6.2.6",
 		"deep-diff": "^1.0.2"
 	},
 	"devDependencies": {
-		"@evilmartians/lefthook": "^1.4.10",
 		"@types/deep-diff": "^1.0.2",
 		"@types/node": "20.6.0",
-		"@vangware/configs": "^5.1.7",
+		"@vangware/configs": "^6.0.0",
 		"c8": "^8.0.1",
 		"eslint": "^8.49.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^3.0.3",
+		"simple-git-hooks": "^2.9.0",
 		"tsx": "^3.12.9",
 		"typescript": "5.2.2"
 	},
@@ -57,16 +57,18 @@
 	"scripts": {
 		"clean": "rimraf ./dist",
 		"compile": "tsc --project tsconfig.dist.json",
-		"git:pre-push": "run-s --print-label clean pre-compile lint test",
 		"lint": "eslint {src,tests}",
 		"lint:fix": "eslint {src,tests} --fix",
 		"pre-compile": "tsc --noemit --project tsconfig.dist.json",
-		"prepare": "lefthook install",
+		"prepare": "simple-git-hooks",
 		"prepublishOnly": "run-s --print-label compile prettify",
 		"prettify": "prettier --ignore-path=.prettierignore --log-level=warn --write './dist/**/*.{js,ts}'",
 		"test": "c8 node --loader tsx --no-warnings ./src/bin.ts"
 	},
 	"sideEffects": false,
+	"simple-git-hooks": {
+		"pre-push": "$(pwd)/node_modules/.bin/run-s --print-label clean pre-compile lint test"
+	},
 	"type": "module",
 	"types": "./dist/index.d.ts"
 }

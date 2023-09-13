@@ -8,10 +8,6 @@
 
 ## Usage
 
-All this configurations are setup automatically by
-[@vangware/create-package][create-package] when creating a new package. For
-manual setup of each file, follow the instructions below.
-
 ### 📦 Node
 
 Install `@vangware/tests` as a dev dependency:
